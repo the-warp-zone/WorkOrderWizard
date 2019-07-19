@@ -9,5 +9,7 @@ MERN (MongoDB, Express, React, and Node)
 
 Built for the desktop experience as well as native mobile. React Native will be used to create iOS and Android smartphone apps.
 
+Depending on our needs during the development process, we may choose to employ Reduct or Context API in order to track application state.
+
 ## Deployment
 This will be a cloud-based service. We may choose to utilize an automatically scaling deployment service such as Amazon Elastic Beanstalk.
