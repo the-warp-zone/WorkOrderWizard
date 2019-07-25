@@ -10,7 +10,6 @@ function App() {
       {/* <WorkOrderWizard /> */}
     </div>
   );
-
 }
 
 export default App
