@@ -1,8 +1,8 @@
 import React from "react";
-import "./App.css";
+import "../../App.css";
 
 var lpJumbotron = () => {
-  return <div className="lp_Jumbotron">{/* Jumbotron */}</div>;
+  return <div className="lp_Jumbotron">yo{/* Jumbotron */}</div>;
 };
 
 export default lpJumbotron;
