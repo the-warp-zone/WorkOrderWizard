@@ -20,7 +20,7 @@ var UserExamples = () => {
         <Col lg={{ span: 3, offset: 1 }}>
                     <img src='https://via.placeholder.com/500x200.jpg' alt='placeholder'></img>
         </Col>
-        <Col lg={{ span: 3, offset: 1 }}>
+        <Col lg={{ span: 1, offset: 1 }}>
                     <img src='https://via.placeholder.com/500x200.jpg' alt='placeholder'></img>
         </Col>
      </Row>
