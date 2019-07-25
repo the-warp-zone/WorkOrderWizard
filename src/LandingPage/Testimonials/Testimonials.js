@@ -12,6 +12,9 @@ var Testimonials = () => {
         
      </Row>
      <Row>
+         <Col></Col>
+     </Row>
+     <Row>
         <Col>"Wow this product is a product that is very good" <em>- That one dude</em></Col>
         <Col>"My life was a tornado of destruction before I found Work Order Wizard" <em>- A Guy</em></Col>  
          
