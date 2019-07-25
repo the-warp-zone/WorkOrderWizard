@@ -14,6 +14,47 @@ Depending on our needs during the development process, we may choose to employ R
 ## Deployment
 This will be a cloud-based service. We may choose to utilize an automatically scaling deployment service such as Amazon Elastic Beanstalk.
 
+## Design Documents
+
+### Data Model:
+![Data Structure](./wireframe_pics/Data_Structure.jpg)
+
+### Landing Page:
+![Data Structure](./wireframe_pics/Landing_Page.jpg)
+
+### Login Modal on Landing Page:
+![Data Structure](./wireframe_pics/Login_Page.jpg)
+
+### User's Home Page
+![Data Structure](./wireframe_pics/User_Home_Page.jpg)
+
+### Customers Page
+![Data Structure](./wireframe_pics/Customers_Page.jpg)
+
+### Single Customer Page
+![Data Structure](./wireframe_pics/Single_Customer_Page.jpg)
+
+### Work Orders Page
+![Data Structure](./wireframe_pics/Work_Orders_Page.jpg)
+
+### Single Work Order Page
+![Data Structure](./wireframe_pics/Single_Work_Order_Page.jpg)
+
+### Invoices Page
+![Data Structure](./wireframe_pics/Invoices_Page.jpg)
+
+### Single Invoice Page
+![Data Structure](./wireframe_pics/Single_Invoice_Page.jpg)
+
+### Costs Page
+![Data Structure](./wireframe_pics/Costs_page.jpg)
+
+### Single Cost Page
+![Data Structure](./wireframe_pics/Single_Cost_Page.jpg)
+
+### User Account Management Page
+![Data Structure](./wireframe_pics/Account_Page.jpg)
+
 # React README follows:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
