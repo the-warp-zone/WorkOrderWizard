@@ -33,7 +33,7 @@ var Features = () => {
                 </Col>
             </Row>
 
-
+        //TEMPLATE
 
         </div>
     );
