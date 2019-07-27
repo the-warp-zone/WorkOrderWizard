@@ -9,17 +9,18 @@ import './Searchbar.css'
 
 var Searchbar = () => {
     return (
-        <div className='margin'>
-            <Row>
-                <Col lg={{ span: 10}}>
-                </Col>
-                <Col lg={{ span: 2}}>
+        <div className=''>
+            <div className='row'>
+                <div className='col xs-10'>
+                </div>
+                <div className='col xs-2'>
+
                     <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                         <Button variant="outline-success">Search</Button>
                     </Form> 
-                </Col>
-            </Row>
+                </div>
+            </div>
             </div>
       
     )
