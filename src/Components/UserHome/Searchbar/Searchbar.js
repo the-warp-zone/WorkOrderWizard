@@ -9,7 +9,7 @@ import './Searchbar.css'
 
 var Searchbar = () => {
     return (
-        <div className=''>
+        <div className='margin'>
             <div className='row'>
                 <div className='col xs-10'>
                 </div>
