@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import './LpNav.css'
+import './MainNav.css'
 
 
-var LpNav = () => {
+var MainNav = () => {
   return (
     <div>
 
@@ -12,9 +12,17 @@ var LpNav = () => {
   <Navbar.Brand className='navText' href="#">Work Order Wizard</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
+  <Nav className="mr-auto">
+      <Nav.Link href="#">Customers</Nav.Link>
+      <Nav.Link href="#">Work Orders</Nav.Link>
+      <Nav.Link href="#">Invoices</Nav.Link>
+      <Nav.Link href="#">Costs</Nav.Link>
+      <Nav.Link href="#">Archived</Nav.Link>
+      <Nav.Link href="#">Jobs</Nav.Link>
+    </Nav>
     <Nav className="ml-auto">
-      <Nav.Link href="#">Login</Nav.Link>
-      <Nav.Link href="#">Sign Up</Nav.Link>
+      <Nav.Link href="#">My Account</Nav.Link>
+      <Nav.Link href="#">Log Out</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
@@ -22,4 +30,4 @@ var LpNav = () => {
   );
 };
 
-export default LpNav;
+export default MainNav;
