@@ -2,7 +2,7 @@ import React from "react";
 import Searchbar from './Searchbar/Searchbar';
 import PageCards from './PageCards/PageCards';
 
-function App() {
+var UserHome = () => {
   return (
     <div>
      <Searchbar />
@@ -12,4 +12,4 @@ function App() {
   );
 }
 
-export default App
+export default UserHome;

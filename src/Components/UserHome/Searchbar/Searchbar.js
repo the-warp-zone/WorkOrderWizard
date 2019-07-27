@@ -20,9 +20,7 @@ var Searchbar = () => {
                     </Form> 
                 </Col>
             </Row>
- 
-
-        </div>
+            </div>
       
     )
 }

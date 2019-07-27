@@ -7,15 +7,43 @@ import './PageCards.css';
 var PageCards = () => {
     return (
         <div>
-            <Row>
-                <Col>
-                    <Card style={{ width: '18rem' }} lg={{ span: 2, offset: 2 }}>
+            <Row className='margin-top'>
+                <Col lg={{ span: 3  }}></Col>
+                <Col lg={{ span: 2  }}>
+                    <Card style={{ width: '300px', height: '200px' }} className='shadow-box'>
                         <Card.Body>
-                            <Card.Link href="#">Customers</Card.Link>
+                            <Card.Link href="#" className='card-title'>Customers</Card.Link>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col lg={{ span: 1  }}></Col>
+                <Col lg={{ span: 2 }}>
+                    <Card style={{ width: '300px', height: '200px' }} className='shadow-box'>
+                        <Card.Body>
+                            <Card.Link href="#" className='card-title'>Work Orders</Card.Link>
                         </Card.Body>
                     </Card>
                 </Col>
             </Row>
+            <Row className='margin-top'>
+            <Col lg={{ span: 3  }}></Col>
+                <Col lg={{ span: 2 }}>
+                    <Card style={{ width: '300px', height: '200px' }} className='shadow-box'>
+                        <Card.Body>
+                            <Card.Link href="#" className='card-title'>Invoices</Card.Link>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col lg={{ span: 1  }}></Col>
+                <Col lg={{ span: 2 }}>
+                    <Card style={{ width: '300px', height: '200px' }} className='shadow-box'>
+                        <Card.Body>
+                            <Card.Link href="#" className='card-title'>Costs</Card.Link>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+
         </div>
     )
 }
