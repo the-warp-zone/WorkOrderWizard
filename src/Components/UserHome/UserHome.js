@@ -1,11 +1,13 @@
 import React from "react";
-import "./App.css";
 import Searchbar from './Searchbar/Searchbar';
+import PageCards from './PageCards/PageCards';
 
 function App() {
   return (
-    <div className="App">
+    <div>
      <Searchbar />
+     <PageCards />
+     
     </div>
   );
 }
