@@ -1,0 +1,38 @@
+.cards {
+    color: black;
+    font-size: 30px;
+    font-weight: 300;
+    font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif;
+}
+.card-spacing {
+    margin: 20px;
+}
+.margin-top {
+    margin: 5%;
+}
+.shadow-box{
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+}
+.shadow-box:hover {
+    background-color: rgba(204, 204, 204, 0.2);
+}
+.card-body {
+    padding: 50px;
+}
+.card-spacing {
+    margin-top: 5%;
+}
+a:link {
+    color: #109250;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #109250;
+  }
+  a:hover {
+    color: #109250;
+  }
+  a:active {
+    color: black;
+  }
+  
