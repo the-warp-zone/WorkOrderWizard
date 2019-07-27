@@ -6,11 +6,13 @@ import './PageCards.css'
 
 var PageCards = () => {
     return (
-        <div>
-            <Row className="margin-top">
-                <Col lg={{ span: 3 }}></Col>
-                <Col lg={{ span: 2 }}>
-                    <a href="#" className="card-title">
+        <div className='container'>
+
+            <div className='row margin-top'>
+            
+                
+                <div className='col px-md-5'>
+                    <a href="#" className="cards">
                         <Card
                             style={{ width: '300px', height: '200px' }}
                             className="shadow-box"
@@ -18,10 +20,10 @@ var PageCards = () => {
                             <Card.Body>Customers</Card.Body>
                         </Card>
                     </a>
-                </Col>
-                <Col lg={{ span: 1 }}></Col>
-                <Col lg={{ span: 2 }}>
-                    <a href="#" className="card-title">
+                </div>
+                
+                <div className='col px-md-5'>
+                    <a href="#" className="cards">
                         <Card
                             style={{ width: '300px', height: '200px' }}
                             className="shadow-box"
@@ -29,12 +31,14 @@ var PageCards = () => {
                             <Card.Body>Work Orders</Card.Body>
                         </Card>
                     </a>
-                </Col>
-            </Row>
-            <Row className="margin-top">
-                <Col lg={{ span: 3 }}></Col>
-                <Col lg={{ span: 2 }}>
-                    <a href="#" className="card-title">
+                </div>
+            
+            </div>
+            <div className='row margin-top'>
+            
+                
+                <div className='col px-md-5'>
+                    <a href="#" className="cards">
                         <Card
                             style={{ width: '300px', height: '200px' }}
                             className="shadow-box"
@@ -42,10 +46,10 @@ var PageCards = () => {
                             <Card.Body>Invoices</Card.Body>
                         </Card>
                     </a>
-                </Col>
-                <Col lg={{ span: 1 }}></Col>
-                <Col lg={{ span: 2 }}>
-                    <a href="#" className="card-title">
+                </div>
+               
+                <div className='col px-md-5'>
+                    <a href="#" className="cards">
                         <Card
                             style={{ width: '300px', height: '200px' }}
                             className="shadow-box"
@@ -53,9 +57,11 @@ var PageCards = () => {
                             <Card.Body>Costs</Card.Body>
                         </Card>
                     </a>
-                </Col>
-            </Row>
+                </div>
+            
         </div>
+        </div>
+        
     )
 }
 
