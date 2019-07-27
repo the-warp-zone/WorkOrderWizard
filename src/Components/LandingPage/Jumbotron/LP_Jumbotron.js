@@ -2,7 +2,7 @@ import React from 'react'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import './LP_Jumbotron.css'
 
-import '../../App.css'
+import '../../../App.css'
 
 var LP_Jumbotron = () => {
     return (
