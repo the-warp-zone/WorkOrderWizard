@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import { shallow } from 'enzyme'
 import MainNav from './Components/MainNav/MainNav'
+import LandingPage from './Components/LandingPage/LandingPage'
 
 it('renders without crashing', () => {
     const div = document.createElement('div')
@@ -18,6 +19,6 @@ describe('App', () => {
     })
 
     it('should render the LandingPage Component', () => {
-        expect(wrapper.containsMatchingElement(<MainNav />)).toEqual(true)
+        expect(wrapper.containsMatchingElement(<LandingPage />)).toEqual(true)
     })
 })
