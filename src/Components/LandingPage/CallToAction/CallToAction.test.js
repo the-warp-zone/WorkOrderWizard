@@ -18,5 +18,5 @@ describe('Features', () => {
     })
     it('should contain a Submit Button that says: Sign Up Now', () => {
         expect(wrapper.find('Button').text()).toEqual('Sign Up Now')
-    })
+    }) //
 })
