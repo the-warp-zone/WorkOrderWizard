@@ -1,17 +1,33 @@
-// Dependencies
-const express = require("express");
-
-// Initialize Express
+const express = require('express');
+const routes = require('./controllers');
 const app = express();
+const PORT = process.env.PORT || 3001;
+//var db = require('./models');
 
+// Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+} else {
+	app.use(express.static("client/public"));
+}
+// Add routes, both API and view
+app.use(routes);
 
-require("./routes/api-routes")(app);
-//require("./routes/html-routes")(app);
+// Start the API server
 
-// Set the app to listen on port 3000
-app.listen(3001, function() {
-  console.log("App running on port 3001!");
+app.listen(PORT, () => {
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+
+// ADD SEQUELIZE HERE TO CONNECT TO YOUR DB
+/*
+db.sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => {
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  });
+});
+*.
