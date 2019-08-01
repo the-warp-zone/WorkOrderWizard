@@ -1,11 +1,19 @@
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
+const router = require('express').Router();
 //const models = require('../../models');
 
 // ===============================================================================
 // ROUTING
 // ===============================================================================
 
-module.exports = function(app) {
+router.get("/", function(req, res) {
+	console.log("get route requested.");
+	res.send("Get Route Hit").status(200);
+});
+
+module.exports = router;
+
+//module.exports = function(app) {
 	
 
 /*
@@ -23,13 +31,16 @@ let cust = new Customer({
 cust.save();
 */
 
-app.get("/fetch", function(req, res) {
+/*
+router.get("/fetch", function(req, res) {
 	console.log("get fetch requested.");
 	console.log("get all customers");
+	console.log(req);
 	res.send("Get Customers Route Hit").status(200);
 	
 	//models.Customer.find({}).then( function(customers) {res.send(customers).status(200);});
 });
+*/
 
 /*
 app.delete("/customer/*", function(req, res) {
@@ -57,5 +68,3 @@ app.put("/customer/*", function(req, res) {
 	}).then(function (customer){console.log(customer);res.send(customer).status(200)});
 });
 */
-
-};
