@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 require("./routes/api-routes")(app);
-require("./routes/html-routes")(app);
+//require("./routes/html-routes")(app);
 
 // Set the app to listen on port 3000
 app.listen(3001, function() {
