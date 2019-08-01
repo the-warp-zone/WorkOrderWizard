@@ -2,7 +2,7 @@ const express = require('express');
 const routes = require('./controllers');
 const app = express();
 const PORT = process.env.PORT || 3001;
-var models = require('./models');
+const models = require('./models');
 
 const mongoose = require('mongoose');
 
