@@ -1,0 +1,102 @@
+routes
+
+
+	user routes
+	customer routes
+		get all customers (for logged in user)  (DONE, except auhorization bit: GET /customer/all )
+		get one customer (of user's customers)  (DONE, except auhorization bit: GET /customer/:id )
+		
+		add a customer (associated to logged in user)
+		remove a customer (mark customer deleted / archived)
+		
+	workorder routes
+		get all workorders 
+		get one workorder
+		
+		create a workorder
+		remove a workorder (mark deleted/archived)
+		
+	invoice routes
+		get all invoices 
+		get one invoice
+		
+		add an invoice to a workorder
+		remove an invoice from a workorder (mark deleted/archived)
+		
+	cost routes
+		get all costs
+		get one cost
+		
+		add cost to a workorder
+		remove a cost from a workorder (mark deleted / archived)
+		
+		
+Schema:
+
+	Customers collection
+	Workorders collection
+	Invoices collection
+	Costs collection
+	Users Collection
+	
+OR, hierarcical:
+	
+	users {
+		Customers {
+			Workorders {
+				Invoices {}
+				Costs {}
+			}
+		}
+	}
+	
+Again hierarcical, but different:
+	
+	users {}
+	
+	Customers {}
+			
+	Workorders {
+		Invoices {}
+		Costs {}
+	}
+	
+	
+	Because I probably want to nest Costs and Invoices within the document of their parent workOrder (at least as long as I am using MongoDB), I will start implementing the workOrder routes first, using a WorkOrders collection. But I already have a Customers collections so I can use that to build these customer routes.
+		
+Either way, these objects should have the following properties / columns:
+
+		
+	Customers : {
+		name: string,
+		businessName: string,
+		phone: string,
+		emailAddress: string,
+		Address: string
+	};
+	
+	Workorders : {
+		customerID (if nested hierarcically this is not needed, it is the parent ID),
+		created on DATE,
+		Due DATE,
+		hoursLogged: number
+	};
+	
+	Invoices : {
+		paid: boolean,
+		open: boolean,
+		amountBilled: number,
+		dateIssued: date
+		
+	};
+	
+	Costs : {
+		amount: number
+		datePurchased: DATE,
+		vendor: string,
+		vendorReceiptSN (unique receipt transaction ID from vendor receipt, if any)
+	};
+	
+	Users : {
+	
+	};
