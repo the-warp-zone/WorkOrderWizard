@@ -3,6 +3,10 @@ import { shallow } from 'enzyme'
 import LandingPage from './LandingPage'
 import LP_Jumbotron from './Jumbotron/LP_Jumbotron'
 import LpNav from './navbar/LpNav'
+import Testimonials from './Testimonials/Testimonials'
+import UserExamples from './UserExamples/UserExamples'
+import Features from './Features/Features'
+import CallToAction from './CallToAction/CallToAction'
 
 describe('Landing Page', () => {
     let wrapper
@@ -11,11 +15,23 @@ describe('Landing Page', () => {
         expect(wrapper.find('div').length).toEqual(1)
     })
 
-    it('should render the LP_Nav Component', () => {
-        expect(wrapper.containsMatchingElement(<LpNav />)).toEqual(true)
-    })
+    // it('should render the LP_Nav Component', () => {
+    //     expect(wrapper.containsMatchingElement(<LpNav />)).toEqual(true)
+    // })
 
     it('should render the LP_Jumbotron Component', () => {
         expect(wrapper.containsMatchingElement(<LP_Jumbotron />)).toEqual(true)
+    })
+    it('should render the Testimonials Component', () => {
+        expect(wrapper.containsMatchingElement(<Testimonials />)).toEqual(true)
+    })
+    it('should render the Features Component', () => {
+        expect(wrapper.containsMatchingElement(<Features />)).toEqual(true)
+    })
+    it('should render the UserExamples Component', () => {
+        expect(wrapper.containsMatchingElement(<UserExamples />)).toEqual(true)
+    })
+    it('should render the CalltoAction Component', () => {
+        expect(wrapper.containsMatchingElement(<CallToAction />)).toEqual(true)
     })
 })

@@ -9,7 +9,8 @@ var CallToAction = () => {
         <div id="calltoAction">
             <hr />
             <Row>
-                <Col lg={{ span: 4, offset: 2 }}>
+                {/* lg={{ span: 4, offset: 2 }} */}
+                <Col className="Action">
                     <h2>
                         <em>Get Work Order Wizard Today</em>
                     </h2>
@@ -19,7 +20,8 @@ var CallToAction = () => {
                 <Col />
             </Row>
             <Row>
-                <Col lg={{ span: 5, offset: 2 }} className="ctaText">
+                {/* lg={{ span: 5, offset: 2 }} */}
+                <Col className="ctaText">
                     Now that You have seen the awesome power that Work Order
                     Wizard has, do you dare sign a contract? It will be written
                     in Blood.
@@ -30,7 +32,8 @@ var CallToAction = () => {
                 <Col />
             </Row>
             <Row>
-                <Col lg={{ span: 3, offset: 2 }}>
+                {/* lg={{ span: 3, offset: 2 }} */}
+                <Col>
                     <Button variant="success">Sign Up Now</Button>
                 </Col>
             </Row>
