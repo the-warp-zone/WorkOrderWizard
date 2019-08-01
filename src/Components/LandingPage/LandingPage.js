@@ -11,8 +11,8 @@ var LandingPage = () => {
         <div className="LandingPage">
             {/* <LpNav/> */}
             <LP_Jumbotron />
-            <Testimonials />
             <Features />
+            <Testimonials />
             <UserExamples />
             <CallToAction />
         </div>
