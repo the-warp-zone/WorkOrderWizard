@@ -1,17 +1,14 @@
-//const mongoose = require('mongoose');
-const router = require('express').Router();
-//const models = require('../../models');
+// const router = require('express').Router();
+//const WorkOrder = require('../models');
 
-// ===============================================================================
-// ROUTING
-// ===============================================================================
-
+/*
 router.get("/", function(req, res) {
 	console.log("get route requested.");
 	res.send("Get Route Hit").status(200);
 });
+*/
 
-module.exports = router;
+//module.exports = router;
 
 //module.exports = function(app) {
 	

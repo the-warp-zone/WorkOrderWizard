@@ -31,13 +31,40 @@ cust.save();
 */
 
 
-router.get("/fetch", function(req, res) {
+router.get("/all", function(req, res) {
 	console.log("get fetch requested.");
 	console.log("get all customers");
 	//console.log(req);
 	
 	
 	Customer.find({}).then( function(customers) {res.send(customers).status(200);});
+});
+
+router.get("/*", function(req, res) {
+	console.log("requested details of customer ID : " + req.params[0]);
+	Customer.findById(req.params[0], function (err, customer) {
+		if(customer) res.send(customer).status(200);})
+		.then(function (customer){
+			console.log(customer);});
+});
+
+
+router.post("/", function(req, res) {
+	
+	let customer = new Customer(req.body).save().then(function(customer){
+		res.send(customer).status(200);
+	});
+	
+	//console.log("create customer route hit");
+	//res.send("create customer route hit").status(200);
+	
+	/*
+	console.log(req.body);
+	let customer = new Customer(req.body).save().then(function(customer){
+		res.send(customer).status(200);
+	*/
+	
+	
 });
 
 
