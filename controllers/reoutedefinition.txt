@@ -6,11 +6,11 @@ routes
 		get all customers (for logged in user)  (DONE, except auhorization bit: GET /customer/all )
 		get one customer (of user's customers)  (DONE, except auhorization bit: GET /customer/:id )
 		
-		add a customer (associated to logged in user)
-		remove a customer (mark customer deleted / archived)
+		add a customer (associated to logged in user) (DONE, except auhorization bit: POST /customer/ with JSON for customer in Body)
+		remove a customer (we should be marking customer deleted / archived instead of deleting customer document) (DONE, except auhorization bit and "marking deleted bit" : DELETE /customer/:id )
 		
 	workorder routes
-		get all workorders 
+		get all workorders (for a given user, filterable on customer or other fields)
 		get one workorder
 		
 		create a workorder

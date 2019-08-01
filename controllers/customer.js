@@ -54,17 +54,10 @@ router.post("/", function(req, res) {
 	let customer = new Customer(req.body).save().then(function(customer){
 		res.send(customer).status(200);
 	});
-	
-	//console.log("create customer route hit");
-	//res.send("create customer route hit").status(200);
-	
-	/*
-	console.log(req.body);
-	let customer = new Customer(req.body).save().then(function(customer){
-		res.send(customer).status(200);
-	*/
-	
-	
+});
+
+router.delete("/*", function(req, res) {
+	Customer.findById(req.params[0], function (err, customer) { if(customer) customer.remove();}).then(function (customer){res.send(customer).status(200)});
 });
 
 
