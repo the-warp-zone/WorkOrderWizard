@@ -1,6 +1,6 @@
 //const mongoose = require('mongoose');
 const router = require('express').Router();
-//const models = require('../../models');
+const Customer = require('../models');
 
 // ===============================================================================
 // ROUTING
@@ -11,7 +11,6 @@ router.get("/", function(req, res) {
 	res.send("Get Route Hit").status(200);
 });
 
-module.exports = router;
 
 //module.exports = function(app) {
 	
@@ -31,16 +30,18 @@ let cust = new Customer({
 cust.save();
 */
 
-/*
+
 router.get("/fetch", function(req, res) {
 	console.log("get fetch requested.");
 	console.log("get all customers");
-	console.log(req);
-	res.send("Get Customers Route Hit").status(200);
+	//console.log(req);
 	
-	//models.Customer.find({}).then( function(customers) {res.send(customers).status(200);});
+	
+	Customer.find({}).then( function(customers) {res.send(customers).status(200);});
 });
-*/
+
+
+module.exports = router;
 
 /*
 app.delete("/customer/*", function(req, res) {
