@@ -8,8 +8,7 @@ var UserExamples = () => {
         <div>
             <hr />
             <Row>
-                {/* lg={{ span: 2, offset: 2 }} */}
-                <Col className="header">
+                <Col lg={{ span: 2, offset: 2 }}>
                     <h2>
                         <em>User Examples</em>
                     </h2>
@@ -19,22 +18,19 @@ var UserExamples = () => {
                 <Col />
             </Row>
             <Row>
-                {/* lg={{ span: 2, offset: 1 }} */}
-                <Col>
+                <Col lg={{ span: 2, offset: 1 }}>
                     <img
                         src="https://via.placeholder.com/500x200.jpg"
                         alt="placeholder"
                     />
                 </Col>
-                {/* lg={{ span: 2, offset: 1 }} */}
-                <Col>
+                <Col lg={{ span: 2, offset: 1 }}>
                     <img
                         src="https://via.placeholder.com/500x200.jpg"
                         alt="placeholder"
                     />
                 </Col>
-                {/* lg={{ span: 1, offset: 1 }} */}
-                <Col>
+                <Col lg={{ span: 1, offset: 1 }}>
                     <img
                         src="https://via.placeholder.com/500x200.jpg"
                         alt="placeholder"
