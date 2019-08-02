@@ -18,6 +18,9 @@ routes
 		create a workorder
 		remove a workorder (mark deleted/archived)
 		
+		update an existing workorder (associated to logged in user) 
+ 		
+		
 	invoice routes
 		get all invoices 
 		get one invoice
