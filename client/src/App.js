@@ -7,10 +7,11 @@ import UserHome from './Components/UserHome/UserHome'
 function App() {
     return (
         <div className="App">
+            <MainNav />
             <LandingPage />
 
             {/* After user is past landing page or loggin in... */}
-            {/* <MainNav /> */}
+
             {/* <UserHome /> */}
         </div>
     )
