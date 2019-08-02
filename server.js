@@ -2,7 +2,7 @@ const express = require('express');
 const routes = require('./controllers');
 const app = express();
 const PORT = process.env.PORT || 3001;
-const models = require('./models');
+
 
 const mongoose = require('mongoose');
 
@@ -13,7 +13,7 @@ const mongoose = require('mongoose');
 
 	
 	// If deployed, use the deployed database. Otherwise use the local database
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/invoiceCentral";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/WorkOrderWizard";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 

@@ -11,14 +11,14 @@ routes
 		
 		update an existing customer (associated to logged in user) (DONE, except authorization bit: PUT /customer/:id with JSON for properties to update customer in Body)
  		
-	workorder routes
-		get all workorders (for a given user, filterable on customer or other fields)
-		get one workorder
+	workorder routes (copied from customer)
+		get all workorders (for a given user, filterable on customer or other fields) (DONE, except authorization bit: GET /workorder/all )
+		get one workorder (DONE, except authorization bit: GET /workorder/:id )
 		
-		create a workorder
-		remove a workorder (mark deleted/archived)
+		create a workorder (DONE, except authorization bit: POST /workorder/ with JSON for workorder in Body)
+		remove a workorder (mark deleted/archived) (we should be marking workorder deleted / archived instead of deleting workorder document) (DONE, except authorization bit and "marking deleted bit" : DELETE /workorder/:id )
 		
-		update an existing workorder (associated to logged in user) 
+		update an existing workorder (associated to logged in user) (DONE, except authorization bit: PUT /workorder/:id with JSON for properties to update workorder in Body)
  		
 		
 	invoice routes
@@ -27,14 +27,15 @@ routes
 		
 		add an invoice to a workorder
 		remove an invoice from a workorder (mark deleted/archived)
+		update an existing invoice
 		
-	cost routes
+	cost routes (DONE copied from workorders)
 		get all costs
 		get one cost
 		
 		add cost to a workorder
 		remove a cost from a workorder (mark deleted / archived)
-		
+		update an existing cost
 		
 Schema:
 
