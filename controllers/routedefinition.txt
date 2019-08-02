@@ -20,6 +20,15 @@ routes
 		
 		update an existing workorder (associated to logged in user) (DONE, except authorization bit: PUT /workorder/:id with JSON for properties to update workorder in Body)
  		
+	ADDING SIX NEW ROUTES TO WORKORDER ROUTES:
+		
+		add new invoice to invoice array
+		update an invoice in invoice array
+		remove an invoice from invoice array
+		
+		add new cost to cost array
+		update a cost in cost array
+		remove a cost from cost array
 		
 	invoice routes
 		get all invoices 
