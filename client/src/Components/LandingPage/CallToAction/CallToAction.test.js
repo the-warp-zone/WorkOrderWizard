@@ -8,7 +8,7 @@ describe('Features', () => {
     it('should render a <div />', () => {
         expect(wrapper.find('div').length).toEqual(1)
     })
-    it('should say Features', () => {
+    it('should say Get Work Order Wizard Today', () => {
         expect(wrapper.find('.Action').text()).toEqual(
             'Get Work Order Wizard Today'
         )
