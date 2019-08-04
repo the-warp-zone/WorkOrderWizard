@@ -6,7 +6,8 @@ const invoiceSchema = new Schema({
 	paid: Boolean,
 	open: Boolean,
 	amountBilled: Number,
-	dateIssued: Date
+	dateIssued: Date,
+	workOrderID: Schema.Types.ObjectId
 });
 
 const Invoice = mongoose.model("Invoice", invoiceSchema);
