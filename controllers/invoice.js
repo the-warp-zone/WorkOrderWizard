@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Invoice = require('../models/invoice.js');
+const db = require("../models");
 
 router.get("/", function(req, res) {
 	console.log("get route requested.");
@@ -9,12 +9,12 @@ router.get("/", function(req, res) {
 router.get("/all", function(req, res) {
 	console.log("get fetch requested.");
 	console.log("get all invoices");
-	Invoice.find({}).then( function(invoices) {res.send(invoices).status(200);});
+	db.Invoice.find({}).then( function(invoices) {res.send(invoices).status(200);});
 });
 
 router.get("/*", function(req, res) {
 	console.log("requested details of invoice ID : " + req.params[0]);
-	Invoice.findById(req.params[0], function (err, invoice) {
+	db.Invoice.findById(req.params[0], function (err, invoice) {
 		if(invoice) res.send(invoice).status(200);})
 		.then(function (invoice){
 			console.log(invoice);});
@@ -22,20 +22,20 @@ router.get("/*", function(req, res) {
 
 router.post("/", function(req, res) {
 	
-	let invoice = new Invoice(req.body).save().then(function(invoice){
+	let invoice = new db.Invoice(req.body).save().then(function(invoice){
 		res.send(invoice).status(200);
 	});
 });
 
 router.delete("/*", function(req, res) {
-	Invoice.findById(req.params[0], function (err, invoice) { if(invoice) invoice.remove();}).then(function (invoice){res.send(invoice).status(200)});
+	db.Invoice.findById(req.params[0], function (err, invoice) { if(invoice) invoice.remove();}).then(function (invoice){res.send(invoice).status(200)});
 });
 
 router.put("/*", function(req, res) {
 	console.log("update invoice route hit");
 	console.log(req.params); //this specifies which invoice record we are adding information to
 	console.log(req.body); //use this to specify properties and values to add
-	Invoice.update({_id:req.params[0]}, req.body, function(err, numAffected){
+	db.Invoice.update({_id:req.params[0]}, req.body, function(err, numAffected){
 		if (err) return console.log(err);
 		console.log("numAffected:");
 		console.log(numAffected);

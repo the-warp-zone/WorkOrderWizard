@@ -6,7 +6,8 @@ const costSchema = new Schema({
 	vendorReceiptSN: String,
 	vendor: String,
 	datePurchased: Date,
-	amount: Number
+	amount: Number,
+	workOrderID: Schema.Types.ObjectId
 });
 
 const Cost = mongoose.model("Cost", costSchema);
