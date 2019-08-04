@@ -11,7 +11,8 @@ const customerSchema = new Schema({
 	city: String,
 	state: String,
 	zip: String,
-	country: String
+	country: String,
+	userID: Schema.Types.ObjectId
 });
 
 const Customer = mongoose.model("Customer", customerSchema);
