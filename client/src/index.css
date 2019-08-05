@@ -16,3 +16,8 @@ code {
     margin-left: 0;
     margin-right: 0;
 }
+
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
