@@ -9,9 +9,10 @@ import CallToAction from './CallToAction/CallToAction'
 var LandingPage = () => {
     return (
         <div className="LandingPage">
+            {/* <LpNav/> */}
             <LP_Jumbotron />
-            <Testimonials />
             <Features />
+            <Testimonials />
             <UserExamples />
             <CallToAction />
         </div>
