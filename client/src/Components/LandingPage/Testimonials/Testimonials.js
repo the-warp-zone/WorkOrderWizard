@@ -6,7 +6,6 @@ import './Testimonials.css'
 var Testimonials = () => {
     return (
         <div>
-            <hr />
             <Row>
                 {/* lg={{ span: 3, offset: 2 }} */}
                 <Col>

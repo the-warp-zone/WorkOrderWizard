@@ -18,7 +18,7 @@ var UserExamples = () => {
             <Row>
                 <Col />
             </Row>
-            <Row>
+            <Row className="examples">
                 {/* lg={{ span: 2, offset: 1 }} */}
                 <Col>
                     <img
