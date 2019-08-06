@@ -28,14 +28,15 @@ await db.dropCollection("costs", function (err, result) {
 });
 
 Cost(newcost).save();
-}	
-
+}
 
 beforeAll(done => {
 
   initializeDB();
   done();
 });
+
+afterAll(() => mongoose.disconnect());
 
 describe("API Cost Route Tests", () => {
 
