@@ -14,6 +14,7 @@
         "heroku-postbuild": "npm run build",
         "test:watch": "jest && cd client && npm run test",
         "test": "CI=true jest && cd client && npm run test:ci",
+        "test:windows": "set CI=true jest && cd client && npm run test:ci",
         "lint": "eslint \"**/*.js\"",
         "fix": "eslint --fix ."
     },
