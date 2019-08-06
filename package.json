@@ -12,7 +12,8 @@
         "install": "cd client && npm install",
         "build": "cd client && npm run build",
         "heroku-postbuild": "npm run build",
-        "test": "",
+        "test:watch": "jest && cd client && npm run test",
+        "test": "CI=true jest && cd client && npm run test:ci",
         "lint": "eslint \"**/*.js\"",
         "fix": "eslint --fix ."
     },
