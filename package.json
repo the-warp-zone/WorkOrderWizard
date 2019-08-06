@@ -36,7 +36,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.8.0",
-    "nodemon": "^1.18.7"
+    "nodemon": "^1.18.7",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "@shelf/jest-mongodb": "^1.1.0",
