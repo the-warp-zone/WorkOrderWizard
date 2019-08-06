@@ -8,11 +8,10 @@ var LP_Jumbotron = () => {
     return (
         <div>
             <Jumbotron>
-                <h1>Work Order Wizard</h1>
-                <p>
-                    This is going to be some text about what we do.. I actually
-                    dont know.
-                </p>
+                <div id="text">
+                    <h1>Work Order Wizard</h1>
+                    <p>Doing the Magic for You</p>
+                </div>
             </Jumbotron>
         </div>
     )

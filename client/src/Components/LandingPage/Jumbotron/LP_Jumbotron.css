@@ -1,3 +1,32 @@
 .jumbotron {
     background-color: white;
+    height: 660px;
+    background-image: url('/images/desktop_background_wow.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 40%;
+    margin: 0;
+    border-radius: 0;
+}
+
+#text {
+    padding: 55px 0;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    /* color: #109250; */
+    font-weight: bold;
+}
+
+.jumbotron p {
+    color: black;
+    padding-top: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+    .jumbotron {
+        background-position: 50% 20%;
+        background-image: url('/images/mobile_background_wow.jpeg');
+    }
 }

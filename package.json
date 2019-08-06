@@ -1,5 +1,5 @@
 {
-  "name": "workorderwizardnew",
+  "name": "workorderwizard",
   "version": "1.0.0",
   "description": "A system for tracking work orders and billing for all of your customers.",
   "main": "server.js",
@@ -12,28 +12,39 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
-    "test": "cd client && npm run test",
+    "test:watch": "jest && cd client && npm run test",
+    "test": "CI=true jest && cd client && npm run test:ci",
+    "test:windows": "set CI=true jest && cd client && npm run test:ci",
     "lint": "eslint \"**/*.js\"",
     "fix": "eslint --fix ."
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "client"
+    ]
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-dev": "^2.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
+    "jest": "^24.8.0",
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "@shelf/jest-mongodb": "^1.1.0",
     "babel-eslint": "^10.0.1",
+    "eslint-config-prettier": "^6.0.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.6.7",
-    "eslint-config-prettier": "^6.0.0",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1"
   },

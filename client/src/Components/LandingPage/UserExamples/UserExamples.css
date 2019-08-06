@@ -1,0 +1,12 @@
+#images {
+}
+
+@media only screen and (max-width: 430px) {
+    .examples {
+        max-width: 400px;
+    }
+
+    img {
+        max-width: 300px;
+    }
+}

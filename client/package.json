@@ -12,6 +12,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:ci": "CI=true react-scripts test --forceExit --verbose=true",
+    "test:ci:windows": "set CI=true react-scripts test --forceExit --verbose=true",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
