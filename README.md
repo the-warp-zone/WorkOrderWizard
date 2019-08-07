@@ -17,43 +17,43 @@ This will be a cloud-based service. We may choose to utilize an automatically sc
 ## Design Documents
 
 ### Data Model:
-![Data Structure](./wireframe_pics/Data_Structure.jpg)
+![Data Structure](./api/wireframe_pics/Data_Structure.jpg)
 
 ### Landing Page:
-![Data Structure](./wireframe_pics/Landing_Page.jpg)
+![Data Structure](./api/wireframe_pics/Landing_Page.jpg)
 
 ### Login Modal on Landing Page:
-![Data Structure](./wireframe_pics/Login_Page.jpg)
+![Data Structure](./api/wireframe_pics/Login_Page.jpg)
 
 ### User's Home Page
-![Data Structure](./wireframe_pics/User_Home_Page.jpg)
+![Data Structure](./api/wireframe_pics/User_Home_Page.jpg)
 
 ### Customers Page
-![Data Structure](./wireframe_pics/Customers_Page.jpg)
+![Data Structure](./api/wireframe_pics/Customers_Page.jpg)
 
 ### Single Customer Page
-![Data Structure](./wireframe_pics/Single_Customer_Page.jpg)
+![Data Structure](./api/wireframe_pics/Single_Customer_Page.jpg)
 
 ### Work Orders Page
-![Data Structure](./wireframe_pics/Work_Orders_Page.jpg)
+![Data Structure](./api/wireframe_pics/Work_Orders_Page.jpg)
 
 ### Single Work Order Page
-![Data Structure](./wireframe_pics/Single_Work_Order_Page.jpg)
+![Data Structure](./api/wireframe_pics/Single_Work_Order_Page.jpg)
 
 ### Invoices Page
-![Data Structure](./wireframe_pics/Invoices_Page.jpg)
+![Data Structure](./api/wireframe_pics/Invoices_Page.jpg)
 
 ### Single Invoice Page
-![Data Structure](./wireframe_pics/Single_Invoice_Page.jpg)
+![Data Structure](./api/wireframe_pics/Single_Invoice_Page.jpg)
 
 ### Costs Page
-![Data Structure](./wireframe_pics/Costs_page.jpg)
+![Data Structure](./api/wireframe_pics/Costs_page.jpg)
 
 ### Single Cost Page
-![Data Structure](./wireframe_pics/Single_Cost_Page.jpg)
+![Data Structure](./api/wireframe_pics/Single_Cost_Page.jpg)
 
 ### User Account Management Page
-![Data Structure](./wireframe_pics/Account_Page.jpg)
+![Data Structure](./api/wireframe_pics/Account_Page.jpg)
 
 # React README follows:
 
