@@ -1,13 +1,13 @@
 import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-
+import { Link } from 'react-router-dom'
 import Routes from '../../Constants/routes'
 import './MainNav.css'
 import { LinkContainer } from 'react-router-bootstrap'
 import Customers from '../UserHome/PageCards/Customers/Customers'
 
-var MainNav = props => {
+var MainNav = () => {
     // Might need to render sign in and sign out separately
     return (
         <div>
