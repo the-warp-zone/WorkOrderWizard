@@ -6,7 +6,7 @@ import Routes from '../../Constants/routes'
 import './MainNav.css'
 import { LinkContainer } from 'react-router-bootstrap'
 
-var MainNav = () => {
+var MainNav = props => {
     // Might need to render sign in and sign out separately
     return (
         <div>
@@ -45,7 +45,9 @@ var MainNav = () => {
                             <Nav.Item>My Account</Nav.Item>
                         </LinkContainer>
                         <LinkContainer to={Routes.SIGN_IN}>
-                            <Nav.Item>Sign In</Nav.Item>
+                            <Nav.Item onClick={props.handleShow}>
+                                Sign In
+                            </Nav.Item>
                         </LinkContainer>
                         <LinkContainer to={Routes.LANDING}>
                             <Nav.Item>Log Out</Nav.Item>

@@ -6,10 +6,10 @@ import Features from './Features/Features'
 import UserExamples from './UserExamples/UserExamples'
 import CallToAction from './CallToAction/CallToAction'
 
-var LandingPage = () => {
+var LandingPage = props => {
     return (
         <div className="LandingPage">
-            <LP_Jumbotron />
+            <LP_Jumbotron modal={props.modal} />
             <Testimonials />
             <Features />
             <UserExamples />

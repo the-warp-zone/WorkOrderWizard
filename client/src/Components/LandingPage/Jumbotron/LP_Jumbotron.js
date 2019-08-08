@@ -4,7 +4,7 @@ import './LP_Jumbotron.css'
 
 import '../../../App.css'
 
-var LP_Jumbotron = () => {
+var LP_Jumbotron = props => {
     return (
         <div>
             <Jumbotron>
@@ -12,6 +12,7 @@ var LP_Jumbotron = () => {
                     <h1>Work Order Wizard</h1>
                     <p>Doing the Magic for You</p>
                 </div>
+                {props.modal}
             </Jumbotron>
         </div>
     )
