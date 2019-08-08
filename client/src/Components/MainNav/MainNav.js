@@ -20,12 +20,24 @@ var MainNav = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link>Customers</Nav.Link>
-                        <Nav.Link>Work Orders</Nav.Link>
-                        <Nav.Link>Invoices</Nav.Link>
-                        <Nav.Link>Costs</Nav.Link>
-                        <Nav.Link>Archived</Nav.Link>
-                        <Nav.Link>Jobs</Nav.Link>
+                        <Nav.Link>
+                            <Link to={Routes.CUSTOMERS}>Customers</Link>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <Link to={Routes.WORK_ORDERS}>Work Orders</Link>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <Link to={Routes.INVOICES}>Invoices</Link>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <Link to={Routes.COSTS}>Costs</Link>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <Link to={Routes.ARCHIVED}>Archived</Link>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <Link to={Routes.JOBS}>Jobs</Link>
+                        </Nav.Link>
                     </Nav>
                     <Nav className="ml-auto">
                         <Nav.Link>
