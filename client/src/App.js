@@ -10,9 +10,19 @@ function App() {
         <Router>
             <div className="App">
                 <MainNav />
-                <Route exact path={Routes.LANDING} component={LandingPage} />
+                <Route
+                    className="routes"
+                    exact
+                    path={Routes.LANDING}
+                    component={LandingPage}
+                />
                 {/* After user is past landing page or loggin in... */}
-                <Route exact path={Routes.HOME} component={UserHome} />
+                <Route
+                    className="routes"
+                    exact
+                    path={Routes.HOME}
+                    component={UserHome}
+                />
             </div>
         </Router>
     )
