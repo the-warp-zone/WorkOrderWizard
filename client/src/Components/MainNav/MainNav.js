@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav'
 import { Link } from 'react-router-dom'
 import Routes from '../../Constants/routes'
 import './MainNav.css'
+import { LinkContainer } from 'react-router-bootstrap'
 
 var MainNav = () => {
     // Might need to render sign in and sign out separately
@@ -20,35 +21,35 @@ var MainNav = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link>
-                            <Link to={Routes.CUSTOMERS}>Customers</Link>
-                        </Nav.Link>
-                        <Nav.Link>
-                            <Link to={Routes.WORK_ORDERS}>Work Orders</Link>
-                        </Nav.Link>
-                        <Nav.Link>
-                            <Link to={Routes.INVOICES}>Invoices</Link>
-                        </Nav.Link>
-                        <Nav.Link>
-                            <Link to={Routes.COSTS}>Costs</Link>
-                        </Nav.Link>
-                        <Nav.Link>
-                            <Link to={Routes.ARCHIVED}>Archived</Link>
-                        </Nav.Link>
-                        <Nav.Link>
-                            <Link to={Routes.JOBS}>Jobs</Link>
-                        </Nav.Link>
+                        <LinkContainer to={Routes.CUSTOMERS}>
+                            <Nav.Item>Customers</Nav.Item>
+                        </LinkContainer>
+                        <LinkContainer to={Routes.WORK_ORDERS}>
+                            <Nav.Item>Work Orders</Nav.Item>
+                        </LinkContainer>
+                        <LinkContainer to={Routes.INVOICES}>
+                            <Nav.Item>Invoices</Nav.Item>
+                        </LinkContainer>
+                        <LinkContainer to={Routes.COSTS}>
+                            <Nav.Item>Costs</Nav.Item>
+                        </LinkContainer>
+                        <LinkContainer to={Routes.ARCHIVED}>
+                            <Nav.Item>Archived</Nav.Item>
+                        </LinkContainer>
+                        <LinkContainer to={Routes.JOBS}>
+                            <Nav.Item>Jobs</Nav.Item>
+                        </LinkContainer>
                     </Nav>
                     <Nav className="ml-auto">
-                        <Nav.Link>
-                            <Link to={Routes.ACCOUNT}>My Account</Link>
-                        </Nav.Link>
-                        <Nav.Link>
-                            <Link to={Routes.SIGN_IN}>Sign In</Link>
-                        </Nav.Link>
-                        <Nav.Link>
-                            <Link to={Routes.LANDING}>Log Out</Link>
-                        </Nav.Link>
+                        <LinkContainer to={Routes.ACCOUNT}>
+                            <Nav.Item>My Account</Nav.Item>
+                        </LinkContainer>
+                        <LinkContainer to={Routes.SIGN_IN}>
+                            <Nav.Item>Sign In</Nav.Item>
+                        </LinkContainer>
+                        <LinkContainer to={Routes.LANDING}>
+                            <Nav.Item>Log Out</Nav.Item>
+                        </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
