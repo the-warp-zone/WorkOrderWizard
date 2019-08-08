@@ -18,7 +18,7 @@ describe('App', () => {
         expect(wrapper.find('div').length).toEqual(1)
     })
 
-    it('should render the LandingPage Component', () => {
-        expect(wrapper.containsMatchingElement(<LandingPage />)).toEqual(true)
+    it('should render the Routes Component', () => {
+        expect(wrapper.find('.routes').length).toEqual(2)
     })
 })
