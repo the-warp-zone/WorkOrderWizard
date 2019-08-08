@@ -23,9 +23,7 @@ function App() {
                     className="routes"
                     exact
                     path={Routes.LANDING}
-                    render={() => (
-                        <LandingPage data={show} close={handleClose} />
-                    )}
+                    component={LandingPage}
                 />
                 {/* After user is past landing page or loggin in... */}
                 <Route
@@ -33,21 +31,7 @@ function App() {
                     exact
                     path={Routes.HOME}
                     component={UserHome}
-                >
-                    <Route path={Routes.CUSTOMERS} component={Customers} />
-                </Route>
-                {/* <Route
-                    className="routes"
-                    exact
-                    path={Routes.SIGN_UP}
-                    component={SignUp}
                 />
-                <Route
-                    className="routes"
-                    exact
-                    path={Routes.SIGN_IN}
-                    component={SignIn}
-                /> */}
             </div>
         </Router>
     )

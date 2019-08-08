@@ -22,35 +22,34 @@ var MainNav = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <LinkContainer
-                            to={Routes.CUSTOMERS}
-                            component={Customers}
-                        >
-                            <Nav.Link>Customers</Nav.Link>
+                        <LinkContainer to={Routes.CUSTOMERS}>
+                            <Nav.Item>Customers</Nav.Item>
                         </LinkContainer>
                         <LinkContainer to={Routes.WORK_ORDERS}>
-                            <Nav.Link>Work Orders</Nav.Link>
+                            <Nav.Item>Work Orders</Nav.Item>
                         </LinkContainer>
                         <LinkContainer to={Routes.INVOICES}>
-                            <Nav.Link>Invoices</Nav.Link>
+                            <Nav.Item>Invoices</Nav.Item>
                         </LinkContainer>
                         <LinkContainer to={Routes.COSTS}>
-                            <Nav.Link>Costs</Nav.Link>
+                            <Nav.Item>Costs</Nav.Item>
                         </LinkContainer>
                         <LinkContainer to={Routes.ARCHIVED}>
-                            <Nav.Link>Archived</Nav.Link>
+                            <Nav.Item>Archived</Nav.Item>
                         </LinkContainer>
                         <LinkContainer to={Routes.JOBS}>
-                            <Nav.Link>Jobs</Nav.Link>
+                            <Nav.Item>Jobs</Nav.Item>
                         </LinkContainer>
                     </Nav>
                     <Nav className="ml-auto">
                         <LinkContainer to={Routes.ACCOUNT}>
-                            <Nav.Link>My Account</Nav.Link>
+                            <Nav.Item>My Account</Nav.Item>
                         </LinkContainer>
-                        <Nav.Link onClick={props.handleShow}>Sign In</Nav.Link>
+                        <LinkContainer to={Routes.SIGN_IN}>
+                            <Nav.Item>Sign In</Nav.Item>
+                        </LinkContainer>
                         <LinkContainer to={Routes.LANDING}>
-                            <Nav.Link>Log Out</Nav.Link>
+                            <Nav.Item>Log Out</Nav.Item>
                         </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
