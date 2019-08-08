@@ -12,3 +12,7 @@
     color: white;
     border-color: white;
 }
+
+.navbar-nav a {
+    color: white !important;
+}
