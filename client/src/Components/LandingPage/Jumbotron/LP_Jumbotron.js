@@ -1,6 +1,9 @@
 import React from 'react'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import './LP_Jumbotron.css'
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+import SignInModal from './SignInModal.js'
 
 import '../../../App.css'
 
@@ -8,11 +11,11 @@ var LP_Jumbotron = props => {
     return (
         <div>
             <Jumbotron>
+                <SignInModal data={props.data} close={props.close} />
                 <div id="text">
                     <h1>Work Order Wizard</h1>
                     <p>Doing the Magic for You</p>
                 </div>
-                {props.modal}
             </Jumbotron>
         </div>
     )
