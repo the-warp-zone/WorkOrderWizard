@@ -14,6 +14,7 @@ function App() {
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
 
+    console.log(show)
     return (
         <Router>
             <div className="App">
@@ -35,7 +36,7 @@ function App() {
                 >
                     <Route path={Routes.CUSTOMERS} component={Customers} />
                 </Route>
-                <Route
+                {/* <Route
                     className="routes"
                     exact
                     path={Routes.SIGN_UP}
@@ -46,7 +47,7 @@ function App() {
                     exact
                     path={Routes.SIGN_IN}
                     component={SignIn}
-                />
+                /> */}
             </div>
         </Router>
     )

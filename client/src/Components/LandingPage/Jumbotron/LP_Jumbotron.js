@@ -11,7 +11,7 @@ var LP_Jumbotron = props => {
     return (
         <div>
             <Jumbotron>
-                <SignInModal data={props.data} close={props.close} />
+                <SignInModal show={props.show} close={props.close} />
                 <div id="text">
                     <h1>Work Order Wizard</h1>
                     <p>Doing the Magic for You</p>
