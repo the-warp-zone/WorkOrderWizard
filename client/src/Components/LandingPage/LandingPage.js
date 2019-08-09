@@ -9,7 +9,7 @@ import CallToAction from './CallToAction/CallToAction'
 var LandingPage = props => {
     return (
         <div className="LandingPage">
-            <LP_Jumbotron modal={props.modal} />
+            <LP_Jumbotron show={props.data} close={props.close} />
             <Testimonials />
             <Features />
             <UserExamples />
