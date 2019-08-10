@@ -15,9 +15,11 @@ var MainNav = () => {
                 expand="lg"
                 className="navColors navbar-dark"
             >
-                <Navbar.Brand className="navText" href="#">
-                    Work Order Wizard
-                </Navbar.Brand>
+                <LinkContainer to={Routes.HOME}>
+                    <Navbar.Brand className="navText">
+                        Work Order Wizard
+                    </Navbar.Brand>
+                </LinkContainer>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
