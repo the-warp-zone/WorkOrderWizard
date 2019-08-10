@@ -2,7 +2,7 @@
   "name": "workorderwizard",
   "version": "1.0.0",
   "description": "A system for tracking work orders and billing for all of your customers.",
-  "main": "server.js",
+  "main": "./api/server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -13,7 +13,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
     "test:watch": "jest && cd client && npm run test",
-    "test": "CI=true jest && cd client && npm run test:ci",
+    "test": "cd client && npm run test:ci",
     "test:windows": "set CI=true jest && cd client && npm run test:ci",
     "lint": "eslint \"**/*.js\"",
     "fix": "eslint --fix ."
@@ -36,7 +36,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.8.0",
-    "nodemon": "^1.18.7"
+    "nodemon": "^1.18.7",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "@shelf/jest-mongodb": "^1.1.0",
