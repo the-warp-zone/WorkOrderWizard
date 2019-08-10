@@ -1,79 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
+import CustomerRow from './CustomerRow'
+//import axios from 'axios'
 
-var Customers = () => {
-    return (
-        <div>
-            <h1>Customers</h1>
-            <div>
-                <Table responsive="md">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Business Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <Button>Create W.O.</Button>
-                            </td>
-                            <td>
-                                <Button>Create Invoice</Button>
-                            </td>
-                            <td>
-                                <Button>Delete Customer</Button>
-                            </td>
-                            <td>1</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Button>Create W.O.</Button>
-                            </td>
-                            <td>
-                                <Button>Create Invoice</Button>
-                            </td>
-                            <td>
-                                <Button>Delete Customer</Button>
-                            </td>
-                            <td>2</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Button>Create W.O.</Button>
-                            </td>
-                            <td>
-                                <Button>Create Invoice</Button>
-                            </td>
-                            <td>
-                                <Button>Delete Customer</Button>
-                            </td>
-                            <td>3</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                    </tbody>
-                </Table>
-            </div>
-        </div>
-    )
+class Customers extends Component {
+    state = {
+        data: [],
+    }
+    componentDidMount() {
+        const url = 'http://localhost:3001/customer/all'
+        // console.log('fetching:\t' + url)
+        //var res = await axios.get(url)
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => this.setState({ data: data }))
+        //console.log(res)
+        //this.setState({ data: res.data })
+    }
+    render() {
+        return <CustomerRow data={this.state.data} />
+    }
 }
 
 export default Customers
