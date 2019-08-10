@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+
 import { withFirebase } from '../../../Constants/Firebase/'
 import * as ROUTES from '../../../Constants/routes'
 import Modal from 'react-bootstrap/Modal'
@@ -21,9 +22,7 @@ const SignInModal = props => {
             </Modal.Header>
             <Modal.Body>
                 <h4>Welcome Back!</h4>
-                <p>
-                    User Log in
-                </p>
+                <p>User Log in</p>
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.close}>Close</Button>
@@ -32,4 +31,13 @@ const SignInModal = props => {
     )
 }
 
+const SignUpLink = () => (
+    <p>
+        Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    </p>
+)
+const SignUpForm = withRouter(withFirebase(SignUpFormBase))
+
 export default SignInModal
+
+export { SignUpForm, SignUpLink }
