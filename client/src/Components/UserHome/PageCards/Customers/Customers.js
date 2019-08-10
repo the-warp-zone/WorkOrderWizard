@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import CustomerRow from './CustomerRow'
-import axios from 'axios'
+//import axios from 'axios'
 
 class Customers extends Component {
     state = {
