@@ -1,9 +1,13 @@
 export default {
     LANDING: '/',
     CUSTOMERS: '/customers',
+    CUSTOMER: '/customer',
     WORK_ORDERS: '/workorders',
+    WORK_ORDER: '/workorder',
     INVOICES: '/invoices',
+    INVOICE: '/invoice',
     COSTS: '/costs',
+    COST: '/cost',
     ARCHIVED: '/archived',
     JOBS: '/jobs',
     SIGN_UP: '/signup',

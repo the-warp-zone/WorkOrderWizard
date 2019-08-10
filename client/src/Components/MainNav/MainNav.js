@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import Routes from '../../Constants/routes'
 import './MainNav.css'
 import { LinkContainer } from 'react-router-bootstrap'
-import Customers from '../UserHome/PageCards/Customers/Customers'
 
 var MainNav = () => {
     // Might need to render sign in and sign out separately
@@ -23,7 +22,7 @@ var MainNav = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                         <LinkContainer to={Routes.CUSTOMERS}>
-                            <Nav.Item>Customers</Nav.Item>
+                            <Nav.Link>Customers</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to={Routes.WORK_ORDERS}>
                             <Nav.Item>Work Orders</Nav.Item>
