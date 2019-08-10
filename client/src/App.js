@@ -5,16 +5,20 @@ import MainNav from './Components/MainNav/MainNav'
 import UserHome from './Components/UserHome/UserHome'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Routes from './Constants/routes.js'
-import SignUp from './Components/Auth/signup'
-import SignIn from './Components/Auth/signin'
 import Customers from './Components/UserHome/PageCards/Customers/Customers'
+import WorkOrders from './Components/UserHome/PageCards/WorkOrders/WorkOrders'
+import Customer from './Components/UserHome/PageCards/Customers/Customer/Customer'
+import WorkOrder from './Components/UserHome/PageCards/WorkOrders/WorkOrder/WorkOrder'
+import Invoices from './Components/UserHome/PageCards/Invoices/Invoices'
+import Invoice from './Components/UserHome/PageCards/Invoices/Invoice/Invoice'
+import Costs from './Components/UserHome/PageCards/Costs/Costs'
+import Cost from './Components/UserHome/PageCards/Costs/Cost/Cost.js'
+import UserAccount from './Components/UserHome/UserAccount/UserAccount'
 
 function App() {
     const [show, setShow] = React.useState(false)
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
-
-    console.log(show)
     return (
         <Router>
             <div className="App">
@@ -35,6 +39,23 @@ function App() {
                     component={UserHome}
                 >
                     <Route path={Routes.CUSTOMERS} component={Customers} />
+                    <Route
+                        path={Routes.CUSTOMER + '/:customerId'}
+                        component={Customer}
+                    />
+                    <Route path={Routes.WORK_ORDERS} component={WorkOrders} />
+                    <Route
+                        path={Routes.WORK_ORDER + '/:workorderId'}
+                        component={WorkOrder}
+                    />
+                    <Route path={Routes.INVOICES} component={Invoices} />
+                    <Route
+                        path={Routes.INVOICE + '/:invoiceId'}
+                        component={Invoice}
+                    />
+                    <Route path={Routes.COSTS} component={Costs} />
+                    <Route path={Routes.COST + '/:costId'} component={Cost} />
+                    <Route path={Routes.ACCOUNT} component={UserAccount} />
                 </Route>
                 {/* <Route
                     className="routes"

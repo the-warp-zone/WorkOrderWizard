@@ -5,7 +5,6 @@ import Nav from 'react-bootstrap/Nav'
 import Routes from '../../Constants/routes'
 import './MainNav.css'
 import { LinkContainer } from 'react-router-bootstrap'
-import Customers from '../UserHome/PageCards/Customers/Customers'
 
 var MainNav = props => {
     // Might need to render sign in and sign out separately
@@ -22,10 +21,7 @@ var MainNav = props => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <LinkContainer
-                            to={Routes.CUSTOMERS}
-                            component={Customers}
-                        >
+                        <LinkContainer to={Routes.CUSTOMERS}>
                             <Nav.Link>Customers</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to={Routes.WORK_ORDERS}>
