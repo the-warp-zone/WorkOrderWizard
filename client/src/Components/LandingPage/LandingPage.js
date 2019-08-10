@@ -1,15 +1,14 @@
 import React from 'react'
-import LpNav from './navbar/LpNav'
-import LP_Jumbotron from './Jumbotron/LP_Jumbotron'
+import LpJumbotron from './Jumbotron/LP_Jumbotron'
 import Testimonials from './Testimonials/Testimonials'
 import Features from './Features/Features'
 import UserExamples from './UserExamples/UserExamples'
 import CallToAction from './CallToAction/CallToAction'
 
-var LandingPage = () => {
+var LandingPage = props => {
     return (
         <div className="LandingPage">
-            <LP_Jumbotron />
+            <LpJumbotron show={props.data} close={props.close} />
             <Testimonials />
             <Features />
             <UserExamples />
