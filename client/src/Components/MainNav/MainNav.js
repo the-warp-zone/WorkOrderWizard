@@ -43,10 +43,10 @@ const MainNav = props => (
           <LinkContainer to={Routes.LANDING}>
             <Nav.Link>Log Out</Nav.Link>
           </LinkContainer>
+          <SignOutButton />
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-    <SignOutButton />
   </div>
 );
 
