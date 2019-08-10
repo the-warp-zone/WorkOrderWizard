@@ -1,8 +1,18 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
+import CustomerRow from './CustomerRow'
 
 var Customers = () => {
+    const url = 'http://localhost:3001/customer/all'
+    console.log('fetching:\t' + url)
+    fetch(url)
+        .then(response => response.json())
+        .then(data => console.log(data))
+    let CustomerData = [].map(i => {
+        return <CustomerRow />
+    })
+
     return (
         <div>
             <h1>Customers</h1>
@@ -21,54 +31,7 @@ var Customers = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <Button>Create W.O.</Button>
-                            </td>
-                            <td>
-                                <Button>Create Invoice</Button>
-                            </td>
-                            <td>
-                                <Button>Delete Customer</Button>
-                            </td>
-                            <td>1</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Button>Create W.O.</Button>
-                            </td>
-                            <td>
-                                <Button>Create Invoice</Button>
-                            </td>
-                            <td>
-                                <Button>Delete Customer</Button>
-                            </td>
-                            <td>2</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Button>Create W.O.</Button>
-                            </td>
-                            <td>
-                                <Button>Create Invoice</Button>
-                            </td>
-                            <td>
-                                <Button>Delete Customer</Button>
-                            </td>
-                            <td>3</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                        </tr>
+                        <CustomerRow />
                     </tbody>
                 </Table>
             </div>
