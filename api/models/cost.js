@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const costSchema = new Schema({
+	costName: String,
 	vendorReceiptSN: String,
 	vendor: String,
 	datePurchased: Date,
