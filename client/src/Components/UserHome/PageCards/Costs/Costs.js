@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import CostData from './CostData'
+import CostsData from './CostsData'
 
 class Costs extends Component {
     state = {
@@ -18,7 +18,7 @@ class Costs extends Component {
         //this.setState({ data: res.data })
     }
     render() {
-        return <CostData data={this.state.data} />
+        return <CostsData data={this.state.data} />
     }
 }
 

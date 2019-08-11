@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import WorkOrderData from './WorkOrderData'
+import WorkOrdersData from './WorkOrdersData'
 
 class WorkOrders extends Component {
     state = {
@@ -17,7 +17,7 @@ class WorkOrders extends Component {
         //this.setState({ data: res.data })
     }
     render() {
-        return <WorkOrderData data={this.state.data} />
+        return <WorkOrdersData data={this.state.data} />
     }
 }
 

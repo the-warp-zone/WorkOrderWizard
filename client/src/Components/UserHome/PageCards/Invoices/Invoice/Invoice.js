@@ -1,30 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react'
+import IndividualInvoiceData from './IndividualInvoiceData'
 
-const Invoice = () => {
-    // function for getting individual invoice data
-    return (
-        <div>
-            <div>
-                <h1>Invoice</h1>
-                <h3>Customer Name</h3>
-                <h3>Amount</h3>
-            </div>
-            <div>
-                <h3>Work Order</h3>
-                <h3>Date Issued:</h3>
-                <h3>Paid</h3>
-            </div>
-            <div>
-                <h4>Notes / Desc</h4>
-                <h4>Billing Address</h4>
-            </div>
+class Invoice extends Component {
+    state = {
+        data: [],
+    }
+    componentDidMount() {
+        const invoiceName = this.props.match.params._id
+        console.log(this.props.match.params._id)
 
-            <div>
-                <h4>VIEW HERE</h4>
-                {/* Image...? */}
-            </div>
-        </div>
-    )
+        const url = 'http://localhost:3001/invoice/' + invoiceName
+        // console.log('fetching:\t' + url)
+        //var res = await axios.get(url)
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => this.setState({ data: data }))
+        //console.log(res)
+        //this.setState({ data: res.data })
+    }
+    render() {
+        return <IndividualInvoiceData data={this.state.data} />
+    }
 }
 
 export default Invoice
