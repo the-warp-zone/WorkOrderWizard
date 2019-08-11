@@ -22,6 +22,11 @@ router.get('/all', function(req, res) {
 router.get('/*', function(req, res) {
     console.log('requested details of cost ID : ' + req.params[0])
     db.Cost.findById(req.params[0], function(err, cost) {
+        res.header('Access-Control-Allow-Origin', 'http://localhost:3000') // update to match the domain you will make the request from
+        res.header(
+            'Access-Control-Allow-Headers',
+            'Origin, X-Requested-With, Content-Type, Accept'
+        )
         if (cost) res.send(cost).status(200)
     }).then(function(cost) {
         console.log(cost)

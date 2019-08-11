@@ -1,6 +1,8 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom'
+import Routes from '../../../../Constants/routes'
 
 const InvoiceRow = props => {
     var invoiceData = props.data.map(i => (
@@ -8,7 +10,9 @@ const InvoiceRow = props => {
             <td>
                 <Button>Archive</Button>
             </td>
-            <td>{'INV-' + i._id}</td>
+            <td>
+                <Link to={Routes.INVOICE + '/' + i._id}>{'INV-' + i._id}</Link>
+            </td>
             <td>{'WO-' + i.workOrderID}</td>
             <td>{i.dateIssued}</td>
             <td>{i.paid.toString()}</td>

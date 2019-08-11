@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import InvoiceRow from './InvoiceRow'
+import InvoicesData from './InvoicesData'
 
 class Invoices extends Component {
     state = {
@@ -17,7 +17,7 @@ class Invoices extends Component {
         //this.setState({ data: res.data })
     }
     render() {
-        return <InvoiceRow data={this.state.data} />
+        return <InvoicesData data={this.state.data} />
     }
 }
 

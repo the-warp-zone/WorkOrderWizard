@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
+import { Link } from 'react-router-dom'
+import Routes from '../../../../Constants/routes'
 
 const CostData = props => {
     //
@@ -12,7 +14,9 @@ const CostData = props => {
             <td>
                 <Button>Delete</Button>
             </td>
-            <td>{'CO-' + i._id}</td>
+            <td>
+                <Link to={Routes.COST + '/' + i._id}>{'CO-' + i._id}</Link>
+            </td>
             <td>{i.costName}</td>
             <td>{i.vendor}</td>
             <td>{i.vendorReceiptSN}</td>

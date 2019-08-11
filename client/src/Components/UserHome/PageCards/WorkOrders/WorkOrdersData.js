@@ -1,6 +1,8 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom'
+import Routes from '../../../../Constants/routes'
 
 const WorkOrderData = props => {
     console.log(props.data)
@@ -9,7 +11,11 @@ const WorkOrderData = props => {
             <td>
                 <Button>Archive</Button>
             </td>
-            <td>{'WO-' + i._id}</td>
+            <td>
+                <Link to={Routes.WORK_ORDER + '/' + i._id}>
+                    {'WO-' + i._id}
+                </Link>
+            </td>
             <td>{'C-' + i.customerID}</td>
             <td>{i.createdOn}</td>
             <td>{i.dateDue}</td>

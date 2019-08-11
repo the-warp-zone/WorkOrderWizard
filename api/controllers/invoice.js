@@ -22,7 +22,14 @@ router.get('/all', function(req, res) {
 router.get('/*', function(req, res) {
     console.log('requested details of invoice ID : ' + req.params[0])
     db.Invoice.findById(req.params[0], function(err, invoice) {
-        if (invoice) res.send(invoice).status(200)
+        if (invoice) {
+            res.header('Access-Control-Allow-Origin', 'http://localhost:3000') // update to match the domain you will make the request from
+            res.header(
+                'Access-Control-Allow-Headers',
+                'Origin, X-Requested-With, Content-Type, Accept'
+            )
+            res.send(invoice).status(200)
+        }
     }).then(function(invoice) {
         console.log(invoice)
     })
