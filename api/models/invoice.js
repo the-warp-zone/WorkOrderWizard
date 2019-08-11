@@ -7,7 +7,10 @@ const invoiceSchema = new Schema({
 	open: Boolean,
 	amountBilled: Number,
 	dateIssued: Date,
-	workOrderID: Schema.Types.ObjectId
+	workOrderID: Schema.Types.ObjectId,
+	notes: String,
+	billingAddress: String,
+	customerID: Schema.Types.ObjectId
 });
 
 const Invoice = mongoose.model("Invoice", invoiceSchema);
