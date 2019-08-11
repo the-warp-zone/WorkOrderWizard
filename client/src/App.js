@@ -38,21 +38,21 @@ function App() {
                 >
                     <Route path={Routes.CUSTOMERS} component={Customers} />
                     <Route
-                        path={Routes.CUSTOMER + '/:customerId'}
+                        path={Routes.CUSTOMER + '/:_id'}
                         component={Customer}
                     />
                     <Route path={Routes.WORK_ORDERS} component={WorkOrders} />
                     <Route
-                        path={Routes.WORK_ORDER + '/:workorderId'}
+                        path={Routes.WORK_ORDER + '/:_id'}
                         component={WorkOrder}
                     />
                     <Route path={Routes.INVOICES} component={Invoices} />
                     <Route
-                        path={Routes.INVOICE + '/:invoiceId'}
+                        path={Routes.INVOICE + '/:_id'}
                         component={Invoice}
                     />
                     <Route path={Routes.COSTS} component={Costs} />
-                    <Route path={Routes.COST + '/:costId'} component={Cost} />
+                    <Route path={Routes.COST + '/:_id'} component={Cost} />
                     <Route path={Routes.ACCOUNT} component={UserAccount} />
                 </Route>
                 {/* <Route

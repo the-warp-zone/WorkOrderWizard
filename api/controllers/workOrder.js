@@ -27,15 +27,28 @@ router.get('/*', function(req, res) {
             res.send(err).status(400)
             return console.log(err)
         } // we need to actually handle the error appropriately.
-        else if (typeof workorder !== 'undefined' && workorder !== null)
+        else if (typeof workorder !== 'undefined' && workorder !== null) {
+            res.header('Access-Control-Allow-Origin', 'http://localhost:3000') // update to match the domain you will make the request from
+            res.header(
+                'Access-Control-Allow-Headers',
+                'Origin, X-Requested-With, Content-Type, Accept'
+            )
             res.send(workorder).status(200)
-        else if (workorder === null) {
+        } else if (workorder === null) {
             db.Customer.findById(req.params[0], function(err, customer) {
                 if (err) return console.log(err)
                 else if (customer) {
                     db.WorkOrder.find({ customerID: customer }).then(function(
                         workorders
                     ) {
+                        res.header(
+                            'Access-Control-Allow-Origin',
+                            'http://localhost:3000'
+                        ) // update to match the domain you will make the request from
+                        res.header(
+                            'Access-Control-Allow-Headers',
+                            'Origin, X-Requested-With, Content-Type, Accept'
+                        )
                         res.send(workorders).status(200)
                     })
                 }
