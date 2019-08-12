@@ -16,6 +16,7 @@ import Cost from './Components/UserHome/PageCards/Costs/Cost/Cost.js';
 import UserAccount from './Components/UserHome/UserAccount/UserAccount';
 
 function App() {
+<<<<<<< HEAD
   const [show, setShow] = React.useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -42,6 +43,50 @@ function App() {
           <Route path={Routes.ACCOUNT} component={UserAccount} />
         </Route>
         {/* <Route
+=======
+    const [show, setShow] = React.useState(false)
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
+    return (
+        <Router>
+            <div className="App">
+                <MainNav handleShow={handleShow} />
+                <Route
+                    className="routes"
+                    exact
+                    path={Routes.LANDING}
+                    render={() => (
+                        <LandingPage data={show} close={handleClose} />
+                    )}
+                />
+                {/* After user is past landing page or loggin in... */}
+                <Route
+                    className="routes"
+                    exact
+                    path={Routes.HOME}
+                    component={UserHome}
+                >
+                    <Route path={Routes.CUSTOMERS} component={Customers} />
+                    <Route
+                        path={Routes.CUSTOMER + '/:_id'}
+                        component={Customer}
+                    />
+                    <Route path={Routes.WORK_ORDERS} component={WorkOrders} />
+                    <Route
+                        path={Routes.WORK_ORDER + '/:_id'}
+                        component={WorkOrder}
+                    />
+                    <Route path={Routes.INVOICES} component={Invoices} />
+                    <Route
+                        path={Routes.INVOICE + '/:_id'}
+                        component={Invoice}
+                    />
+                    <Route path={Routes.COSTS} component={Costs} />
+                    <Route path={Routes.COST + '/:_id'} component={Cost} />
+                    <Route path={Routes.ACCOUNT} component={UserAccount} />
+                </Route>
+                {/* <Route
+>>>>>>> a4c9162ebf912c0d323b1f121af724f07d6adc6a
                     className="routes"
                     exact
                     path={Routes.SIGN_UP}

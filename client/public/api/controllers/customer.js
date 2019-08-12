@@ -22,7 +22,14 @@ router.get('/all', function(req, res) {
 router.get('/*', function(req, res) {
     console.log('requested details of customer ID : ' + req.params[0])
     db.Customer.findById(req.params[0], function(err, customer) {
-        if (customer) res.send(customer).status(200)
+        if (customer) {
+            res.header('Access-Control-Allow-Origin', 'http://localhost:3000') // update to match the domain you will make the request from
+            res.header(
+                'Access-Control-Allow-Headers',
+                'Origin, X-Requested-With, Content-Type, Accept'
+            )
+            res.send(customer).status(200)
+        }
     }).then(function(customer) {
         console.log(customer)
     })

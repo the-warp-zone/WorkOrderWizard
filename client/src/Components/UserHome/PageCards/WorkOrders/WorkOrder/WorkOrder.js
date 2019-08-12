@@ -1,29 +1,32 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
+import IndividualWorkOrderData from './IndividualWorkOrderData'
 
-const WorkOrder = () => {
-    return (
-        <div>
-            <h1>Work Order ID</h1>
-            <h3>Created On</h3>
-            <h3>Due Date</h3>
+class WorkOrder extends Component {
+    state = {
+        data: [],
+    }
+    componentDidMount() {
+        const workOrderName = this.props.match.params._id
+        console.log(this.props.match.params._id)
 
-            <Button>Edit</Button>
-            <h4>Hours</h4>
-            <h4>Costs</h4>
-            <Button>Add Invoice</Button>
-            <Button>Add Cost</Button>
-            <div id="description">
-                <p>Something something dark side</p>
-            </div>
-            <DropdownButton id="dropdown-basic-button" title="Completed?">
-                <Dropdown.Item href="#/action-1">Yes</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">No</Dropdown.Item>
-            </DropdownButton>
-        </div>
-    )
+        const url = 'http://localhost:3001/workorder/' + workOrderName
+        // console.log('fetching:\t' + url)
+        //var res = await axios.get(url)
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data =>
+                this.setState({ data: data, WorkOrder: workOrderName })
+            )
+        //console.log(res)
+        //this.setState({ data: res.data })
+    }
+    render() {
+        return <IndividualWorkOrderData data={this.state.data} />
+    }
 }
 
 export default WorkOrder

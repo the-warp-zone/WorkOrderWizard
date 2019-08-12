@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import Table from 'react-bootstrap/Table'
-import Button from 'react-bootstrap/Button'
-import CustomerRow from './CustomerRow'
+import CustomersData from './CustomersData'
 //import axios from 'axios'
 
 class Customers extends Component {
@@ -19,8 +17,11 @@ class Customers extends Component {
         //console.log(res)
         //this.setState({ data: res.data })
     }
+    handleHide = () => {
+        this.setState({ show: false })
+    }
     render() {
-        return <CustomerRow data={this.state.data} />
+        return <CustomersData data={this.state.data} />
     }
 }
 
