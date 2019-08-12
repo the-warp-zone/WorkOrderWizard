@@ -1,0 +1,117 @@
+routes
+
+
+	user routes
+	customer routes
+		get all customers (for logged in user)  (DONE, except authorization bit: GET /customer/all )
+		get one customer (of user's customers)  (DONE, except authorization bit: GET /customer/:id )
+		
+		add a customer (associated to logged in user) (DONE, except authorization bit: POST /customer/ with JSON for customer in Body)
+		remove a customer (we should be marking customer deleted / archived instead of deleting customer document) (DONE, except authorization bit and "marking deleted bit" : DELETE /customer/:id )
+		
+		update an existing customer (associated to logged in user) (DONE, except authorization bit: PUT /customer/:id with JSON for properties to update customer in Body)
+ 		
+	workorder routes (copied from customer)
+		get all workorders (for a given user, filterable on customer or other fields) (DONE, except authorization bit: GET /workorder/all )
+		get one workorder (DONE, except authorization bit: GET /workorder/:id )
+		
+		create a workorder (DONE, except authorization bit: POST /workorder/ with JSON for workorder in Body)
+		remove a workorder (mark deleted/archived) (we should be marking workorder deleted / archived instead of deleting workorder document) (DONE, except authorization bit and "marking deleted bit" : DELETE /workorder/:id )
+		
+		update an existing workorder (associated to logged in user) (DONE, except authorization bit: PUT /workorder/:id with JSON for properties to update workorder in Body)
+ 		
+	ADDING SIX NEW ROUTES TO WORKORDER ROUTES:
+		
+		add new invoice to invoice array
+		update an invoice in invoice array
+		remove an invoice from invoice array
+		
+		add new cost to cost array
+		update a cost in cost array
+		remove a cost from cost array
+		
+	invoice routes
+		get all invoices 
+		get one invoice
+		
+		add an invoice to a workorder
+		remove an invoice from a workorder (mark deleted/archived)
+		update an existing invoice
+		
+	cost routes (DONE copied from workorders)
+		get all costs
+		get one cost
+		
+		add cost to a workorder
+		remove a cost from a workorder (mark deleted / archived)
+		update an existing cost
+		
+Schema:
+
+	Customers collection
+	Workorders collection
+	Invoices collection
+	Costs collection
+	Users Collection
+	
+OR, hierarcical:
+	
+	users {
+		Customers {
+			Workorders {
+				Invoices {}
+				Costs {}
+			}
+		}
+	}
+	
+Again hierarcical, but different:
+	
+	users {}
+	
+	Customers {}
+			
+	Workorders {
+		Invoices {}
+		Costs {}
+	}
+	
+	
+	Because I probably want to nest Costs and Invoices within the document of their parent workOrder (at least as long as I am using MongoDB), I will start implementing the workOrder routes first, using a WorkOrders collection. But I already have a Customers collections so I can use that to build these customer routes.
+		
+Either way, these objects should have the following properties / columns:
+
+		
+	Customers : {
+		name: string,
+		businessName: string,
+		phone: string,
+		emailAddress: string,
+		Address: string
+	};
+	
+	Workorders : {
+		customerID (if nested hierarcically this is not needed, it is the parent ID),
+		created on DATE,
+		Due DATE,
+		hoursLogged: number
+	};
+	
+	Invoices : {
+		paid: boolean,
+		open: boolean,
+		amountBilled: number,
+		dateIssued: date
+		
+	};
+	
+	Costs : {
+		amount: number
+		datePurchased: DATE,
+		vendor: string,
+		vendorReceiptSN (unique receipt transaction ID from vendor receipt, if any)
+	};
+	
+	Users : {
+	
+	};
