@@ -8,16 +8,16 @@ class SubmitForm extends Component {
     }
     componentDidMount() {
         this.setState({
-            form: this.props.datatype,
+            form: this.props.dataType,
         })
     }
 
     render() {
-        console.log('Form: ' + this.state.form)
-
         let formData
-        if (this.state.form === 'customer')
-            formData = <CustomerForm data={this.props} />
+        if (this.props.dataType === 'customer')
+            formData = (
+                <CustomerForm data={this.props} getData={this.props.getData} />
+            )
         // if (this.state.form === 'workorder') formData = <WorkOrderForm />
         // if (this.state.form === 'invoice') formData = <InvoiceForm />
         // if (this.state.form === 'cost') formData = <CostForm />
