@@ -10,11 +10,6 @@ router.get('/all', function(req, res) {
     console.log('get fetch requested.')
     console.log('get all workorders')
     db.WorkOrder.find({}).then(function(workorders) {
-        res.header('Access-Control-Allow-Origin', 'http://localhost:3000') // update to match the domain you will make the request from
-        res.header(
-            'Access-Control-Allow-Headers',
-            'Origin, X-Requested-With, Content-Type, Accept'
-        )
         res.send(workorders).status(200)
     })
 })
@@ -28,11 +23,6 @@ router.get('/*', function(req, res) {
             return console.log(err)
         } // we need to actually handle the error appropriately.
         else if (typeof workorder !== 'undefined' && workorder !== null) {
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000') // update to match the domain you will make the request from
-            res.header(
-                'Access-Control-Allow-Headers',
-                'Origin, X-Requested-With, Content-Type, Accept'
-            )
             res.send(workorder).status(200)
         } else if (workorder === null) {
             db.Customer.findById(req.params[0], function(err, customer) {
@@ -41,14 +31,6 @@ router.get('/*', function(req, res) {
                     db.WorkOrder.find({ customerID: customer }).then(function(
                         workorders
                     ) {
-                        res.header(
-                            'Access-Control-Allow-Origin',
-                            'http://localhost:3000'
-                        ) // update to match the domain you will make the request from
-                        res.header(
-                            'Access-Control-Allow-Headers',
-                            'Origin, X-Requested-With, Content-Type, Accept'
-                        )
                         res.send(workorders).status(200)
                     })
                 }
