@@ -24,14 +24,9 @@ const CustomersData = props => {
 	function deleteCustomer(event) {
 		let value = event.target.value;
 		console.log(value);
-		
 		// remove deleted row from component and re-render component
-		fetch(apiEndpointUrl + value, {method: 'DELETE'}).then();
 		
-		
-		
-		// send delete command to API
-		
+		fetch(apiEndpointUrl + value, {method: 'DELETE'}).then(); // send delete command to API
 	}
     // Props should be the API call to get customer data
     var CustomerData = props.data.map(i => (

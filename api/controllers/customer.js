@@ -32,13 +32,15 @@ router.post('/', function(req, res) {
 })
 
 router.delete('/*', function(req, res) {
-    db.Customer.findById(req.params[0], function(err, customer) {
-		if (err) return err;
-        if (customer) customer.remove();
-		else return customer = "No Customer Found";
+	
+	    db.Customer.update({ _id: req.params[0] }, {"deleted":true}, function(err, numAffected) {
+        if (err) return console.log(err);
+        console.log('numAffected:');
+        console.log(numAffected);
     }).then(function(customer) {
-        res.send(customer).status(200);
-    })
+        console.log(customer)
+        res.send(customer).status(200)
+    });
 })
 
 router.put('/*', function(req, res) {
