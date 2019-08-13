@@ -1,15 +1,14 @@
 const express = require('express');
 const routes = require('./controllers');
 const app = express();
+var cors = require('cors')
 const PORT = process.env.PORT || 3001;
-
 
 const mongoose = require('mongoose');
 
 // ===============================================================================
 // ROUTING
 // ===============================================================================
-
 
 	
 	// If deployed, use the deployed database. Otherwise use the local database
@@ -26,6 +25,7 @@ db.once('open', function() {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors())
 app.use(routes);
 
 // Start the API server

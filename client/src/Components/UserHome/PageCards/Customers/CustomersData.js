@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
 
+const apiEndpointUrl = "http://localhost:3001/customer/"
+
 const CustomersData = props => {
     const [show, setShow] = React.useState(false)
     const [submit, setSubmit] = React.useState('')
@@ -16,6 +18,19 @@ const CustomersData = props => {
         handleShow()
         insertSubmit()
     }
+	
+	function deleteCustomer(event) {
+		let value = event.target.value;
+		console.log(value);
+		
+		// remove deleted row from component and re-render component
+		fetch(apiEndpointUrl + value, {method: 'DELETE'}).then();
+		
+		
+		
+		// send delete command to API
+		
+	}
     // Props should be the API call to get customer data
     var CustomerData = props.data.map(i => (
         <tr key={i._id}>
@@ -26,7 +41,7 @@ const CustomersData = props => {
                 <Button>Create Invoice</Button>
             </td>
             <td>
-                <Button>Delete Customer</Button>
+<Button value={i._id} onClick={deleteCustomer}>Delete Customer</Button>
             </td>
             <td>
                 <Link to={Routes.CUSTOMER + '/' + i._id}>
@@ -42,7 +57,7 @@ const CustomersData = props => {
         <div>
             <div id="customerHeader">
                 <h1>Customers</h1>
-                <Button dataType="customer" onClick={addCustomer}>
+                <Button datatype="customer" onClick={addCustomer}>
                     +
                 </Button>
             </div>
