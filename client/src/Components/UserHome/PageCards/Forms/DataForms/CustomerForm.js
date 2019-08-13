@@ -5,34 +5,43 @@ import Button from 'react-bootstrap/Button'
 import NumberFormat from 'react-number-format'
 import axios from 'axios'
 class CustomerForm extends Component {
-    state = {
-        businessName: '',
-        phone: null,
-        displayPhone: '',
-        email: '',
-        firstName: '',
-        lastName: '',
-        nickName: '',
-        address1: '',
-        address2: '',
-        city: '',
-        state: '',
-        zip: '',
-        country: '',
+    constructor(props) {
+        super(props)
+        this.state = {
+            businessName: '',
+            phone: null,
+            displayPhone: '',
+            email: '',
+            firstName: '',
+            lastName: '',
+            nickName: '',
+            address1: '',
+            address2: '',
+            city: '',
+            state: '',
+            zip: '',
+            country: '',
+            posted: false,
+            err: '',
+        }
+        this.onSubmit = this.onSubmit.bind(this)
     }
     inputChange = event => {
         //
         const { name, value } = event.target
+
         this.setState({
             [name]: value,
         })
     }
-    onSubmit = event => {
+    async onSubmit(event) {
         event.preventDefault()
         //
+        let data
         let phoneNumber = this.state.phone
         phoneNumber = phoneNumber.replace(/[^\d]/g, '')
         phoneNumber = parseInt(phoneNumber)
+        await this.setState({ phone: phoneNumber })
         /* Post goes here */
         const url = 'http://localhost:3001/customer'
         // fetch(url, {
@@ -44,16 +53,23 @@ class CustomerForm extends Component {
         // }).then(res => {
         //     console.log(res.json())
         // })
-        axios.post(url, this.state).then(res => console.log(res))
-        //         .catch(err => {
-        //     if (err) {
-        //         this.setState({
-        //             err: 'Something went wrong. Please try again.',
-        //         })
-        //     } else {
-        //         this.setState({ posted: true })
-        //     }
-        // }
+        axios
+            .post(url, this.state)
+            .then(res => {
+                console.log(res)
+                data = res.data
+                this.props.getData(data)
+            })
+            .catch(err => {
+                if (err) {
+                    this.setState({
+                        err: 'Something went wrong. Please try again.',
+                    })
+                } else {
+                    this.setState({ posted: true })
+                    console.log(data)
+                }
+            })
     }
     render() {
         return (
