@@ -4,7 +4,6 @@ import Table from 'react-bootstrap/Table'
 import { Link } from 'react-router-dom'
 import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
-import { getDefaultWatermarks } from 'istanbul-lib-report'
 
 class CustomersData extends Component {
     constructor(props) {
