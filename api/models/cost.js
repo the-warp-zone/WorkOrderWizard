@@ -8,6 +8,8 @@ const costSchema = new Schema({
 	vendor: String,
 	datePurchased: Date,
 	amount: Number,
+	archived: Boolean,
+	deleted: Boolean,
 	workOrderID: Schema.Types.ObjectId
 });
 

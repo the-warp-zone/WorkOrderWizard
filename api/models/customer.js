@@ -15,6 +15,8 @@ const customerSchema = new Schema({
 	state: String,
 	zip: String,
 	country: String,
+	archived: Boolean,
+	deleted: Boolean,
 	userID: Schema.Types.ObjectId
 });
 
