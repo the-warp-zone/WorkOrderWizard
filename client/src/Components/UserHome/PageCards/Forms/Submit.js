@@ -16,10 +16,11 @@ class SubmitForm extends Component {
         console.log('Form: ' + this.state.form)
 
         let formData
-        if (this.state.form === 'customer') formData = <CustomerForm />
-        if (this.state.form === 'workorder') formData = <CustomerForm />
-        if (this.state.form === 'invoice') formData = <CustomerForm />
-        if (this.state.form === 'cost') formData = <CustomerForm />
+        if (this.state.form === 'customer')
+            formData = <CustomerForm data={this.props} />
+        // if (this.state.form === 'workorder') formData = <WorkOrderForm />
+        // if (this.state.form === 'invoice') formData = <InvoiceForm />
+        // if (this.state.form === 'cost') formData = <CostForm />
         return (
             <Modal
                 show={this.props.show}

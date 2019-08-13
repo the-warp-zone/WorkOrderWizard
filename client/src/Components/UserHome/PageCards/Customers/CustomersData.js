@@ -12,8 +12,6 @@ const CustomersData = props => {
     const insertSubmit = () => setSubmit('Insert')
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
-    console.log(show)
-    console.log(submit)
     var addCustomer = () => {
         handleShow()
         insertSubmit()
