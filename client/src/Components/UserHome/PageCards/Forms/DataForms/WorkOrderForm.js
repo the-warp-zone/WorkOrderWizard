@@ -24,7 +24,6 @@ class WorkOrderForm extends Component {
         this.onSubmit = this.onSubmit.bind(this)
     }
     inputChange = event => {
-        //
         const { name, value } = event.target
 
         this.setState({
@@ -37,8 +36,6 @@ class WorkOrderForm extends Component {
 
     handleCustomers = () => {
         const url = 'http://localhost:3001/customer/all'
-        // console.log('fetching:\t' + url)
-        //var res = await axios.get(url)
         var list = []
         var idList = []
         fetch(url)
@@ -51,6 +48,7 @@ class WorkOrderForm extends Component {
                     var fullName = data[i].firstName + ' ' + data[i].lastName
                     list.push([fullName, data[i]._id])
                 }
+                // Issue when using string to as a replacement for a object id
                 this.setState({ customerList: list })
             })
     }
