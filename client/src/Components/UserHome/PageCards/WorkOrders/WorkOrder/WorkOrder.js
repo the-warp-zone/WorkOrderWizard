@@ -4,6 +4,10 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 import IndividualWorkOrderData from './IndividualWorkOrderData'
 
+const API_ENDPOINT_BASEURL = process.env.API_ENDPOINT_BASEURL || 'http://localhost:';
+const PORT = process.env.API_PORT || 3001;
+const pageEndpoint = '/workorder/';
+
 class WorkOrder extends Component {
     state = {
         data: [],
@@ -12,7 +16,7 @@ class WorkOrder extends Component {
         const workOrderName = this.props.match.params._id
         console.log(this.props.match.params._id)
 
-        const url = 'http://localhost:3001/workorder/' + workOrderName
+        const url = API_ENDPOINT_BASEURL + PORT + pageEndpoint + workOrderName
         // console.log('fetching:\t' + url)
         //var res = await axios.get(url)
 
