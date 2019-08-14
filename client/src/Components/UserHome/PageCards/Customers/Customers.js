@@ -2,10 +2,15 @@ import React, { Component } from 'react'
 import CustomersData from './CustomersData'
 //import axios from 'axios'
 
+function checkNotDeleted(customer) {
+		return customer.deleted !== true;
+	}
+
 class Customers extends Component {
     state = {
         data: [],
     }
+	
     componentDidMount() {
         const url = 'http://localhost:3001/customer/all'
         // console.log('fetching:\t' + url)
@@ -13,7 +18,9 @@ class Customers extends Component {
 
         fetch(url)
             .then(response => response.json())
-            .then(data => this.setState({ data: data }))
+	.then(data => {
+		return this.setState({ data: data.filter(checkNotDeleted) });
+	});
         //console.log(res)
         //this.setState({ data: res.data })
     }

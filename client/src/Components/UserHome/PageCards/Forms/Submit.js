@@ -8,7 +8,7 @@ class SubmitForm extends Component {
     }
     componentDidMount() {
         this.setState({
-            form: this.props.dataType,
+            form: this.props.datatype,
         })
     }
 

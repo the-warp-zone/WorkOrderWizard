@@ -10,6 +10,8 @@ const invoiceSchema = new Schema({
 	workOrderID: Schema.Types.ObjectId,
 	notes: String,
 	billingAddress: String,
+	archived: Boolean,
+	deleted: Boolean,
 	customerID: Schema.Types.ObjectId
 });
 
