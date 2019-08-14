@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import IndividualCostData from './IndividualCostData'
 
+const API_ENDPOINT_BASEURL = process.env.API_ENDPOINT_BASEURL || 'http://localhost:';
+const PORT = process.env.API_PORT || 3001;
+const pageEndpoint = '/cost/';
+
 class Cost extends Component {
     state = {
         data: [],
@@ -10,16 +14,10 @@ class Cost extends Component {
     componentDidMount() {
         const costName = this.props.match.params._id
         console.log(this.props.match.params._id)
-
-        const url = 'http://localhost:3001/cost/' + costName
-        // console.log('fetching:\t' + url)
-        //var res = await axios.get(url)
-
-        fetch(url)
+		
+		fetch(API_ENDPOINT_BASEURL + PORT + pageEndpoint + costName)
             .then(response => response.json())
             .then(data => this.setState({ data: data, cost: costName }))
-        //console.log(res)
-        //this.setState({ data: res.data })
     }
     render() {
         return <IndividualCostData data={this.state.data} />

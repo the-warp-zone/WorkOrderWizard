@@ -12,7 +12,7 @@ class CustomersData extends Component {
             show: false,
             submit: '',
             data: '',
-            apiEndpointUrl: 'http://localhost:3001/customer/',
+            apiEndpointUrl: '/customer/',
         }
         this.getData = this.getData.bind(this)
     }
@@ -52,7 +52,7 @@ class CustomersData extends Component {
         console.log(value)
 
         // remove deleted row from component and re-render component
-        fetch(this.state.apiEndpointUrl + value, { method: 'DELETE' }).then()
+        fetch(this.state.apiEndpointUrl + value, { method: 'DELETE', port: 3001 }).then()
         // send delete command to API
     }
     // Props should be the API call to get customer data
