@@ -1,0 +1,11 @@
+.card {
+	height: 50px;
+	text-align: center;
+}
+.card-text {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.card-text:last-child {
+	margin-bottom: auto;
+}
