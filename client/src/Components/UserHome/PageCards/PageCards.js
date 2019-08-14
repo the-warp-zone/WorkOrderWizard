@@ -7,7 +7,7 @@ var PageCards = () => {
         <div className="container">
             <div className="row">
                 <div className="col-sm-6">
-                    <a href="#" className="cards">
+                    <a href="/customers" className="cards">
                         <Card
                             style={{ width: '100%', height: '300px' }}
                             className="shadow-box card-spacing"
@@ -18,7 +18,7 @@ var PageCards = () => {
                 </div>
 
                 <div className="col-sm-6">
-                    <a href="#" className="cards">
+                    <a href="/workorders" className="cards">
                         <Card
                             style={{ width: '100%', height: '300px' }}
                             className="shadow-box card-spacing"
@@ -30,7 +30,7 @@ var PageCards = () => {
             </div>
             <div className="row">
                 <div className="col-sm-6">
-                    <a href="#" className="cards">
+                    <a href="/invoices" className="cards">
                         <Card
                             style={{ width: '100%', height: '300px' }}
                             className="shadow-box card-spacing"
@@ -41,7 +41,7 @@ var PageCards = () => {
                 </div>
 
                 <div className="col-sm-6">
-                    <a href="#" className="cards">
+                    <a href="/costs" className="cards">
                         <Card
                             style={{ width: '100%', height: '300px' }}
                             className="shadow-box card-spacing"
