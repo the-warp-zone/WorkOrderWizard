@@ -28,7 +28,7 @@ class SubmitForm extends Component {
                 <WorkOrderForm
                     data={this.props}
                     getData={this.props.getData}
-                    hide={this.props.hide}
+                    hide={this.props.cancel}
                 />
             )
         // if (this.state.form === 'invoice') formData = <InvoiceForm />

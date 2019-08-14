@@ -46,7 +46,7 @@ class CustomersData extends Component {
         }
         this.handleClose()
     }
-    cancelForm(event) {
+    cancelForm = event => {
         event.preventDefault()
         console.log(this.state.show)
         this.setState({ show: false })

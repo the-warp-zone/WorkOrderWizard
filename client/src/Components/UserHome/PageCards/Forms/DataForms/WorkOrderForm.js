@@ -3,14 +3,19 @@ import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 class WorkOrderForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            createdOn: '',
-            dateDue: '',
+            createdOn: new Date(),
+            dateDue: new Date(),
             customerAssociated: '',
-            hoursLogged: null,
+            customerList: [],
+            title: '',
+            notes: '',
+            hoursLogged: 0,
             archived: false,
             deleted: false,
             posted: false,
@@ -26,12 +31,54 @@ class WorkOrderForm extends Component {
             [name]: value,
         })
     }
+    handleDate = date => {
+        this.setState({ dateDue: date })
+    }
+
+    handleCustomers = () => {
+        const url = 'http://localhost:3001/customer/all'
+        // console.log('fetching:\t' + url)
+        //var res = await axios.get(url)
+        var list = []
+        var idList = []
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                data = data.filter(customer => customer.deleted !== true)
+                console.log(data)
+                for (let i = 0; i < data.length; i++) {
+                    idList.push(data[i]._id)
+                    var fullName = data[i].firstName + ' ' + data[i].lastName
+                    list.push([fullName, data[i]._id])
+                }
+                this.setState({ customerList: list })
+            })
+    }
     async onSubmit(event) {
         event.preventDefault()
         //
-        let data
+        for (let i = 0; i < this.state.customerList.length; i++) {
+            var index = this.state.customerList[i].indexOf(
+                this.state.customerAssociated
+            )
+            if (index > -1) {
+                this.setState({
+                    customerAssociated: this.state.customerList[i][index + 1],
+                })
+            }
+        }
+        console.log(this.state)
+        let data = {
+            createdOn: this.state.createdOn,
+            dateDue: this.state.dateDue,
+            customerId: this.state.customerAssociated,
+            archived: this.state.archived,
+            deleted: this.state.deleted,
+            title: this.state.title,
+            notes: this.state.notes,
+        }
         /* Post goes here */
-        const url = 'http://localhost:3001/customer'
+        const url = 'http://localhost:3001/workorder'
         // fetch(url, {
         //     method: 'POST',
         //     body: JSON.stringify(this.state),
@@ -42,7 +89,7 @@ class WorkOrderForm extends Component {
         //     console.log(res.json())
         // })
         axios
-            .post(url, this.state)
+            .post(url, data)
             .then(res => {
                 console.log(res)
                 data = res.data
@@ -59,105 +106,83 @@ class WorkOrderForm extends Component {
                 }
             })
     }
+    componentDidMount() {
+        this.handleCustomers()
+    }
     render() {
         return (
             <Form>
                 <Form.Row>
                     <Form.Group as={Col} controlId="">
-                        <Form.Label>First Name</Form.Label>
+                        <Form.Label>Work Order</Form.Label>
                         <Form.Control
-                            value={this.state.firstName}
-                            name="firstName"
+                            value={this.state.title}
+                            name="title"
                             onChange={this.inputChange}
                             type="text"
-                            placeholder="First Name"
-                        />
-                    </Form.Group>
-                    <Form.Group as={Col} controlId="">
-                        <Form.Label>Last Name</Form.Label>
-                        <Form.Control
-                            value={this.state.lastName}
-                            name="lastName"
-                            onChange={this.inputChange}
-                            type="text"
-                            placeholder="Last Name"
+                            placeholder="Work Order 001"
                         />
                     </Form.Group>
                 </Form.Row>
                 <Form.Row>
-                    <Form.Group as={Col} controlId="">
-                        <Form.Label>Business Name</Form.Label>
-                        <Form.Control
-                            value={this.state.businessName}
-                            name="businessName"
-                            onChange={this.inputChange}
-                            type="text"
-                            placeholder="Business Name"
-                        />
-                    </Form.Group>
-                </Form.Row>
-                <Form.Row>
-                    <Form.Group as={Col} controlId="formGridEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control
-                            value={this.state.email}
-                            onChange={this.inputChange}
-                            name="email"
-                            type="email"
-                            placeholder="Enter email"
-                        />
-                    </Form.Group>
-                </Form.Row>
-
-                <Form.Group controlId="formGridAddress1">
-                    <Form.Label>Address</Form.Label>
-                    <Form.Control
-                        value={this.state.address1}
-                        name="address1"
-                        onChange={this.inputChange}
-                        placeholder="1234 Main St"
-                    />
-                </Form.Group>
-
-                <Form.Group controlId="formGridAddress2">
-                    <Form.Label>Address 2</Form.Label>
-                    <Form.Control
-                        value={this.state.address2}
-                        name="address2"
-                        onChange={this.inputChange}
-                        placeholder="Apartment, studio, or floor"
-                    />
-                </Form.Group>
-
-                <Form.Row>
-                    <Form.Group as={Col} controlId="formGridCity">
-                        <Form.Label>City</Form.Label>
-                        <Form.Control
-                            value={this.state.city}
-                            name="city"
-                            onChange={this.inputChange}
-                        />
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="formGridState">
-                        <Form.Label>State</Form.Label>
+                    <Form.Group as={Col} controlId="formGridCustomer">
+                        <Form.Label>Customer</Form.Label>
                         <Form.Control
                             as="select"
-                            value={this.state.state}
-                            name="state"
+                            value={this.state.customerAssociated}
+                            name="customerAssociated"
                             onChange={this.inputChange}
                         >
-                            <option>Choose...</option>
-                            <option>...</option>
+                            <option>Select...</option>
+                            {this.state.customerList.map(i => (
+                                <option key={i[1]} value={i[1]}>
+                                    {i[0]}
+                                </option>
+                            ))}
                         </Form.Control>
                     </Form.Group>
-
-                    <Form.Group as={Col} controlId="formGridZip">
-                        <Form.Label>Zip</Form.Label>
+                    <Form.Group as={Col} controlId="hoursLogged">
+                        <Form.Label>Hours Logged</Form.Label>
                         <Form.Control
-                            value={this.state.zip}
-                            name="zip"
+                            value={this.state.hoursLogged}
+                            name="hoursLogged"
                             onChange={this.inputChange}
+                            type="number"
+                            placeholder="123"
+                        />
+                    </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                    <Form.Group controlId="createdOn">
+                        <Form.Label>Created On</Form.Label>
+                        <Form.Control
+                            value={this.state.createdOn}
+                            name="address1"
+                            onChange={this.inputChange}
+                            placeholder="Is this needed here?"
+                        />
+                    </Form.Group>
+
+                    <Form.Group controlId="dueDate">
+                        <Form.Label>Date Due</Form.Label>
+                        <DatePicker
+                            selected={this.state.dateDue}
+                            onChange={this.handleDate}
+                            value={this.state.dateDue}
+                        />
+                    </Form.Group>
+                </Form.Row>
+
+                <Form.Row>
+                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                        <Form.Label>Notes</Form.Label>
+                        <Form.Control
+                            as="textarea"
+                            rows="3"
+                            value={this.state.notes}
+                            name="notes"
+                            onChange={this.inputChange}
+                            placeholder="Notes for Work Order"
                         />
                     </Form.Group>
                 </Form.Row>
