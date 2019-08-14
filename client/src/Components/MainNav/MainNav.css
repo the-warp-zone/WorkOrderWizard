@@ -2,24 +2,30 @@
     background-color: rgb(16, 146, 80);
     color: white;
 }
+
 .navbar-light .navbar-nav .nav-link {
     color: white;
 }
+
 .navbar-light .navbar-brand {
     color: white;
 }
+
 .navbar-light .navbar-toggler {
     color: white;
     border-color: white;
 }
 
+
 .navbar-nav a {
     color: white !important;
 }
-/* .navText {
-    font-family: monospace;
+
+.navbar-brand {
+	font-family: monospace;
     font-weight: bold;
-    color: gold;
     font-variant-caps: small-caps;
     font-size: xx-large;
-} */
+	word-spacing: -.69rem;
+	color: gold!important;
+}
