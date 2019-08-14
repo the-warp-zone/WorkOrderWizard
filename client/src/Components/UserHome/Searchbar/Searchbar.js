@@ -8,8 +8,7 @@ var Searchbar = () => {
     return (
         <div className="margin">
             <div className="row">
-                <div className="col xs-10"></div>
-                <div className="col xs-2">
+                <div className="col mr-9">
                     <Form inline>
                         <FormControl
                             type="text"

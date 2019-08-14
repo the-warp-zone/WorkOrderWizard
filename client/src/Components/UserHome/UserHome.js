@@ -4,7 +4,7 @@ import PageCards from './PageCards/PageCards'
 
 var UserHome = () => {
     return (
-        <div>
+        <div id="background">
             <Searchbar />
             <PageCards />
         </div>
