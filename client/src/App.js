@@ -35,26 +35,20 @@ function App() {
                     exact
                     path={Routes.HOME}
                     component={UserHome}
-                >
-                    <Route path={Routes.CUSTOMERS} component={Customers} />
-                    <Route
-                        path={Routes.CUSTOMER + '/:_id'}
-                        component={Customer}
-                    />
-                    <Route path={Routes.WORK_ORDERS} component={WorkOrders} />
-                    <Route
-                        path={Routes.WORK_ORDER + '/:_id'}
-                        component={WorkOrder}
-                    />
-                    <Route path={Routes.INVOICES} component={Invoices} />
-                    <Route
-                        path={Routes.INVOICE + '/:_id'}
-                        component={Invoice}
-                    />
-                    <Route path={Routes.COSTS} component={Costs} />
-                    <Route path={Routes.COST + '/:_id'} component={Cost} />
-                    <Route path={Routes.ACCOUNT} component={UserAccount} />
-                </Route>
+                />
+                <Route path={Routes.CUSTOMERS} component={Customers} />
+                <Route path={Routes.CUSTOMER + '/:_id'} component={Customer} />
+                <Route path={Routes.WORK_ORDERS} component={WorkOrders} />
+                <Route
+                    path={Routes.WORK_ORDER + '/:_id'}
+                    component={WorkOrder}
+                />
+                <Route path={Routes.INVOICES} component={Invoices} />
+                <Route path={Routes.INVOICE + '/:_id'} component={Invoice} />
+                <Route path={Routes.COSTS} component={Costs} />
+                <Route path={Routes.COST + '/:_id'} component={Cost} />
+                <Route path={Routes.ACCOUNT} component={UserAccount} />
+                {/* </Route> */}
                 {/* <Route
                     className="routes"
                     exact

@@ -31,13 +31,11 @@ class CustomersData extends Component {
     }
     getData(data) {
         // setData(data)
-        this.setState({ data: data })
-        console.log('This is the data: ')
-        console.log(data)
-        let calledIt = data
-        if (calledIt) {
-            if (this.props.data.indexOf(calledIt) === -1)
-                this.props.data.push(calledIt)
+        if (data) {
+            this.setState({ data: data })
+            console.log('This is the data: ')
+            console.log(data)
+            if (this.props.data.indexOf(data) === -1) this.props.data.push(data)
             // for (let i = 0; i < this.props.data; i++) {
             //     if (this.props.data[i] === calledIt) {
             //         break
@@ -46,6 +44,12 @@ class CustomersData extends Component {
             //     console.log(this.props.data)
             // }
         }
+        this.handleClose()
+    }
+    cancelForm(event) {
+        event.preventDefault()
+        console.log(this.state.show)
+        this.setState({ show: false })
     }
     deleteCustomer(event) {
         let value = event.target.value
@@ -95,6 +99,7 @@ class CustomersData extends Component {
                     show={this.state.show}
                     hide={this.handleClose}
                     getData={this.getData}
+                    cancel={this.cancelForm}
                 />
 
                 <div>
