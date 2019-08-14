@@ -1,40 +1,71 @@
 import React from 'react'
+import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import './UserAccount.css';
 
 const UserAccount = () => {
-    //
+    const ColoredLine = ({ color }) => (
+        <hr
+            style={{
+                color: color,
+                backgroundColor: color,
+                height: .5
+            }}
+        />
+    );
     return (
-        <div>
-            <h1>User Account</h1>
-            <div>
-                <h2>Account Info</h2>
-                <ul>
-                    <li>
-                        <h3>Username</h3>
-                    </li>
-                    <li>
-                        <h3>Name</h3>
-                    </li>
-                    <li>
-                        <h3>Company Name</h3>
-                    </li>
-                    <li>
-                        <Button>Edit</Button>
-                    </li>
-                </ul>
+        <React.Fragment>
+        <div className="row">
+            <div className="col">
+                <h1>User Account</h1>
+            </div> 
+        </div>
+        <div className="row">
+            <div className="col-sm-12 col-md-3">
+                <Card>
+                    <p className="card-text">(Username)</p>
+                </Card>
+            </div>  
+            <div className="col-sm-12 col-md-3">
+                <Card>
+                    <p className="card-text">(Name)</p>
+                </Card>
             </div>
-            <div>
-                <h2>Payment Methods / Billing</h2>
-                <Button>+ Add</Button>
-                <h4>Existing Payment Methods</h4>
-                <ul>
-                    <li>
-                        <p>****-****-****-1234</p>
-                        <span>VISA</span>
-                    </li>
-                </ul>
+            <div className="col-sm-12 col-md-3">
+                <Card>
+                    <p className="card-text">(Company Name)</p>
+                </Card>
+            </div>
+            <div className="col-sm-12 col-md-3">
+                <Button>Edit</Button>
             </div>
         </div>
+        <ColoredLine color="rgb(216, 216, 216)" />
+        <div className="row">
+            <div className="col">
+                <h1>Billing</h1>
+            </div> 
+        </div>
+        <div className="row">
+            <div className="col">
+                <Button>Add Payment Method</Button>
+            </div>
+        </div>
+        <div className="row">
+            <h5 style={{marginLeft: '15px' }}>Your Payment Methods</h5>
+        </div>
+        <div className="row">
+            <div style={{ width: '400px' }}>
+                <ol>
+                    <li>
+                        <p>(****-****-****-1234)<span>(VISA)</span></p>
+                    </li>
+                </ol>  
+            </div>
+        
+        </div>
+        </React.Fragment>
+       
     )
 }
 
