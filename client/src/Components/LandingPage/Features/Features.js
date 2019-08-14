@@ -2,6 +2,7 @@ import React from 'react'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import './Features.css'
+import '../../../App.css'
 
 var Features = () => {
     return (
@@ -11,7 +12,7 @@ var Features = () => {
                 {/* lg={{ span: 3, offset: 2 }} */}
                 <Col>
                     <h2>
-                        <em className="col">Features</em>
+                        <em className="col text-font">Features</em>
                     </h2>
                 </Col>
             </Row>
@@ -21,7 +22,7 @@ var Features = () => {
             <Row>
                 {/* lg={{ span: 3, offset: 1 }} */}
                 <Col>
-                    <ul className="list">
+                    <ul className="list text-font">
                         <li>This is a feature</li>
                         <li>This is also a feature</li>
                         <li>What is a feature?</li>

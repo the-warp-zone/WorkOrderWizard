@@ -10,7 +10,7 @@ var Testimonials = () => {
                 {/* lg={{ span: 3, offset: 2 }} */}
                 <Col>
                     <h2>
-                        <em className="col testimonials">
+                        <em className="col testimonials text-font">
                             Customer Testimonials
                         </em>
                     </h2>

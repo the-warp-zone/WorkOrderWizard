@@ -1,5 +1,5 @@
 .navColors {
-    background-color: #109250;
+    background-color: rgb(16, 146, 80);
     color: white;
 }
 .navbar-light .navbar-nav .nav-link {
@@ -16,3 +16,10 @@
 .navbar-nav a {
     color: white !important;
 }
+/* .navText {
+    font-family: monospace;
+    font-weight: bold;
+    color: gold;
+    font-variant-caps: small-caps;
+    font-size: xx-large;
+} */
