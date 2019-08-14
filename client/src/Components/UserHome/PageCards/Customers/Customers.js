@@ -9,6 +9,8 @@ function checkNotDeleted(customer) {
 class Customers extends Component {
     state = {
         data: [],
+        posted: false,
+        err: '',
     }
 	
     componentDidMount() {
@@ -24,6 +26,14 @@ class Customers extends Component {
         //console.log(res)
         //this.setState({ data: res.data })
     }
+    submit() {}
+    // componentDidUpdate(){
+    //     const url = 'http://localhost:3001/customer/all'
+
+    //     fetch(url)
+    //         .then(response => response.json())
+    //         .then(data => this.setState({ data: data }))
+    // }
     handleHide = () => {
         this.setState({ show: false })
     }

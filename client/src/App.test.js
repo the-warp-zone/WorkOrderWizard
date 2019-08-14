@@ -2,8 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import { shallow } from 'enzyme'
-import MainNav from './Components/MainNav/MainNav'
-import LandingPage from './Components/LandingPage/LandingPage'
 
 it('renders without crashing', () => {
     const div = document.createElement('div')

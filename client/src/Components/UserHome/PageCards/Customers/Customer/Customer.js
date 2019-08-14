@@ -19,6 +19,7 @@ class Customer extends Component {
         //console.log(res)
         //this.setState({ data: res.data })
     }
+    submit() {}
     render() {
         return <IndividualCustomerData data={this.state.data} />
     }
