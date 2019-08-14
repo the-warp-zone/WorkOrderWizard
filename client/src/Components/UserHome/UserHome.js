@@ -1,6 +1,7 @@
 import React from 'react'
 import Searchbar from './Searchbar/Searchbar'
 import PageCards from './PageCards/PageCards'
+import './UserHome.css'
 
 var UserHome = () => {
     return (
