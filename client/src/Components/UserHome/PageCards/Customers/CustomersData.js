@@ -4,6 +4,7 @@ import Table from 'react-bootstrap/Table'
 import { Link } from 'react-router-dom'
 import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
+import './Customers.css';
 
 class CustomersData extends Component {
     constructor(props) {
@@ -87,11 +88,15 @@ class CustomersData extends Component {
         ))
         return (
             <div>
-                <div id="customerHeader">
-                    <h1>Customers</h1>
-                    <Button datatype="customer" onClick={this.addCustomer}>
+                <div class="row" id="customerHeader">
+                    
+                    <h1 class="col">Customers
+                    <Button datatype="customer" onClick={this.addCustomer} class="col add-button">
                         +
                     </Button>
+                    </h1>
+
+                    
                 </div>
                 <SubmitForm
                     dataType="customer"
