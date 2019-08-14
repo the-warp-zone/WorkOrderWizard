@@ -12,7 +12,7 @@ var LpNav = () => {
                 className="navColors navbar-dark"
             >
                 <Navbar.Brand className="navText" href="#">
-                    Work Order Wizard
+                    <span className="logoText">Work Order Wizard</span>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

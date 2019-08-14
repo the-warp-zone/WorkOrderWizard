@@ -1,7 +1,7 @@
 .jumbotron {
-    background-color: white;
+    /* background-color: white; */
     height: 660px;
-    background-image: url('/images/desktop_background_wow.jpeg');
+    background-image: url('/images/jumbotron.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0% 40%;
@@ -13,10 +13,38 @@
     padding: 55px 0;
     text-align: center;
 }
+@font-face {
+    font-family: LogoFont;
+    src: url(../../../../src/Raphtalia.otf);
+}
 
-.jumbotron h1 {
+#logoLP {
+    font-family: LogoFont;
+    font-weight: 900;
+    color: #109250;
+    text-shadow:
+   -1px -1px 0 black,  
+    1px -1px 0 black,
+    -1px 1px 0 black,
+     1px 1px 0 black;
+    font-size: 100px;
+    animation: fadein 3s;
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.jumbotron h2 {
     /* color: #109250; */
-    font-weight: bold;
+    padding-top: 25px;
+    color: #93f5c4;
+    text-shadow:
+    -1px -1px 0 black,  
+     1px -1px 0 black,
+     -1px 1px 0 black,
+      1px 1px 0 black;
+      animation: fadein 3s;
 }
 
 .jumbotron p {
@@ -27,6 +55,6 @@
 @media only screen and (max-width: 500px) {
     .jumbotron {
         background-position: 50% 20%;
-        background-image: url('/images/mobile_background_wow.jpeg');
+        background-image: url('/images/jumbotron.jpg');
     }
 }

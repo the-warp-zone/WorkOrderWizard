@@ -35,17 +35,21 @@ var MainNav = props => {
                         <LinkContainer to={Routes.COSTS}>
                             <Nav.Link>Costs</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to={Routes.ARCHIVED}>
+						{/*
+						<LinkContainer to={Routes.ARCHIVED}>
                             <Nav.Link>Archived</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to={Routes.JOBS}>
                             <Nav.Link>Jobs</Nav.Link>
                         </LinkContainer>
+						*/}
                     </Nav>
                     <Nav className="ml-auto">
+						{/* Note: Only Show My Account While Logged In */}
                         <LinkContainer to={Routes.ACCOUNT}>
                             <Nav.Link>My Account</Nav.Link>
                         </LinkContainer>
+						{/* Note: Only Show Sign In While Logged Out */}
                         <Nav.Link onClick={props.handleShow}>Sign In</Nav.Link>
                         <LinkContainer to={Routes.LANDING}>
                             <Nav.Link>Log Out</Nav.Link>

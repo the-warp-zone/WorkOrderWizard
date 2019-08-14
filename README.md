@@ -11,6 +11,9 @@ Built for the desktop experience as well as native mobile. React Native will be 
 
 Depending on our needs during the development process, we may choose to employ Reduct or Context API in order to track application state.
 
+## Installation
+In addition to running npm install in both the root directory of the project and the /client directory of the project, you will also need a .env file with the SKIP-PREFLIGHT-CHECK=true, and with the firebase connection details because firebase is used for login.
+
 ## Deployment
 This will be a cloud-based service. We may choose to utilize an automatically scaling deployment service such as Amazon Elastic Beanstalk.
 

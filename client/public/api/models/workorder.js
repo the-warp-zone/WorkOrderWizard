@@ -6,6 +6,8 @@ const workOrderSchema = new Schema({
 	createdOn: Date,
 	dateDue: Date,
 	hoursLogged: Number,
+	title: String,
+	notes: String,
 	archived: Boolean,
 	deleted: Boolean,
 	customerID: Schema.Types.ObjectId

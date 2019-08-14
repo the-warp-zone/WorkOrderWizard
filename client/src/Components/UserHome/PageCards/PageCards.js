@@ -1,51 +1,50 @@
 import React from 'react'
-
 import Card from 'react-bootstrap/Card'
 import './PageCards.css'
 
 var PageCards = () => {
     return (
         <div className="container">
-            <div className="row margin-top">
-                <div className="col px-md-5">
-                    <a href="#" className="cards">
+            <div className="row">
+                <div className="col-sm-6">
+                    <a href="/customers" className="cards">
                         <Card
-                            style={{ width: '300px', height: '200px' }}
-                            className="shadow-box"
+                            style={{ width: '100%', height: '300px' }}
+                            className="shadow-box card-spacing"
                         >
                             <Card.Body>Customers</Card.Body>
                         </Card>
                     </a>
                 </div>
 
-                <div className="col px-md-5">
-                    <a href="#" className="cards">
+                <div className="col-sm-6">
+                    <a href="/workorders" className="cards">
                         <Card
-                            style={{ width: '300px', height: '200px' }}
-                            className="shadow-box"
+                            style={{ width: '100%', height: '300px' }}
+                            className="shadow-box card-spacing"
                         >
                             <Card.Body>Work Orders</Card.Body>
                         </Card>
                     </a>
                 </div>
             </div>
-            <div className="row margin-top">
-                <div className="col px-md-5">
-                    <a href="#" className="cards">
+            <div className="row">
+                <div className="col-sm-6">
+                    <a href="/invoices" className="cards">
                         <Card
-                            style={{ width: '300px', height: '200px' }}
-                            className="shadow-box"
+                            style={{ width: '100%', height: '300px' }}
+                            className="shadow-box card-spacing"
                         >
                             <Card.Body>Invoices</Card.Body>
                         </Card>
                     </a>
                 </div>
 
-                <div className="col px-md-5">
-                    <a href="#" className="cards">
+                <div className="col-sm-6">
+                    <a href="/costs" className="cards">
                         <Card
-                            style={{ width: '300px', height: '200px' }}
-                            className="shadow-box"
+                            style={{ width: '100%', height: '300px' }}
+                            className="shadow-box card-spacing"
                         >
                             <Card.Body>Costs</Card.Body>
                         </Card>
