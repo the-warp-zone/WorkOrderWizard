@@ -1,9 +1,8 @@
 import React from 'react'
-import './App.css'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LandingPage from './Components/LandingPage/LandingPage'
 import MainNav from './Components/MainNav/MainNav'
 import UserHome from './Components/UserHome/UserHome'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Routes from './Constants/routes.js'
 import Customers from './Components/UserHome/PageCards/Customers/Customers'
 import WorkOrders from './Components/UserHome/PageCards/WorkOrders/WorkOrders'
@@ -14,6 +13,7 @@ import Invoice from './Components/UserHome/PageCards/Invoices/Invoice/Invoice'
 import Costs from './Components/UserHome/PageCards/Costs/Costs'
 import Cost from './Components/UserHome/PageCards/Costs/Cost/Cost.js'
 import UserAccount from './Components/UserHome/UserAccount/UserAccount'
+import './App.css'
 
 function App() {
     const [show, setShow] = React.useState(false)
