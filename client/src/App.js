@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import LandingPage from './Components/LandingPage/LandingPage';
@@ -19,29 +19,43 @@ function App() {
   const [show, setShow] = React.useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  return (
-    <Router>
-      <div className="App">
-        <MainNav handleShow={handleShow} />
-        <Route
-          className="routes"
-          exact
-          path={Routes.LANDING}
-          render={() => <LandingPage data={show} close={handleClose} />}
-        />
-        {/* After user is past landing page or loggin in... */}
-        <Route className="routes" exact path={Routes.HOME} component={UserHome}>
-          <Route path={Routes.CUSTOMERS} component={Customers} />
-          <Route path={`${Routes.CUSTOMER}/:customerId`} component={Customer} />
-          <Route path={Routes.WORK_ORDERS} component={WorkOrders} />
-          <Route path={`${Routes.WORK_ORDER}/:workorderId`} component={WorkOrder} />
-          <Route path={Routes.INVOICES} component={Invoices} />
-          <Route path={`${Routes.INVOICE}/:invoiceId`} component={Invoice} />
-          <Route path={Routes.COSTS} component={Costs} />
-          <Route path={`${Routes.COST}/:costId`} component={Cost} />
-          <Route path={Routes.ACCOUNT} component={UserAccount} />
-        </Route>
-        {/* <Route
+  class App extends Component {
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        authUser: null,
+      };
+    }
+
+    render() {
+      return (
+        <Router>
+          <div className="App">
+            <MainNav handleShow={handleShow} />
+            <MainNav authUser={this.state.authUser} />
+            <Route
+              className="routes"
+              exact
+              path={Routes.LANDING}
+              render={() => <LandingPage data={show} close={handleClose} />}
+            />
+            {/* After user is past landing page or loggin in... */}
+            <Route className="routes" exact path={Routes.HOME} component={UserHome}>
+              <Route path={Routes.CUSTOMERS} component={Customers} />
+              <Route path={`${Routes.CUSTOMER}/:customerId`} component={Customer} />
+              <Route path={Routes.WORK_ORDERS} component={WorkOrders} />
+              <Route
+                path={`${Routes.WORK_ORDER}/:workorderId`}
+                component={WorkOrder}
+              />
+              <Route path={Routes.INVOICES} component={Invoices} />
+              <Route path={`${Routes.INVOICE}/:invoiceId`} component={Invoice} />
+              <Route path={Routes.COSTS} component={Costs} />
+              <Route path={`${Routes.COST}/:costId`} component={Cost} />
+              <Route path={Routes.ACCOUNT} component={UserAccount} />
+            </Route>
+            {/* <Route
                     className="routes"
                     exact
                     path={Routes.SIGN_UP}
@@ -53,9 +67,10 @@ function App() {
                     path={Routes.SIGN_IN}
                     component={SignIn}
                 /> */}
-      </div>
-    </Router>
-  );
+          </div>
+        </Router>
+      );
+    }
+  }
 }
-
 export default App;
