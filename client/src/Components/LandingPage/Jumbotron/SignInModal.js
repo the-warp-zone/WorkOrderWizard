@@ -70,14 +70,6 @@ class SignInFormBase extends Component {
                 />
                 <button disabled={isInvalid} type="submit">
                     Sign In
-<<<<<<< HEAD
-                </button>
-
-                {error && <p>{error.message}</p>}
-            </form>
-        )
-    }
-=======
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -91,7 +83,6 @@ class SignInFormBase extends Component {
             </Modal.Footer>
         </Modal>
     )
->>>>>>> e0574fdb1f8ec02c3cc350b1265ba8b378f08b0c
 }
 
 const SignInForm = compose(
