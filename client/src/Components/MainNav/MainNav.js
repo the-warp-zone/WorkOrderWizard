@@ -41,8 +41,10 @@ var MainNav = () => {
                         <LinkContainer to={Routes.JOBS}>
                             <Nav.Item>Jobs</Nav.Item>
                         </LinkContainer>
+                        */}
                     </Nav>
                     <Nav className="ml-auto">
+                        {/* Note: Only Show My Account While Logged In */}
                         <LinkContainer to={Routes.ACCOUNT}>
                             <Nav.Item>My Account</Nav.Item>
                         </LinkContainer>
