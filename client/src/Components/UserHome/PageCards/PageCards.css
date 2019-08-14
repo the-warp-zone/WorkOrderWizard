@@ -1,8 +1,13 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background: rgba(230, 230, 230, .4)
+}
 .cards {
-    color: black;
+    color: #109250;
     font-size: 30px;
     font-weight: 300;
-    font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 .card-spacing {
     margin: 20px;
@@ -10,29 +15,46 @@
 .margin-top {
     margin: 5%;
 }
+/* .second-row {
+    margin: 5%;
+} */
 .shadow-box{
     box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
 }
 .shadow-box:hover {
-    background-color: rgba(204, 204, 204, 0.2);
+    background: rgba(54, 54, 54, 0.3);
+
 }
 .card-body {
     padding: 50px;
+    margin-top: 15%;;
 }
 .card-spacing {
     margin-top: 5%;
 }
 a:link {
-    color: #109250;
+    color: rgb(43, 43, 43);
+    font-weight: 400;
     text-decoration: none;
   }
   a:visited {
-    color: #109250;
+    color: rgb(43, 43, 43);
+    font-weight: 400;
   }
   a:hover {
-    color: #109250;
+    color: rgb(43, 43, 43);
+    font-weight: 400;
   }
   a:active {
-    color: black;
+    color: rgb(43, 43, 43);
+    font-weight: 400;
   }
-  
+
+  @media only screen and (max-width: 768px) {
+    .cards {
+        color: #109250;
+        font-size: 25px;
+        font-weight: 300;
+        font-family: 'Lato', sans-serif;
+    }
+  } 

@@ -11,8 +11,8 @@ var LpJumbotron = props => {
             <Jumbotron>
                 <SignInModal show={props.show} close={props.close} />
                 <div id="text">
-                    <h1>Work Order Wizard</h1>
-                    <p>Doing the Magic for You</p>
+                    <h1 id="logoLP">Work Order Wizard</h1>
+                    <h2>Doing the Magic for You</h2>
                 </div>
             </Jumbotron>
         </div>
