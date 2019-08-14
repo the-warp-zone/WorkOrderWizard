@@ -16,13 +16,13 @@ class WorkOrderData extends Component {
         }
         this.getData = this.getData.bind(this)
     }
-    handleShow() {
+    handleShow = () => {
         this.setState({ show: true })
     }
-    handleClose() {
+    handleClose = () => {
         this.setState({ show: false })
     }
-    addWorkOrder() {
+    addWorkOrder = () => {
         this.handleShow()
         this.insertSubmit()
     }
@@ -33,8 +33,7 @@ class WorkOrderData extends Component {
         // setData(data)
         if (data) {
             this.setState({ data: data })
-            console.log('This is the data: ')
-            console.log(data)
+
             if (this.props.data.indexOf(data) === -1) this.props.data.push(data)
         }
         this.handleClose()
@@ -47,6 +46,11 @@ class WorkOrderData extends Component {
         fetch(this.state.apiEndpointUrl + value, { method: 'DELETE' }).then()
         // send delete command to API
     }
+    cancelForm = event => {
+        event.preventDefault()
+        console.log(this.state.show)
+        this.setState({ show: false })
+    }
     render() {
         const WorkOrderRows = this.props.data.map(i => (
             <tr key={i._id}>
@@ -58,6 +62,7 @@ class WorkOrderData extends Component {
                         {'WO-' + i._id}
                     </Link>
                 </td>
+                <td>{i.title}</td>
                 <td>{'C-' + i.customerID}</td>
                 <td>{i.createdOn}</td>
                 <td>{i.dateDue}</td>
@@ -76,6 +81,7 @@ class WorkOrderData extends Component {
                     show={this.state.show}
                     hide={this.handleClose}
                     getData={this.getData}
+                    cancel={this.cancelForm}
                 />
                 {/* Table */}
                 <Table responsive>
@@ -83,6 +89,7 @@ class WorkOrderData extends Component {
                         <tr>
                             <th></th>
                             <th>Work Order ID</th>
+                            <th>Work Order Title</th>
                             <th>Customer ID</th>
                             <th>Created On</th>
                             <th>Date Due</th>
