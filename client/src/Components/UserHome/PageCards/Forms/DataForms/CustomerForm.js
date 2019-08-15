@@ -198,7 +198,11 @@ class CustomerForm extends Component {
                     Submit
                 </Button>
                 {/* Cancel Button should hide form*/}
-                <Button variant="primary" type="submit">
+                <Button
+                    variant="primary"
+                    type="submit"
+                    onClick={this.props.hide}
+                >
                     Cancel
                 </Button>
             </Form>
