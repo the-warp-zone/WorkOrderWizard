@@ -5,14 +5,17 @@ import { Link } from 'react-router-dom'
 import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
 
+const API_ENDPOINT_BASEURL = process.env.API_ENDPOINT_BASEURL || 'http://localhost:';
+const PORT = process.env.API_PORT || 3001;
+const pageEndpoint = '/workorder/';
+
 class WorkOrderData extends Component {
     constructor(props) {
         super(props)
         this.state = {
             show: false,
             submit: '',
-            data: '',
-            apiEndpointUrl: 'http://localhost:3001/workorder/',
+            data: ''
         }
         this.getData = this.getData.bind(this)
     }
@@ -43,7 +46,7 @@ class WorkOrderData extends Component {
         console.log(value)
 
         // remove deleted row from component and re-render component
-        fetch(this.state.apiEndpointUrl + value, { method: 'DELETE' }).then()
+        fetch(API_ENDPOINT_BASEURL + PORT + pageEndpoint + value, { method: 'DELETE' }).then()
         // send delete command to API
     }
     cancelForm = event => {
