@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table'
 import { Link } from 'react-router-dom'
 import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
-import './Customers.css';
+import './Customers.css'
 
 class CustomersData extends Component {
     constructor(props) {
@@ -37,13 +37,6 @@ class CustomersData extends Component {
             console.log('This is the data: ')
             console.log(data)
             if (this.props.data.indexOf(data) === -1) this.props.data.push(data)
-            // for (let i = 0; i < this.props.data; i++) {
-            //     if (this.props.data[i] === calledIt) {
-            //         break
-            //     }
-            //     this.props.data.push(calledIt)
-            //     console.log(this.props.data)
-            // }
         }
         this.handleClose()
     }
@@ -57,7 +50,10 @@ class CustomersData extends Component {
         console.log(value)
 
         // remove deleted row from component and re-render component
-        fetch(this.state.apiEndpointUrl + value, { method: 'DELETE', port: 3001 }).then()
+        fetch(this.state.apiEndpointUrl + value, {
+            method: 'DELETE',
+            port: 3001,
+        }).then()
         // send delete command to API
     }
     // Props should be the API call to get customer data
@@ -89,14 +85,14 @@ class CustomersData extends Component {
         return (
             <div>
                 <div class="row" id="customerHeader">
-                    
-                    <h1 class="col">Customers
-                    <Button datatype="customer" onClick={this.addCustomer} class="col add-button">
+                    <h1 class="col">Customers</h1>{' '}
+                    <Button
+                        datatype="customer"
+                        onClick={this.addCustomer}
+                        class="col add-button"
+                    >
                         +
                     </Button>
-                    </h1>
-
-                    
                 </div>
                 <SubmitForm
                     dataType="customer"

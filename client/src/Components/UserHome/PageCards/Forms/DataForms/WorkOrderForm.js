@@ -69,7 +69,7 @@ class WorkOrderForm extends Component {
         let data = {
             createdOn: this.state.createdOn,
             dateDue: this.state.dateDue,
-            customerId: this.state.customerAssociated,
+            customerID: this.state.customerAssociated,
             archived: this.state.archived,
             deleted: this.state.deleted,
             title: this.state.title,
@@ -77,15 +77,6 @@ class WorkOrderForm extends Component {
         }
         /* Post goes here */
         const url = 'http://localhost:3001/workorder'
-        // fetch(url, {
-        //     method: 'POST',
-        //     body: JSON.stringify(this.state),
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        // }).then(res => {
-        //     console.log(res.json())
-        // })
         axios
             .post(url, data)
             .then(res => {
