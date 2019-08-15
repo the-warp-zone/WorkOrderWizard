@@ -7,7 +7,7 @@ const cost = require("./cost.js");
 
 
 router.use("/customer", customer);
-router.use("/workorder", workorder);
+router.use("/workOrder", workorder);
 router.use("/invoice", invoice);
 router.use("/cost", cost);
 
