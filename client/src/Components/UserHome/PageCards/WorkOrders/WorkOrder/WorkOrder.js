@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
 import IndividualWorkOrderData from './IndividualWorkOrderData'
 
-const API_ENDPOINT_BASEURL = process.env.API_ENDPOINT_BASEURL || 'http://localhost:';
-const PORT = process.env.API_PORT || 3001;
-const pageEndpoint = '/workorder/';
+const API_ENDPOINT_BASEURL =
+    process.env.API_ENDPOINT_BASEURL || 'http://localhost:'
+const PORT = process.env.API_PORT || 3001
+const pageEndpoint = '/workorder/'
 
 class WorkOrder extends Component {
     state = {

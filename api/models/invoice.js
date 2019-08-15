@@ -1,21 +1,20 @@
-const mongoose = require('mongoose');
-	
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+
+const Schema = mongoose.Schema
 
 const invoiceSchema = new Schema({
-	paid: Boolean,
-	open: Boolean,
-	amountBilled: Number,
-	dateIssued: Date,
-	workOrderID: Schema.Types.ObjectId,
-	notes: String,
-	billingAddress: String,
-	archived: Boolean,
-	deleted: Boolean,
-	customerID: Schema.Types.ObjectId
-});
+    paid: Boolean,
+    open: Boolean,
+    amountBilled: Number,
+    dateIssued: Date,
+    workOrderID: { type: Schema.Types.ObjectId, ref: 'WorkOrder' },
+    title: String,
+    notes: String,
+    billingAddress: String,
+    archived: Boolean,
+    deleted: Boolean,
+})
 
-const Invoice = mongoose.model("Invoice", invoiceSchema);
+const Invoice = mongoose.model('Invoice', invoiceSchema)
 
-module.exports = Invoice;
-
+module.exports = Invoice

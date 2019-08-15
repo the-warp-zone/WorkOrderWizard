@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import CustomerForm from './DataForms/CustomerForm'
 import Modal from 'react-bootstrap/Modal'
 import WorkOrderForm from './DataForms/WorkOrderForm'
+import InvoiceForm from './DataForms/InvoiceForm'
+import CostForm from './DataForms/CostForm'
 
 class SubmitForm extends Component {
     state = {
@@ -31,8 +33,22 @@ class SubmitForm extends Component {
                     hide={this.props.cancel}
                 />
             )
-        // if (this.state.form === 'invoice') formData = <InvoiceForm />
-        // if (this.state.form === 'cost') formData = <CostForm />
+        else if (this.state.form === 'invoice')
+            formData = (
+                <InvoiceForm
+                    data={this.props}
+                    getData={this.props.getData}
+                    hide={this.props.cancel}
+                />
+            )
+        else if (this.state.form === 'cost')
+            formData = (
+                <CostForm
+                    data={this.props}
+                    getData={this.props.getData}
+                    hide={this.props.cancel}
+                />
+            )
         return (
             <Modal
                 show={this.props.show}
