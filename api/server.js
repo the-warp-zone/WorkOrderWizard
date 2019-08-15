@@ -2,6 +2,10 @@ const express = require('express');
 const routes = require('./controllers');
 const app = express();
 var cors = require('cors')
+
+require('dotenv').config();
+
+
 const PORT = process.env.PORT || 3001;
 
 const mongoose = require('mongoose');
@@ -23,6 +27,8 @@ db.once('open', function() {
   // we're connected!
 });
 
+console.log("environment variables:\t");
+console.log(process.env.API_PORT);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors())
