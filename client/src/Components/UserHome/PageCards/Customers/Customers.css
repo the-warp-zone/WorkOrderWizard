@@ -1,5 +1,15 @@
-.btn-primary {
+.btn-success {
 	background-color: rgb(16, 146, 80);
 	border-color: rgb(16, 146, 80);
 	margin-left: 15px;
 }
+
+.btn-success:hover { 
+	background-color: rgb(16, 186, 80);
+	border-color: rgb(16, 186, 80);
+}
+
+.btn-success:focus {
+	box-shadow: 0 0 0 0.2rem rgba(144,238,144 ,1 )
+}
+
