@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
-
 import { SignUpLink } from './SignUpModal'
-import { withFirebase } from '../../../Constants/Firebase'
+import { withFirebase } from '../../Auth/Firebase'
 import ROUTES from '../../../Constants/routes'
 import { Model } from 'mongoose'
 
 const SignInPage = () => (
     <div>
-        <h1>Sign In</h1>
+        <h1>Sign In FUN</h1>
         <SignInForm />
         <SignUpLink />
     </div>

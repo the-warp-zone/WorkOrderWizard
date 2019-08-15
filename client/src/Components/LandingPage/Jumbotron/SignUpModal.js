@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
-import { withFirebase } from '../../../Constants/Firebase'
+import { withFirebase } from '../../Auth/Firebase'
 import ROUTES from '../../../Constants/routes'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
