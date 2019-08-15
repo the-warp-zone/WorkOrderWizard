@@ -4,6 +4,14 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import NumberFormat from 'react-number-format'
 import axios from 'axios'
+
+const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
+const PORT = ":" + process.env.REACT_APP_API_PORT || '';
+const pageEndpoint = '/customer/all';
+
+const url = API_ENDPOINT_BASEURL + PORT + pageEndpoint;
+console.log(url);
+
 class CustomerForm extends Component {
     constructor(props) {
         super(props)
