@@ -6,10 +6,12 @@ import NumberFormat from 'react-number-format'
 import axios from 'axios'
 
 const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
-const PORT = ":" + process.env.REACT_APP_API_PORT || '';
+const PORT = process.env.REACT_APP_API_PORT || '';
 const pageEndpoint = '/customer/all';
+let url;
 
-const url = API_ENDPOINT_BASEURL + PORT + pageEndpoint;
+if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
+else url = API_ENDPOINT_BASEURL + pageEndpoint;
 console.log(url);
 
 class CustomerForm extends Component {
