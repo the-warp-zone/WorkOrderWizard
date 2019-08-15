@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table'
 import { Link } from 'react-router-dom'
 import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
-import './Customers.css';
+import './Customers.css'
 
 class CustomersData extends Component {
     constructor(props) {
@@ -32,28 +32,28 @@ class CustomersData extends Component {
     }
     getData(data) {
         // setData(data)
-        this.setState({ data: data })
-        console.log('This is the data: ')
-        console.log(data)
-        let calledIt = data
-        if (calledIt) {
-            if (this.props.data.indexOf(calledIt) === -1)
-                this.props.data.push(calledIt)
-            // for (let i = 0; i < this.props.data; i++) {
-            //     if (this.props.data[i] === calledIt) {
-            //         break
-            //     }
-            //     this.props.data.push(calledIt)
-            //     console.log(this.props.data)
-            // }
+        if (data) {
+            this.setState({ data: data })
+            console.log('This is the data: ')
+            console.log(data)
+            if (this.props.data.indexOf(data) === -1) this.props.data.push(data)
         }
+        this.handleClose()
+    }
+    cancelForm = event => {
+        event.preventDefault()
+        console.log(this.state.show)
+        this.setState({ show: false })
     }
     deleteCustomer(event) {
         let value = event.target.value
         console.log(value)
 
         // remove deleted row from component and re-render component
-        fetch(this.state.apiEndpointUrl + value, { method: 'DELETE', port: 3001 }).then()
+        fetch(this.state.apiEndpointUrl + value, {
+            method: 'DELETE',
+            port: 3001,
+        }).then()
         // send delete command to API
     }
     // Props should be the API call to get customer data
@@ -68,7 +68,11 @@ class CustomersData extends Component {
                     <Button variant="success">Create Invoice</Button>
                 </td>
                 <td>
-                    <Button value={i._id} onClick={this.deleteCustomer} variant="success">
+                    <Button
+                        value={i._id}
+                        onClick={this.deleteCustomer}
+                        variant="success"
+                    >
                         Delete Customer
                     </Button>
                 </td>
@@ -85,14 +89,15 @@ class CustomersData extends Component {
         return (
             <div>
                 <div class="row" id="customerHeader">
-                    
-                    <h1 class="col">Customers
-                    <Button datatype="customer" onClick={this.addCustomer} class="col add-button" variant="success">
+                    <h1 class="col">Customers</h1>
+                    <Button
+                        datatype="customer"
+                        onClick={this.addCustomer}
+                        class="col add-button"
+                        variant="success"
+                    >
                         +
                     </Button>
-                    </h1>
-
-                    
                 </div>
                 <SubmitForm
                     dataType="customer"
@@ -100,6 +105,7 @@ class CustomersData extends Component {
                     show={this.state.show}
                     hide={this.handleClose}
                     getData={this.getData}
+                    cancel={this.cancelForm}
                 />
 
                 <div>
