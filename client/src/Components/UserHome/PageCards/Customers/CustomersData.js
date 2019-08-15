@@ -62,13 +62,13 @@ class CustomersData extends Component {
         const CustomerData = this.props.data.map(i => (
             <tr key={i._id}>
                 <td>
-                    <Button>Create W.O.</Button>
+                    <Button variant="success">Create W.O.</Button>
                 </td>
                 <td>
-                    <Button>Create Invoice</Button>
+                    <Button variant="success">Create Invoice</Button>
                 </td>
                 <td>
-                    <Button value={i._id} onClick={this.deleteCustomer}>
+                    <Button value={i._id} onClick={this.deleteCustomer} variant="success">
                         Delete Customer
                     </Button>
                 </td>
@@ -85,12 +85,9 @@ class CustomersData extends Component {
         return (
             <div>
                 <div class="row" id="customerHeader">
-                    <h1 class="col">Customers</h1>{' '}
-                    <Button
-                        datatype="customer"
-                        onClick={this.addCustomer}
-                        class="col add-button"
-                    >
+                    
+                    <h1 class="col">Customers
+                    <Button datatype="customer" onClick={this.addCustomer} class="col add-button" variant="success">
                         +
                     </Button>
                 </div>
