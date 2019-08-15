@@ -39,8 +39,11 @@ class CustomerForm extends Component {
         //
         let data
         let phoneNumber = this.state.phone
-        phoneNumber = phoneNumber.replace(/[^\d]/g, '')
-        phoneNumber = parseInt(phoneNumber)
+        if(phoneNumber) {
+			phoneNumber = phoneNumber.replace(/[^\d]/g, '')
+			phoneNumber = parseInt(phoneNumber)
+		}
+		else phoneNumber = ''
         await this.setState({ phone: phoneNumber })
         /* Post goes here */
         const url = 'http://localhost:3001/customer'
