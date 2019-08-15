@@ -1,54 +1,56 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import './PageCards.css'
+import { Link } from 'react-router-dom'
+import Routes from '../../../Constants/routes'
 
 var PageCards = () => {
     return (
         <div className="container">
             <div className="row">
                 <div className="col-sm-6">
-                    <a href="/customers" className="cards">
+                    <Link to={Routes.CUSTOMERS} className="cards">
                         <Card
                             style={{ width: '100%', height: '300px' }}
                             className="shadow-box card-spacing"
                         >
                             <Card.Body>Customers</Card.Body>
                         </Card>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="col-sm-6">
-                    <a href="/workorders" className="cards">
+                    <Link to={Routes.WORK_ORDERS} className="cards">
                         <Card
                             style={{ width: '100%', height: '300px' }}
                             className="shadow-box card-spacing"
                         >
                             <Card.Body>Work Orders</Card.Body>
                         </Card>
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className="row">
                 <div className="col-sm-6">
-                    <a href="/invoices" className="cards">
+                    <Link to={Routes.INVOICES} className="cards">
                         <Card
                             style={{ width: '100%', height: '300px' }}
                             className="shadow-box card-spacing"
                         >
                             <Card.Body>Invoices</Card.Body>
                         </Card>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="col-sm-6">
-                    <a href="/costs" className="cards">
+                    <Link to={Routes.COSTS} className="cards">
                         <Card
                             style={{ width: '100%', height: '300px' }}
                             className="shadow-box card-spacing"
                         >
                             <Card.Body>Costs</Card.Body>
                         </Card>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
