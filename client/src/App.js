@@ -13,6 +13,7 @@ import Invoice from './Components/UserHome/PageCards/Invoices/Invoice/Invoice'
 import Costs from './Components/UserHome/PageCards/Costs/Costs'
 import Cost from './Components/UserHome/PageCards/Costs/Cost/Cost.js'
 import UserAccount from './Components/UserHome/UserAccount/UserAccount'
+import Account from './Components/Auth/Account/'
 import './App.css'
 
 function App() {
