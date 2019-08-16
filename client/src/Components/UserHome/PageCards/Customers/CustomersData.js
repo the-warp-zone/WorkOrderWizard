@@ -6,9 +6,10 @@ import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
 import './Customers.css'
 
-const API_ENDPOINT_BASEURL = process.env.API_ENDPOINT_BASEURL || 'http://localhost:';
-const PORT = process.env.API_PORT || 3001;
-const pageEndpoint = '/customer/';
+const API_ENDPOINT_BASEURL =
+    process.env.API_ENDPOINT_BASEURL || 'http://localhost:'
+const PORT = process.env.API_PORT || 3001
+const pageEndpoint = '/customer/'
 
 class CustomersData extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class CustomersData extends Component {
         this.state = {
             show: false,
             submit: '',
-            data: ''
+            data: '',
         }
         this.getData = this.getData.bind(this)
     }
@@ -71,7 +72,11 @@ class CustomersData extends Component {
                     <Button variant="success">Create Invoice</Button>
                 </td>
                 <td>
-                    <Button value={i._id} onClick={this.deleteCustomer} variant="success">
+                    <Button
+                        value={i._id}
+                        onClick={this.deleteCustomer}
+                        variant="success"
+                    >
                         Delete Customer
                     </Button>
                 </td>
@@ -86,13 +91,19 @@ class CustomersData extends Component {
             </tr>
         ))
         return (
-            <div>
-                <div class="row" id="customerHeader">
-                    
-                    <h1 class="col">Customers
-                    <Button datatype="customer" onClick={this.addCustomer} class="col add-button" variant="success">
-                        +
-                    </Button>
+            <div className="container">
+                <div classNameName="row" id="customerHeader">
+                    <div className="col">
+                        <h1>Customers</h1>
+                        <Button
+                            datatype="customer"
+                            onClick={this.addCustomer}
+                            className="col add-button"
+                            variant="success"
+                        >
+                            +
+                        </Button>
+                    </div>
                 </div>
                 <SubmitForm
                     dataType="customer"
