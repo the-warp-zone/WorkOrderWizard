@@ -12,3 +12,12 @@
 .btn-success:focus {
 	box-shadow: 0 0 0 0.2rem rgba(144,238,144 ,1 )
 }
+
+.table {
+		width:unset;
+		margin: auto 0;
+}
+
+td {
+	vertical-align: middle!important;
+}

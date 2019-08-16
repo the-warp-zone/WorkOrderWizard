@@ -25,6 +25,9 @@ class CustomersData extends Component {
         }
         this.getData = this.getData.bind(this)
     }
+	
+	componentDidUpdate(){}
+	
     handleShow() {
         this.setState({ show: true })
     }
@@ -69,19 +72,13 @@ class CustomersData extends Component {
         const CustomerData = this.props.data.map(i => (
             <tr key={i._id}>
                 <td>
-                    <Button variant="success">Create W.O.</Button>
+                    <Button variant="success">+</Button>
                 </td>
                 <td>
-                    <Button variant="success">Create Invoice</Button>
+                    <Button variant="success">+</Button>
                 </td>
                 <td>
-                    <Button
-                        value={i._id}
-                        onClick={this.deleteCustomer}
-                        variant="success"
-                    >
-                        Delete Customer
-                    </Button>
+                    <Button value={i._id} onClick={this.deleteCustomer} variant="success">-</Button>
                 </td>
                 <td>
                     <Link to={Routes.CUSTOMER + '/' + i._id}>
@@ -94,7 +91,7 @@ class CustomersData extends Component {
             </tr>
         ))
         return (
-            <div>
+            <div className="container">
                 <div className="row" id="customerHeader">
                     <h1 className="col">Customers</h1>
                     <Button
@@ -119,9 +116,9 @@ class CustomersData extends Component {
                     <Table responsive="md">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
+                                <th>W.O.</th>
+                                <th>Invoice</th>
+                                <th>Remove</th>
                                 <th>Name</th>
                                 <th>Business Name</th>
                                 <th>Email</th>
