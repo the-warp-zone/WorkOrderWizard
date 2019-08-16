@@ -6,7 +6,6 @@ import '../../../App.css';
 var Features = () => {
     return (
         <React.Fragment>
-            <hr />
             <div className="container">
                 <div className="row">
                     <div className="col">
