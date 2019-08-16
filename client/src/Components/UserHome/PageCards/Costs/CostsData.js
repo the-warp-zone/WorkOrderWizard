@@ -5,9 +5,14 @@ import { Link } from 'react-router-dom'
 import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
 
-const API_ENDPOINT_BASEURL = process.env.API_ENDPOINT_BASEURL || 'http://localhost:';
-const PORT = process.env.API_PORT || 3001;
-const pageEndpoint = '/cost/';
+const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
+const PORT = process.env.REACT_APP_API_PORT || '';
+const pageEndpoint = '/api/cost/';
+let url;
+
+if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
+else url = API_ENDPOINT_BASEURL + pageEndpoint;
+console.log(url);
 
 class CostData extends Component {
     constructor(props) {
@@ -45,9 +50,8 @@ class CostData extends Component {
     }
     deleteCost = event => {
         let value = event.target.value
-        fetch(API_ENDPOINT_BASEURL + PORT + pageEndpoint + value, {
-            method: 'DELETE',
-            port: 3001,
+        fetch(url + value, {
+            method: 'DELETE'
         }).then()
     }
     render() {

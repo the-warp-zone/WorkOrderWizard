@@ -18,9 +18,7 @@ class Customer extends Component {
         const customerName = this.props.match.params._id
         console.log(this.props.match.params._id)
 
-        const url = API_ENDPOINT_BASEURL + PORT + pageEndpoint + customerName
-
-        fetch(url)
+        fetch(url + customerName)
             .then(response => response.json())
             .then(data => this.setState({ data: data }))
     }

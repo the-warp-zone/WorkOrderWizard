@@ -58,9 +58,8 @@ class CustomersData extends Component {
         console.log(value)
 
         // remove deleted row from component and re-render component
-        fetch(API_ENDPOINT_BASEURL + PORT + pageEndpoint + value, {
-            method: 'DELETE',
-            port: 3001,
+        fetch(url + value, {
+            method: 'DELETE'
         }).then()
         // send delete command to API
     }
