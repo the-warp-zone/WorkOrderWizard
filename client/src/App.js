@@ -103,12 +103,6 @@ class App extends Component {
                         path={Routes.SIGN_IN}
                         component={SignIn}
                     />
-                    <Route
-                        className="routes"
-                        exact
-                        path={Routes.SIGN_IN}
-                        component={SignIn}
-                    />
                 </div>
             </Router>
         )

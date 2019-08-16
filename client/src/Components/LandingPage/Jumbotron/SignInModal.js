@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
 import { SignUpLink } from './SignUpModal'
 import { withFirebase } from '../../Auth/Firebase'
@@ -25,6 +25,7 @@ class SignInFormBase extends Component {
         const { email, password } = this.state
 
         this.props.firebase
+            .auth()
             .doSignInWithEmailAndPassword(email, password)
             .then(() => {
                 this.setState({ ...INITIAL_STATE })
@@ -45,7 +46,6 @@ class SignInFormBase extends Component {
         const { email, password, error } = this.state
 
         const isInvalid = password === '' || email === ''
-
         return (
             <Modal
                 show={this.props.show}
@@ -55,7 +55,9 @@ class SignInFormBase extends Component {
                 centered
             >
                 <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-vcenter">Sign In</Modal.Title>
+                    <Modal.Title id="contained-modal-title-vcenter">
+                        Sign In
+                    </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={this.onSubmit}>
