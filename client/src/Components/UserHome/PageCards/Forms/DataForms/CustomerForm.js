@@ -7,7 +7,7 @@ import axios from 'axios'
 
 const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
 const PORT = process.env.REACT_APP_API_PORT || '';
-const pageEndpoint = '/customer/all';
+const pageEndpoint = '/api/customer/all';
 let url;
 
 if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;

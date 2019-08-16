@@ -6,9 +6,9 @@ const invoice = require("./invoice.js");
 const cost = require("./cost.js");
 
 
-router.use("/customer", customer);
-router.use("/workorder", workorder);
-router.use("/invoice", invoice);
-router.use("/cost", cost);
+router.use("api/customer", customer);
+router.use("api/workorder", workorder);
+router.use("api/invoice", invoice);
+router.use("api/cost", cost);
 
 module.exports = router;
