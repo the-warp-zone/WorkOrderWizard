@@ -5,6 +5,16 @@ import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 
+const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
+const PORT = process.env.REACT_APP_API_PORT || '';
+const pageEndpoint = '/api/invoice/';
+let url;
+
+if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
+else url = API_ENDPOINT_BASEURL + pageEndpoint;
+console.log(url);
+
+
 class InvoiceForm extends Component {
     constructor(props) {
         super(props)
@@ -30,10 +40,14 @@ class InvoiceForm extends Component {
         this.setState({ [name]: value })
     }
     handleWorkOrders = () => {
-        const url = 'http://localhost:3001/workorder/all'
+		let workorder_url = '';
+		if (PORT) workorder_url = API_ENDPOINT_BASEURL + ":" + PORT + "/api/workorder/all";
+		else workorder_url = API_ENDPOINT_BASEURL + "/api/workorder/all";
+		console.log(workorder_url);
+		
         var list = []
         var idList = []
-        fetch(url)
+        fetch(workorder_url)
             .then(response => response.json())
             .then(data => {
                 data = data.filter(workorder => workorder.title !== false)
@@ -72,7 +86,6 @@ class InvoiceForm extends Component {
             deleted: false,
         }
         /* Post goes here */
-        const url = 'http://localhost:3001/invoice'
         axios
             .post(url, data)
             .then(res => {

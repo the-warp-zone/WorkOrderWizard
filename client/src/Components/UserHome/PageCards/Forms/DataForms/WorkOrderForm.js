@@ -5,6 +5,17 @@ import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+
+
+const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
+const PORT = process.env.REACT_APP_API_PORT || '';
+const pageEndpoint = '/api/workorder/';
+let url;
+
+if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
+else url = API_ENDPOINT_BASEURL + pageEndpoint;
+console.log(url);
+
 class WorkOrderForm extends Component {
     constructor(props) {
         super(props)
@@ -35,10 +46,14 @@ class WorkOrderForm extends Component {
     }
 
     handleCustomers = () => {
-        const url = 'http://localhost:3001/customer/all'
+		let customer_url = '';
+		if (PORT) customer_url = API_ENDPOINT_BASEURL + ":" + PORT + "/api/customer/all";
+		else customer_url = API_ENDPOINT_BASEURL + "/api/customer/all";
+		console.log(customer_url);
+		
         var list = []
         var idList = []
-        fetch(url)
+        fetch(customer_url)
             .then(response => response.json())
             .then(data => {
                 data = data.filter(customer => customer.deleted !== true)
@@ -76,7 +91,7 @@ class WorkOrderForm extends Component {
             notes: this.state.notes,
         }
         /* Post goes here */
-        const url = 'http://localhost:3001/workorder'
+        
         axios
             .post(url, data)
             .then(res => {
