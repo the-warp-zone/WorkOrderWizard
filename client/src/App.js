@@ -16,7 +16,7 @@ import UserAccount from './Components/UserHome/UserAccount/UserAccount'
 //import Account from './Components/Auth/Account'
 import { withFirebase } from './Components/Auth/'
 import { AuthUserContext } from './Components/Auth/Session'
-import SignUp from './Components/Auth/signup'
+import SignUp from './Components/Auth/SignUp'
 import SignIn from './Components/LandingPage/Jumbotron/SignInModal'
 import './App.css'
 

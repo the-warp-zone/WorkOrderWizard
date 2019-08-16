@@ -5,18 +5,15 @@ import SignUpModal from './SignUpModal.js'
 
 import '../../../App.css'
 
-var LpJumbotron = props => {
-    return (
-        <div>
-            <Jumbotron>
-                <SignInModal show={props.show} close={props.close} />
-                <div id="text">
-                    <h1 id="logoLP">Work Order Wizard</h1>
-                    <h2>Doing the Magic for You</h2>
-                </div>
-            </Jumbotron>
-        </div>
-    )
-}
+const LpJumbotron = props => (
+    <div>
+        <Jumbotron>
+            <div id="text">
+                <h1 id="logoLP">Work Order Wizard</h1>
+                <h2>Doing the Magic for You</h2>
+            </div>
+        </Jumbotron>
+    </div>
+)
 
 export default LpJumbotron
