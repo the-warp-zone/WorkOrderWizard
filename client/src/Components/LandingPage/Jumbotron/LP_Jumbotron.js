@@ -8,7 +8,6 @@ import '../../../App.css';
 const LpJumbotron = props => (
   <div>
     <Jumbotron>
-      <SignInModal show={props.show} close={props.close} />
       <div id="text">
         <h1 id="logoLP">Work Order Wizard</h1>
         <h2>Doing the Magic for You</h2>

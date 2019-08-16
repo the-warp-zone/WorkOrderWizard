@@ -17,6 +17,7 @@ import Account from './Components/Auth/Account'
 import { withFirebase } from './Components/Auth/Firebase'
 import { AuthUserContext } from './Components/Auth/Session'
 import SignUp from './Components/Auth/SignUp'
+import SignIn from './Components/LandingPage/Jumbotron/SignInModal'
 import './App.css'
 
 class App extends Component {
@@ -66,14 +67,8 @@ class App extends Component {
                     <Route path={`${Routes.COST}/:_id`} component={Cost} />
                     <Route path={Routes.ACCOUNT} component={UserAccount} />
                     {/* </Route> */}
-                    <Route className="routes" exact path={Routes.SIGN_UP} component={SignUp} />{' '}
-                    {/*
-                <Route
-                    className="routes"
-                    exact
-                    path={Routes.SIGN_IN}
-                    component={SignIn}
-                /> */}
+                    <Route className="routes" exact path={Routes.SIGN_UP} component={SignUp} />
+                    <Route className="routes" exact path={Routes.SIGN_IN} component={SignIn} />
                 </div>
             </Router>
         )
