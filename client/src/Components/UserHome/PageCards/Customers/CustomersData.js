@@ -6,9 +6,14 @@ import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
 import './Customers.css'
 
-const API_ENDPOINT_BASEURL = process.env.API_ENDPOINT_BASEURL || 'http://localhost:';
-const PORT = process.env.API_PORT || 3001;
+const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
+const PORT = process.env.REACT_APP_API_PORT || '';
 const pageEndpoint = '/customer/';
+let url;
+
+if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
+else url = API_ENDPOINT_BASEURL + pageEndpoint;
+console.log(url);
 
 class CustomersData extends Component {
     constructor(props) {
@@ -91,12 +96,12 @@ class CustomersData extends Component {
         ))
         return (
             <div>
-                <div class="row" id="customerHeader">
-                    <h1 class="col">Customers</h1>
+                <div className="row" id="customerHeader">
+                    <h1 className="col">Customers</h1>
                     <Button
                         datatype="customer"
                         onClick={this.addCustomer}
-                        class="col add-button"
+                        className="col add-button"
                         variant="success"
                     >
                         +
