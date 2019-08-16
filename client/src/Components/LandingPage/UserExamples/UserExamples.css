@@ -1,6 +1,7 @@
 .story-images {
     width: 500px;
-    height: 200px;
+    height: auto;
+	padding: 2rem 0;
 }
 
 @media only screen and (max-width: 430px) {

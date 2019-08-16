@@ -31,3 +31,7 @@
 	font-family: LogoFont;
 	src: url(../../../src/Raphtalia.otf);
 }
+
+.navText {
+	word-spacing: -0.3rem;
+}
