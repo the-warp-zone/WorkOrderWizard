@@ -56,7 +56,7 @@ class CustomerForm extends Component {
 		else phoneNumber = ''
         await this.setState({ phone: phoneNumber })
         /* Post goes here */
-        const url = 'http://localhost:3001/customer'
+        
         // fetch(url, {
         //     method: 'POST',
         //     body: JSON.stringify(this.state),
