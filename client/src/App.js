@@ -19,6 +19,8 @@ import { AuthUserContext } from './Components/Auth/Session'
 import SignUp from './Components/Auth/SignUp'
 import SignIn from './Components/LandingPage/Jumbotron/SignInModal'
 import './App.css'
+import { PasswordForgetForm } from './Components/Auth/PasswordForget'
+import PasswordChange from './Components/Auth/PasswordChange'
 
 class App extends Component {
     constructor(props) {
@@ -102,6 +104,18 @@ class App extends Component {
                         exact
                         path={Routes.SIGN_IN}
                         component={SignIn}
+                    />
+                    <Route
+                        className="routes"
+                        exact
+                        path={Routes.PASSWORD_FORGET}
+                        component={PasswordForgetForm}
+                    />
+                    <Route
+                        className="routes"
+                        exact
+                        path={Routes.PASSWORD_CHANGE}
+                        component={PasswordChange}
                     />
                 </div>
             </Router>
