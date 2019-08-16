@@ -7,7 +7,6 @@ import '../../LandingPage/LandingPage.css';
 var CallToAction = () => {
     return (
         <div id="calltoAction">
-            <hr />
             <div className="container">
                 <div className="row">
                     <div className="col">

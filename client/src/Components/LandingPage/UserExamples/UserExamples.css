@@ -1,4 +1,6 @@
-#images {
+.story-images {
+    width: 500px;
+    height: 200px;
 }
 
 @media only screen and (max-width: 430px) {

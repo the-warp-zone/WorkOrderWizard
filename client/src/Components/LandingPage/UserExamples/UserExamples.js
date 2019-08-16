@@ -1,37 +1,32 @@
 import React from 'react'
+import userStory1 from '../../../../src/images/user-story1.jpg';
+import userStory2 from '../../../../src/images/user-story2.jpg';
+
 import './UserExamples.css'
 import '../../../App.css';
 
 var UserExamples = () => {
     return (
         <div className="container">
-            <hr />
-            <div className="">
-                <div className="header">
+            <div className="row">
+                <div className="header col">
                     <h2>
                         <em className="div-title">User Examples</em>
                     </h2>
                 </div>
             </div>
-            <div>
-                <div />
-            </div>
-            <div className="examples">
-                <div>
+            <div className="row">
+                <div className="col">
                     <img
-                        src="https://via.placeholder.com/500x200.jpg"
+                        className="story-images"
+                        src={userStory1}
                         alt="placeholder"
                     />
                 </div>
-                <div>
+                <div className="col">
                     <img
-                        src="https://via.placeholder.com/500x200.jpg"
-                        alt="placeholder"
-                    />
-                </div>
-                <div>
-                    <img
-                        src="https://via.placeholder.com/500x200.jpg"
+                        className="story-images"
+                        src={userStory2}
                         alt="placeholder"
                     />
                 </div>
@@ -39,5 +34,4 @@ var UserExamples = () => {
         </div>
     )
 }
-
 export default UserExamples
