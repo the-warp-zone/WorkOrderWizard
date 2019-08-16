@@ -83,7 +83,7 @@ class InvoiceRow extends Component {
                     <Button
                         datatype="invoice"
                         onClick={this.addInvoice}
-                        class="col add-button"
+                        className="col add-button"
                     >
                         +
                     </Button>
