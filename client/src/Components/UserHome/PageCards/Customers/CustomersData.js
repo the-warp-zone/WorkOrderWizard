@@ -7,9 +7,14 @@ import SubmitForm from '../Forms/Submit'
 import './Customers.css'
 
 const API_ENDPOINT_BASEURL =
-    process.env.API_ENDPOINT_BASEURL || 'http://localhost:'
-const PORT = process.env.API_PORT || 3001
+    process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost'
+const PORT = process.env.REACT_APP_API_PORT || 3001
 const pageEndpoint = '/customer/'
+let url
+
+if (PORT) url = API_ENDPOINT_BASEURL + ':' + PORT + pageEndpoint
+else url = API_ENDPOINT_BASEURL + pageEndpoint
+console.log(url)
 
 class CustomersData extends Component {
     constructor(props) {
@@ -91,19 +96,17 @@ class CustomersData extends Component {
             </tr>
         ))
         return (
-            <div className="container">
-                <div classNameName="row" id="customerHeader">
-                    <div className="col">
-                        <h1>Customers</h1>
-                        <Button
-                            datatype="customer"
-                            onClick={this.addCustomer}
-                            className="col add-button"
-                            variant="success"
-                        >
-                            +
-                        </Button>
-                    </div>
+            <div>
+                <div className="row" id="customerHeader">
+                    <h1 className="col">Customers</h1>
+                    <Button
+                        datatype="customer"
+                        onClick={this.addCustomer}
+                        className="col add-button"
+                        variant="success"
+                    >
+                        +
+                    </Button>
                 </div>
                 <SubmitForm
                     dataType="customer"
