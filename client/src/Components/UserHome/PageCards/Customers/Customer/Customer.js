@@ -3,7 +3,7 @@ import IndividualCustomerData from './IndividualCustomerData'
 
 const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
 const PORT = process.env.REACT_APP_API_PORT || '';
-const pageEndpoint = '/customer/';
+const pageEndpoint = '/api/customer/';
 let url;
 
 if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
