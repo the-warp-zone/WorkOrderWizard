@@ -8,10 +8,7 @@ describe('Features', () => {
     it('should render a <div />', () => {
         expect(wrapper.find('div').length).toEqual(1)
     })
-    it('should say Features', () => {
-        expect(wrapper.find('.col').text()).toEqual('Features')
-    })
     it('should contain a list of features', () => {
-        expect(wrapper.find('li').length).toEqual(6)
+        expect(wrapper.find('li').length).toEqual(4)
     })
 })
