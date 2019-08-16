@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Routes from '../../Constants/routes';
-import './MainNav.css';
-import { LinkContainer } from 'react-router-bootstrap';
-import SignOutButton from '../Auth/SignOut';
-=======
 import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
@@ -15,7 +6,6 @@ import Routes from '../../Constants/routes'
 import './MainNav.css'
 import { LinkContainer } from 'react-router-bootstrap'
 import SignOutButton from '../Auth/SignOut/index'
->>>>>>> cc26bcb0c6d4f677d6deb0ad38e313120cd9fd76
 
 const NavAuth = () => (
     <div>
