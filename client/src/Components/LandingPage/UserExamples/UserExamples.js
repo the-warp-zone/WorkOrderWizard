@@ -1,47 +1,41 @@
 import React from 'react'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
 import './UserExamples.css'
-import '../../LandingPage/LandingPage.css';
+import '../../../App.css';
 
 var UserExamples = () => {
     return (
-        <div>
+        <div className="container">
             <hr />
-            <Row>
-                {/* lg={{ span: 2, offset: 2 }} */}
-                <Col className="header">
+            <div className="">
+                <div className="header">
                     <h2>
                         <em className="div-title">User Examples</em>
                     </h2>
-                </Col>
-            </Row>
-            <Row>
-                <Col />
-            </Row>
-            <Row className="examples">
-                {/* lg={{ span: 2, offset: 1 }} */}
-                <Col>
+                </div>
+            </div>
+            <div>
+                <div />
+            </div>
+            <div className="examples">
+                <div>
                     <img
                         src="https://via.placeholder.com/500x200.jpg"
                         alt="placeholder"
                     />
-                </Col>
-                {/* lg={{ span: 2, offset: 1 }} */}
-                <Col>
+                </div>
+                <div>
                     <img
                         src="https://via.placeholder.com/500x200.jpg"
                         alt="placeholder"
                     />
-                </Col>
-                {/* lg={{ span: 1, offset: 1 }} */}
-                <Col>
+                </div>
+                <div>
                     <img
                         src="https://via.placeholder.com/500x200.jpg"
                         alt="placeholder"
                     />
-                </Col>
-            </Row>
+                </div>
+            </div>
         </div>
     )
 }
