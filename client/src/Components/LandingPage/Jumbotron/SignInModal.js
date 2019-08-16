@@ -8,12 +8,6 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { Model } from 'mongoose'
 
-const SignInPage = () => (
-    <div>
-        <h1>Sign In</h1>
-    </div>
-)
-
 const INITIAL_STATE = {
     email: '',
     password: '',

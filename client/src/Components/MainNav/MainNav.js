@@ -1,11 +1,10 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-
 import Routes from '../../Constants/routes';
 import './MainNav.css';
 import { LinkContainer } from 'react-router-bootstrap';
-import SignOutButton from '../Auth/SignOut/index';
+import SignOutButton from '../Auth/SignOut';
 
 const MainNav = props => (
   // Might need to render sign in and sign out separately
