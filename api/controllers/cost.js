@@ -34,12 +34,26 @@ router.post('/', function(req, res) {
     })
 })
 
+/*
 router.delete('/*', function(req, res) {
     db.Cost.findById(req.params[0], function(err, cost) {
         if (cost) cost.remove()
     }).then(function(cost) {
         res.send(cost).status(200)
     })
+})
+*/
+
+router.delete('/*', function(req, res) {
+	
+	    db.Cost.update({ _id: req.params[0] }, {"deleted":true}, function(err, numAffected) {
+        if (err) return console.log(err);
+        console.log('numAffected:');
+        console.log(numAffected);
+    }).then(function(cost) {
+        console.log(cost)
+        res.send(cost).status(200)
+    });
 })
 
 router.put('/*', function(req, res) {

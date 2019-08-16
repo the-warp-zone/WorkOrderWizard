@@ -6,9 +6,14 @@ import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
 import './Customers.css'
 
-const API_ENDPOINT_BASEURL = process.env.API_ENDPOINT_BASEURL || 'http://localhost:';
-const PORT = process.env.API_PORT || 3001;
-const pageEndpoint = '/customer/';
+const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
+const PORT = process.env.REACT_APP_API_PORT || '';
+const pageEndpoint = '/api/customer/';
+let url;
+
+if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
+else url = API_ENDPOINT_BASEURL + pageEndpoint;
+console.log(url);
 
 class CustomersData extends Component {
     constructor(props) {
@@ -53,9 +58,8 @@ class CustomersData extends Component {
         console.log(value)
 
         // remove deleted row from component and re-render component
-        fetch(API_ENDPOINT_BASEURL + PORT + pageEndpoint + value, {
-            method: 'DELETE',
-            port: 3001,
+        fetch(url + value, {
+            method: 'DELETE'
         }).then()
         // send delete command to API
     }
@@ -90,6 +94,7 @@ class CustomersData extends Component {
             </tr>
         ))
         return (
+
             <div className="container">
                 <div classNameName="row" id="customerHeader">
                     <div className="col">

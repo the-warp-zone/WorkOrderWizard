@@ -47,12 +47,26 @@ router.post('/', function(req, res) {
     })
 })
 
+/*
 router.delete('/*', function(req, res) {
     db.WorkOrder.findById(req.params[0], function(err, workorder) {
         if (workorder) workorder.remove()
     }).then(function(workorder) {
         res.send(workorder).status(200)
     })
+})
+*/
+
+router.delete('/*', function(req, res) {
+	
+	    db.WorkOrder.update({ _id: req.params[0] }, {"deleted":true}, function(err, numAffected) {
+        if (err) return console.log(err);
+        console.log('numAffected:');
+        console.log(numAffected);
+    }).then(function(workorder) {
+        console.log(workorder)
+        res.send(workorder).status(200)
+    });
 })
 
 router.put('/*', function(req, res) {

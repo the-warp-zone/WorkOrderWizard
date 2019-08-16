@@ -5,9 +5,14 @@ import { Link } from 'react-router-dom'
 import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
 
-const API_ENDPOINT_BASEURL = process.env.API_ENDPOINT_BASEURL || 'http://localhost:';
-const PORT = process.env.API_PORT || 3001;
-const pageEndpoint = '/invoice/';
+const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
+const PORT = process.env.REACT_APP_API_PORT || '';
+const pageEndpoint = '/api/invoice/';
+let url;
+
+if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
+else url = API_ENDPOINT_BASEURL + pageEndpoint;
+console.log(url);
 
 class InvoiceRow extends Component {
     constructor(props) {
@@ -46,9 +51,8 @@ class InvoiceRow extends Component {
 
     deleteInvoice = event => {
         let value = event.target.value
-        fetch(API_ENDPOINT_BASEURL + PORT + pageEndpoint + value, {
-            method: 'DELETE',
-            port: 3001,
+        fetch(url + value, {
+            method: 'DELETE'
         }).then()
     }
 
@@ -79,7 +83,7 @@ class InvoiceRow extends Component {
                     <Button
                         datatype="invoice"
                         onClick={this.addInvoice}
-                        class="col add-button"
+                        className="col add-button"
                     >
                         +
                     </Button>
