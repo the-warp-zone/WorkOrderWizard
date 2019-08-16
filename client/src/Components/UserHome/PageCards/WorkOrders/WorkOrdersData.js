@@ -5,9 +5,14 @@ import { Link } from 'react-router-dom'
 import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
 
-const API_ENDPOINT_BASEURL = process.env.API_ENDPOINT_BASEURL || 'http://localhost:';
-const PORT = process.env.API_PORT || 3001;
-const pageEndpoint = '/workorder/';
+const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
+const PORT = process.env.REACT_APP_API_PORT || '';
+const pageEndpoint = '/api/workorder/';
+let url;
+
+if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
+else url = API_ENDPOINT_BASEURL + pageEndpoint;
+console.log(url);
 
 class WorkOrderData extends Component {
     constructor(props) {
@@ -46,7 +51,7 @@ class WorkOrderData extends Component {
         console.log(value)
 
         // remove deleted row from component and re-render component
-        fetch(API_ENDPOINT_BASEURL + PORT + pageEndpoint + value, { method: 'DELETE' }).then()
+        fetch(url + value, { method: 'DELETE' }).then()
         // send delete command to API
     }
     cancelForm = event => {

@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import InvoicesData from './InvoicesData'
 
-const API_ENDPOINT_BASEURL = process.env.API_ENDPOINT_BASEURL || 'http://localhost:';
-const PORT = process.env.API_PORT || 3001;
-const pageEndpoint = '/invoice/all';
+const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
+const PORT = process.env.REACT_APP_API_PORT || '';
+const pageEndpoint = '/api/invoice/all';
+let url;
+
+if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
+else url = API_ENDPOINT_BASEURL + pageEndpoint;
+console.log(url);
 
 class Invoices extends Component {
     state = {
@@ -11,7 +16,7 @@ class Invoices extends Component {
     }
     componentDidMount() {
 		
-        fetch(API_ENDPOINT_BASEURL + PORT + pageEndpoint)
+        fetch(url)
             .then(response => response.json())
             .then(data => this.setState({ data: data }))
     }
