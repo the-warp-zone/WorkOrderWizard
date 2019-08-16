@@ -4,13 +4,13 @@ import { compose } from 'recompose'
 import { SignUpLink } from './SignUpModal'
 import { withFirebase } from '../../Auth/Firebase'
 import ROUTES from '../../../Constants/routes'
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 import { Model } from 'mongoose'
 
 const SignInPage = () => (
     <div>
-        <h1>Sign In FUN</h1>
-        <SignInForm />
-        <SignUpLink />
+        <h1>Sign In</h1>
     </div>
 )
 
@@ -53,27 +53,45 @@ class SignInFormBase extends Component {
         const isInvalid = password === '' || email === ''
 
         return (
-            <form onSubmit={this.onSubmit}>
-                <input
-                    name="email"
-                    value={email}
-                    onChange={this.onChange}
-                    type="text"
-                    placeholder="Email Address"
-                />
-                <input
-                    name="password"
-                    value={password}
-                    onChange={this.onChange}
-                    type="password"
-                    placeholder="Password"
-                />
-                <button disabled={isInvalid} type="submit">
-                    Sign In
-                </button>
+            <Modal
+                show={this.props.show}
+                onHide={this.props.close}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title id="contained-modal-title-vcenter">Sign In</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <form onSubmit={this.onSubmit}>
+                        <input
+                            name="email"
+                            value={email}
+                            onChange={this.onChange}
+                            type="text"
+                            placeholder="Email Address"
+                        />
+                        <input
+                            name="password"
+                            value={password}
+                            onChange={this.onChange}
+                            type="password"
+                            placeholder="Password"
+                        />
+                        <button disabled={isInvalid} type="submit">
+                            Sign In
+                        </button>
+                        <SignInForm />
+                        <SignUpLink />
 
-                {error && <p>{error.message}</p>}
-            </form>
+                        {error && <p>{error.message}</p>}
+                    </form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={this.props.close}>Close</Button>
+                </Modal.Footer>
+            </Modal>
         )
     }
 }
@@ -83,6 +101,6 @@ const SignInForm = compose(
     withFirebase
 )(SignInFormBase)
 
-export default SignInPage
+export default SignInFormBase
 
 export { SignInForm }
