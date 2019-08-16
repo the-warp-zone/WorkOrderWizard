@@ -26,7 +26,7 @@ import Button from 'react-bootstrap/Button'
                       <div class="RML-login-modal-form">
                           <div class="RML-form-group">
                               <label for="form-login">Nickname</label>
-                                <input type="text" class="RML-form-control" id="form-login" name="login" placeholder="Nickname" value=""/>
+                                <input type="text" class="RML-form-control" id="form-login" name="login" placeholder="" value=""/>
                         </div>
                         <div class="RML-form-group">
                             <label for="form-email">Email</label>
@@ -39,8 +39,8 @@ import Button from 'react-bootstrap/Button'
                         <button class="RML-btn" id="registerSubmit">Sign In</button>
                         <div class="clearfix">
                             </div>
-                            </div>
-                            </div>
+                    </div>
+                    </div>
                 </p>
             </Modal.Body>
             <Modal.Footer>
@@ -50,4 +50,4 @@ import Button from 'react-bootstrap/Button'
     )
 }
 
-// export default SignInModal
+export default SignInModal
