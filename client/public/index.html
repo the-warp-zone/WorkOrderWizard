@@ -11,7 +11,10 @@
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossorigin="anonymous"
         />
-        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+            rel="stylesheet"
+        />
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <link rel="stylesheet" href="style.css" />
 
@@ -20,21 +23,4 @@
     <body>
         <div id="root"></div>
     </body>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: 'AIzaSyCxJSd-mfkbdkDez8a7LaeOjCXxtBDUPF8',
-            authDomain: 'project1-48284.firebaseapp.com',
-            databaseURL: 'https://project1-48284.firebaseio.com',
-            projectId: 'project1-48284',
-            storageBucket: 'project1-48284.appspot.com',
-            messagingSenderId: '145616063343',
-        }
-        firebase.initializeApp(config)
-        // Make auth and firestore reference
-        const auth = firebase.auth()
-        const db = firebase.firestore()
-        // update firestore settings
-        // db.settings({ timestampsInSnapshots: true });
-    </script>
 </html>
