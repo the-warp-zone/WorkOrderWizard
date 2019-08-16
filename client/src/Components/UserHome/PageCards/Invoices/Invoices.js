@@ -10,17 +10,23 @@ if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
 else url = API_ENDPOINT_BASEURL + pageEndpoint;
 console.log(url);
 
+function checkNotDeleted(invoice) {
+		return invoice.deleted !== true;
+}
+
 class Invoices extends Component {
     state = {
         data: [],
     }
-    componentDidMount() {
-		
+
+	componentDidMount() {
+        
         fetch(url)
             .then(response => response.json())
-            .then(data => this.setState({ data: data }))
-    }
-    render() {
+			.then(data => this.setState({ data: data.filter(checkNotDeleted)}));
+	}
+	
+	render() {
         return <InvoicesData data={this.state.data} />
     }
 }

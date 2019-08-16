@@ -10,16 +10,22 @@ if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
 else url = API_ENDPOINT_BASEURL + pageEndpoint;
 console.log(url);
 
+function checkNotDeleted(cost) {
+		return cost.deleted !== true;
+}
+
 class Costs extends Component {
     state = {
         data: [],
     }
-    componentDidMount() {
+    
+	componentDidMount() {
         
         fetch(url)
             .then(response => response.json())
-            .then(data => this.setState({ data: data }))
-    }
+			.then(data => this.setState({ data: data.filter(checkNotDeleted)}));
+	}
+	
     render() {
         return <CostsData data={this.state.data} />
     }
