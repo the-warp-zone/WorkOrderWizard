@@ -1,15 +1,15 @@
-import React from 'react'
-import Searchbar from './Searchbar/Searchbar'
-import PageCards from './PageCards/PageCards'
-import './UserHome.css'
+import React from 'react';
+import Searchbar from './Searchbar/Searchbar';
+import PageCards from './PageCards/PageCards';
+import './UserHome.css';
+import { withAuthorization } from '../Auth/Session';
 
-var UserHome = () => {
-    return (
-        <div id="background">
-            <Searchbar />
-            <PageCards />
-        </div>
-    )
-}
+const UserHome = () => (
+  <div id="background">
+    <Searchbar />
+    <PageCards />
+  </div>
+);
+const condition = authUser => !!authUser;
 
-export default UserHome
+export default withAuthorization(condition)(UserHome);

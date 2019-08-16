@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
-
 import { SignUpLink } from '../../Auth/SignUp'
 import { PasswordForgetLink } from '../../Auth/PasswordForget'
 import { withFirebase } from '../../Auth/Firebase'
