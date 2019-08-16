@@ -7,7 +7,7 @@ import axios from 'axios'
 
 const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
 const PORT = process.env.REACT_APP_API_PORT || '';
-const pageEndpoint = '/customer/all';
+const pageEndpoint = '/api/customer/';
 let url;
 
 if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
@@ -56,7 +56,7 @@ class CustomerForm extends Component {
 		else phoneNumber = ''
         await this.setState({ phone: phoneNumber })
         /* Post goes here */
-        const url = 'http://localhost:3001/customer'
+        
         // fetch(url, {
         //     method: 'POST',
         //     body: JSON.stringify(this.state),
