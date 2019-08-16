@@ -3,6 +3,7 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import './CallToAction.css'
+import '../../LandingPage/LandingPage.css';
 
 var CallToAction = () => {
     return (
@@ -12,7 +13,7 @@ var CallToAction = () => {
                 {/* lg={{ span: 4, offset: 2 }} */}
                 <Col className="Action">
                     <h2>
-                        <em>Get Work Order Wizard Today</em>
+                        <em className="div-title">Get Work Order Wizard Today</em>
                     </h2>
                 </Col>
             </Row>

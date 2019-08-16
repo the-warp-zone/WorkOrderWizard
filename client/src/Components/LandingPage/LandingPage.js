@@ -4,6 +4,7 @@ import Testimonials from './Testimonials/Testimonials'
 import Features from './Features/Features'
 import UserExamples from './UserExamples/UserExamples'
 import CallToAction from './CallToAction/CallToAction'
+import './LandingPage.css';
 
 var LandingPage = props => {
     return (

@@ -2,6 +2,7 @@ import React from 'react'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import './UserExamples.css'
+import '../../LandingPage/LandingPage.css';
 
 var UserExamples = () => {
     return (
@@ -11,7 +12,7 @@ var UserExamples = () => {
                 {/* lg={{ span: 2, offset: 2 }} */}
                 <Col className="header">
                     <h2>
-                        <em>User Examples</em>
+                        <em className="div-title">User Examples</em>
                     </h2>
                 </Col>
             </Row>

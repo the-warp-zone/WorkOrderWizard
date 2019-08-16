@@ -2,26 +2,26 @@ import React from 'react'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import './Features.css'
-import '../../../App.css'
+import '../../LandingPage/LandingPage.css';
+import '../../../App.css';
 
 var Features = () => {
     return (
         <div>
             <hr />
-            <Row>
-                {/* lg={{ span: 3, offset: 2 }} */}
-                <Col>
+            <div>
+                <div>
                     <h2>
-                        <em className="col text-font">Features</em>
+                        <em className="col text-font div-title">Features</em>
                     </h2>
-                </Col>
-            </Row>
-            <Row>
-                <Col />
-            </Row>
-            <Row>
-                {/* lg={{ span: 3, offset: 1 }} */}
-                <Col>
+                </div>
+            </div>
+            <div>
+                <div />
+            </div>
+            <div>
+
+                <div>
                     <ul className="list text-font">
                         <li>This is a feature</li>
                         <li>This is also a feature</li>
@@ -33,26 +33,26 @@ var Features = () => {
                             this feature
                         </li>
                     </ul>
-                </Col>
-                {/* lg={{ span: 3, offset: 0 }} */}
-                <Col>
+                </div>
+
+                <div>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Integer eu nisi et leo imperdiet euismod. Nulla id volutpat
                     sem. Etiam non massa vitae leo laoreet sollicitudin
                     imperdiet nec tortor. In hac habitasse platea dictumst.
                     Mauris sapien orci, condimentum id lorem vitae, ultricies
                     egestas magna. Duis bibendum pulvinar velit vitae porttitor.
-                </Col>
-                {/* lg={{ span: 3, offset: 0 }} */}
-                <Col>
+                </div>
+
+                <div>
                     <img
                         src="https://via.placeholder.com/500x200.jpg"
                         alt="placeholder"
                     />
-                </Col>
-            </Row>
+                </div>
+            </div>
 
-            {/* //TEMPLATE */}
+
         </div>
     )
 }
