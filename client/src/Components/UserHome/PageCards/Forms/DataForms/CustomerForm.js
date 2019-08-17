@@ -49,7 +49,7 @@ class CustomerForm extends Component {
         //
         let data
         let phoneNumber = this.state.phone
-        if(phoneNumber) {
+        if (typeof phoneNumber === "string") {
 			phoneNumber = phoneNumber.replace(/[^\d]/g, '')
 			phoneNumber = parseInt(phoneNumber)
 		}
