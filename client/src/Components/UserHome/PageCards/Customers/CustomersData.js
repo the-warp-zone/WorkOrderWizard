@@ -69,20 +69,18 @@ class CustomersData extends Component {
     render() {
         const CustomerData = this.props.data.map(i => (
             <tr key={i._id}>
-                <td>
-                    <Button variant="success">Create W.O.</Button>
+                <td className="button-row">
+                    <Button variant="success">+</Button>
                 </td>
-                <td>
-                    <Button variant="success">Create Invoice</Button>
+                <td className="button-row">
+                    <Button variant="success">+</Button>
                 </td>
-                <td>
+                <td className="button-row">
                     <Button
                         value={i._id}
                         onClick={this.deleteCustomer}
                         variant="success"
-                    >
-                        Delete Customer
-                    </Button>
+                    >-</Button>
                 </td>
                 <td>
                     <Link to={Routes.CUSTOMER + '/' + i._id}>
