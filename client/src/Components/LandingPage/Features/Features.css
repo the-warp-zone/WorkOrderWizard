@@ -1,6 +1,11 @@
 .list {
     text-align: center;
 }
+
 ul {
     list-style-type: none;
-   }
+}
+
+.side-margin {
+	margin: 0 1rem;
+}
