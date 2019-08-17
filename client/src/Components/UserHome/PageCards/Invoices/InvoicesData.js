@@ -83,9 +83,8 @@ class InvoiceRow extends Component {
                     <Button
                         datatype="invoice"
                         onClick={this.addInvoice}
-                        className="col add-button"
                     >
-                        +
+                       + Create New Invoice
                     </Button>
                 </div>
                 <SubmitForm

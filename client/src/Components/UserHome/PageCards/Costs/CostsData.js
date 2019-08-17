@@ -85,7 +85,7 @@ class CostData extends Component {
                         onClick={this.addCost}
                         className="add-button"
                     >
-                        +
+                       + Create New Work Cost
                     </Button>
                 </div>
                 <SubmitForm
