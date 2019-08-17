@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button'
 import SubmitForm from '../../Forms/Submit'
+import './individualCustomerData.css'
 
 class IndividualCustomerData extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class IndividualCustomerData extends Component {
         this.state = {
             show: false,
             submit: '',
-            data: '',
+            data: this.props.data,
         }
         this.getData = this.getData.bind(this)
     }
@@ -27,10 +28,12 @@ class IndividualCustomerData extends Component {
     }
     getData(data) {
         // setData(data)
-        if (data) {
-            this.setState({ data: data })
-        }
-        this.handleClose()
+        this.setState({
+            data: data,
+            show: false,
+        })
+        this.props.data = data
+        this.props.getData(data)
     }
     cancelForm = event => {
         event.preventDefault()
@@ -50,14 +53,42 @@ class IndividualCustomerData extends Component {
                     submitType={this.state.submit}
                     show={this.state.show}
                     hide={this.handleClose}
-                    getData={this.getData}
+                    getData={this.props.getData}
                     data={this.props.data}
                     cancel={this.cancelForm}
                 />
-                <h3>Email: {this.props.data.email}</h3>
-                <h3>Phone: {this.props.data.phone}</h3>
-                <h3></h3>
-                <Button datatype="customer" onClick={this.editCustomer}>
+                <section>
+                    <ul>
+                        <li>
+                            <h3>Email: {this.props.data.email}</h3>
+                        </li>
+                        <li>
+                            <h3>Phone: {this.props.data.phone}</h3>
+                        </li>
+                        <li>
+                            <h3>
+                                Business Name: {this.props.data.businessName}
+                            </h3>
+                        </li>
+                        <li>
+                            <h3>Address: {this.props.data.address1}</h3>
+                        </li>
+                        <li>
+                            <h3>City: {this.props.data.city}</h3>
+                        </li>
+                        <li>
+                            <h3>State: {this.props.data.state}</h3>
+                        </li>
+                        <li>
+                            <h3>Zip: {this.props.data.zip}</h3>
+                        </li>
+                    </ul>
+                </section>
+                <Button
+                    datatype="customer"
+                    onClick={this.editCustomer}
+                    id="edit"
+                >
                     Edit
                 </Button>
                 {/* All relevant  Cards for customer*/}

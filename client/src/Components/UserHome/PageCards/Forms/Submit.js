@@ -33,7 +33,8 @@ class SubmitForm extends Component {
         else if (this.state.form === 'workorder')
             formData = (
                 <WorkOrderForm
-                    data={this.props}
+                    data={this.props.data}
+                    updateType={this.props.submitType}
                     getData={this.props.getData}
                     hide={this.props.cancel}
                 />

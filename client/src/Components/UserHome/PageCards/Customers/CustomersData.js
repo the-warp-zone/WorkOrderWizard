@@ -67,6 +67,7 @@ class CustomersData extends Component {
     // Props should be the API call to get customer data
 
     render() {
+        console.log(this.props.data)
         const CustomerData = this.props.data.map(i => (
             <tr key={i._id}>
                 <td className="button-row">
