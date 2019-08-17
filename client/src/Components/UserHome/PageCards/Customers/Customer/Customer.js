@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import IndividualCustomerData from './IndividualCustomerData'
+import { withAuthorization } from '../../../../Auth/Session'
 
 const API_ENDPOINT_BASEURL =
     process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost'
@@ -22,11 +23,6 @@ class Customer extends Component {
             .then(response => response.json())
             .then(data => this.setState({ data: data }))
     }
-    getData(data) {
-        console.log('DATA')
-        console.log(data)
-        this.setState({ data: data })
-    }
     // componentDidUpdate() {
     //     const customerName = this.props.match.params._id
     //     fetch(url + customerName)
@@ -35,13 +31,9 @@ class Customer extends Component {
     // }
 
     render() {
-        return (
-            <IndividualCustomerData
-                getData={this.getData}
-                data={this.state.data}
-            />
-        )
+        return <IndividualCustomerData data={this.state.data} />
     }
 }
 
-export default Customer
+const condition = authUser => !!authUser
+export default withAuthorization(condition)(Customer)

@@ -8,7 +8,7 @@ import { withFirebase } from '../Firebase'
 import './SignOut.css'
 
 const SignOutButton = ({ firebase }) => (
-    <button to={Routes.LANDING} id="edit">
+    <button to={Routes.LANDING} id="editsignout">
         <Nav.Link onClick={firebase.doSignOut}>Sign Out</Nav.Link>
     </button>
 )

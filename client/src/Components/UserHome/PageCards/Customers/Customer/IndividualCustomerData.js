@@ -43,7 +43,7 @@ class IndividualCustomerData extends Component {
     // Should we provide more info for customer?
     render() {
         return (
-            <div>
+            <div className="container customerCard">
                 <h1>
                     Customer Name: {this.props.data.firstName}{' '}
                     {this.props.data.lastName}
