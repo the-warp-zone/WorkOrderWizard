@@ -25,7 +25,7 @@ class SubmitForm extends Component {
             formData = (
                 <CustomerForm
                     data={this.props.data}
-                    updateType={this.props.updateType}
+                    updateType={this.props.submitType}
                     getData={this.props.getData}
                     hide={this.props.cancel}
                 />
