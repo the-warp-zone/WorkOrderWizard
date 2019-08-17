@@ -66,7 +66,7 @@ class CustomerForm extends Component {
         // }).then(res => {
         //     console.log(res.json())
         // })
-        if (this.props.updateType === 'insert') {
+        if (this.props.updateType === 'Insert') {
             axios
                 .post(url, this.state)
                 .then(res => {
@@ -86,13 +86,30 @@ class CustomerForm extends Component {
                 })
         } else if (this.props.updateType === 'Update') {
             // PUT GOES HERE
+            axios
+                .put(url + this.props.data._id, this.state)
+                .then(res => {
+                    console.log(res)
+                    data = res.data
+                    this.props.getData(data)
+                })
+                .catch(err => {
+                    if (err) {
+                        this.setState({
+                            err: 'Something went wrong. Please try again.',
+                        })
+                    } else {
+                        this.setState({ posted: true })
+                        console.log(data)
+                    }
+                })
         }
     }
     componentDidMount() {
         if (this.props.updateType === 'Update') {
             this.setState({
                 businessName: this.props.data.businessName,
-                phone: this.props.data.Phone,
+                phone: this.props.data.phone,
                 email: this.props.data.email,
                 firstName: this.props.data.firstName,
                 lastName: this.props.data.lastName,

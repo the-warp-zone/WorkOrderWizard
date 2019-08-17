@@ -51,17 +51,13 @@ class IndividualCustomerData extends Component {
                     show={this.state.show}
                     hide={this.handleClose}
                     getData={this.getData}
+                    data={this.props.data}
                     cancel={this.cancelForm}
                 />
                 <h3>Email: {this.props.data.email}</h3>
                 <h3>Phone: {this.props.data.phone}</h3>
-                <Button
-                    modeltype="customer"
-                    onClick={this.editCustomer}
-                    posttype={this.state.submit}
-                    data={this.props.data}
-                    getdata={this.getData}
-                >
+                <h3></h3>
+                <Button datatype="customer" onClick={this.editCustomer}>
                     Edit
                 </Button>
                 {/* All relevant  Cards for customer*/}
