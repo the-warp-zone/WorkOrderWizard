@@ -8,8 +8,8 @@ const pageEndpoint = '/api/cost/all'
 let url
 
 if (PORT) url = API_ENDPOINT_BASEURL + ':' + PORT + pageEndpoint
-else url = API_ENDPOINT_BASEURL + pageEndpoint
-console.log(url)
+else url = API_ENDPOINT_BASEURL + pageEndpoint + process.env.REACT_APP_API_SECRET;
+//console.log(url)
 
 function checkNotDeleted(cost) {
     return cost.deleted !== true
