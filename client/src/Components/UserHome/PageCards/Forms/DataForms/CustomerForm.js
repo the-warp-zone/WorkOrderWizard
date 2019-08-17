@@ -90,7 +90,9 @@ class CustomerForm extends Component {
                 .put(url + this.props.data._id, this.state)
                 .then(res => {
                     console.log(res)
-                    data = res.data
+
+                    data = res.config.data
+                    data = JSON.parse(data)
                     this.props.getData(data)
                 })
                 .catch(err => {

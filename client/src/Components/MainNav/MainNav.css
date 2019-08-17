@@ -3,6 +3,10 @@
     color: white;
 }
 
+.authorizedNav {
+    width: 700px;
+}
+
 .navbar-light .navbar-nav .nav-link {
     color: white;
 }
@@ -16,7 +20,6 @@
     border-color: white;
 }
 
-
 .navbar-nav a {
     color: white !important;
 }
@@ -24,14 +27,14 @@
 .navbar-brand {
     font-family: LogoFont;
     font-size: 30px;
-	color: white;
+    color: white;
 }
 
 @font-face {
-	font-family: LogoFont;
-	src: url(../../../src/Raphtalia.otf);
+    font-family: LogoFont;
+    src: url(../../../src/Raphtalia.otf);
 }
 
 .navText {
-	word-spacing: -0.3rem;
+    word-spacing: -0.3rem;
 }

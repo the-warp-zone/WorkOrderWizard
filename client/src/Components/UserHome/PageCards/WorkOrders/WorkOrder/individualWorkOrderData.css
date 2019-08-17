@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+section {
+    margin-bottom: 20px;
+    background: #ffffff;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+li {
+    float: left;
+    clear: left;
+}
+
+#edit {
+    float: right;
+    margin: 10px;
+}
