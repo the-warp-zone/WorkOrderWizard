@@ -5,11 +5,17 @@
     padding-top: 40px;
 }
 
+.ctaBtn {
+    margin-bottom: 40px;
+}
+
 #calltoAction {
     margin: 0;
     align-items: center;
     justify-content: center;
+    margin-bottom: 50px;
 }
-.ctaBtn {
-    margin-bottom: 40px;
+
+.signupButton {
+    margin-bottom: 25px;
 }

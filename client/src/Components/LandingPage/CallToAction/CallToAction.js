@@ -28,7 +28,7 @@ var CallToAction = () => {
                                 sign up?
                             </p>
                             <Link to={Routes.SIGN_UP}>
-                                <Button>Sign Up!</Button>
+								<Button className="signupButton">Sign Up!</Button>
                             </Link>
                             <br />
                         </div>
