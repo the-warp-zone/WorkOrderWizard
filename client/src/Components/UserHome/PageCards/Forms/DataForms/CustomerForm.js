@@ -5,14 +5,15 @@ import Button from 'react-bootstrap/Button'
 import NumberFormat from 'react-number-format'
 import axios from 'axios'
 
-const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
-const PORT = process.env.REACT_APP_API_PORT || '';
-const pageEndpoint = '/api/customer/';
-let url;
+const API_ENDPOINT_BASEURL =
+    process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost'
+const PORT = process.env.REACT_APP_API_PORT || ''
+const pageEndpoint = '/api/customer/'
+let url
 
-if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
-else url = API_ENDPOINT_BASEURL + pageEndpoint;
-console.log(url);
+if (PORT) url = API_ENDPOINT_BASEURL + ':' + PORT + pageEndpoint
+else url = API_ENDPOINT_BASEURL + pageEndpoint
+console.log(url)
 
 class CustomerForm extends Component {
     constructor(props) {
@@ -49,14 +50,13 @@ class CustomerForm extends Component {
         //
         let data
         let phoneNumber = this.state.phone
-        if (typeof phoneNumber === "string") {
-			phoneNumber = phoneNumber.replace(/[^\d]/g, '')
-			phoneNumber = parseInt(phoneNumber)
-		}
-		else phoneNumber = ''
+        if (typeof phoneNumber === 'string') {
+            phoneNumber = phoneNumber.replace(/[^\d]/g, '')
+            phoneNumber = parseInt(phoneNumber)
+        } else phoneNumber = ''
         await this.setState({ phone: phoneNumber })
         /* Post goes here */
-        
+
         // fetch(url, {
         //     method: 'POST',
         //     body: JSON.stringify(this.state),
@@ -66,23 +66,43 @@ class CustomerForm extends Component {
         // }).then(res => {
         //     console.log(res.json())
         // })
-        axios
-            .post(url, this.state)
-            .then(res => {
-                console.log(res)
-                data = res.data
-                this.props.getData(data)
+        if (this.props.updateType === 'insert') {
+            axios
+                .post(url, this.state)
+                .then(res => {
+                    console.log(res)
+                    data = res.data
+                    this.props.getData(data)
+                })
+                .catch(err => {
+                    if (err) {
+                        this.setState({
+                            err: 'Something went wrong. Please try again.',
+                        })
+                    } else {
+                        this.setState({ posted: true })
+                        console.log(data)
+                    }
+                })
+        } else if (this.props.updateType === 'Update') {
+            // PUT GOES HERE
+        }
+    }
+    componentDidMount() {
+        if (this.props.updateType === 'Update') {
+            this.setState({
+                businessName: this.props.data.businessName,
+                phone: this.props.data.Phone,
+                email: this.props.data.email,
+                firstName: this.props.data.firstName,
+                lastName: this.props.data.lastName,
+                address1: this.props.data.address1,
+                address2: this.props.data.address2,
+                city: this.props.data.city,
+                state: this.props.data.state,
+                zip: this.props.data.zip,
             })
-            .catch(err => {
-                if (err) {
-                    this.setState({
-                        err: 'Something went wrong. Please try again.',
-                    })
-                } else {
-                    this.setState({ posted: true })
-                    console.log(data)
-                }
-            })
+        }
     }
     render() {
         return (
