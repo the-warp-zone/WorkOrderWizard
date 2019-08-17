@@ -75,13 +75,13 @@ class CustomersData extends Component {
                 <td className="button-row">
                     <Button variant="success">+</Button>
                 </td>
-                <td>
+                <td className="button-row">
                     <Button
                         value={i._id}
                         onClick={this.deleteCustomer}
                         variant="success"
                     >
-                        Delete Customer
+                        -
                     </Button>
                 </td>
                 <td>
