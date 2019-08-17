@@ -94,7 +94,7 @@ class CustomersData extends Component {
         return (
 
             <div className="container">
-                <div classNameName="row" id="customerHeader">
+                <div className="row" id="customerHeader">
                     <div className="col">
                         <h1>Customers</h1>
                     <Button
