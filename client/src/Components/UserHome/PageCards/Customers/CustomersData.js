@@ -74,19 +74,12 @@ class CustomersData extends Component {
                 <td className="button-row">
                     <Button variant="success">+</Button>
                 </td>
-<<<<<<< HEAD
                 <td className="button-row">
                     <Button
                         value={i._id}
                         onClick={this.deleteCustomer}
                         variant="success"
                     >-</Button>
-=======
-                <td>
-                    <Button value={i._id} onClick={this.deleteCustomer} variant="success">
-                        Delete Customer
-                    </Button>
->>>>>>> signin
                 </td>
                 <td>
                     <Link to={Routes.CUSTOMER + '/' + i._id}>{i.firstName + ' ' + i.lastName}</Link>
