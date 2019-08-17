@@ -99,11 +99,10 @@ class CustomersData extends Component {
                     <Button
                         datatype="customer"
                         onClick={this.addCustomer}
-                        className="col add-button"
-                        variant="success"
-                    >
-                        +
-                    </Button>
+                        
+                        variant="success" >+ Create New Customer</Button>
+                        </div>
+                        
                 </div>
                 <SubmitForm
                     dataType="customer"
