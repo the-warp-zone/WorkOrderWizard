@@ -46,45 +46,47 @@ class App extends Component {
     render() {
         console.log(this.state.authUser)
         return (
-            <Router>
-                <div className="App">
-                    <MainNav handleShow={this.handleShow} auth={this.state.authUser} />
-                    <Route
-                        className="routes"
-                        exact
-                        path={Routes.LANDING}
-                        render={() => (
-                            <LandingPage data={this.state.show} close={this.handleClose} />
-                        )}
-                    />
-                    {/* After user is past landing page or loggin in... */}
-                    <Route className="routes" exact path={Routes.HOME} component={UserHome} />
-                    <Route path={Routes.CUSTOMERS} component={Customers} />
-                    <Route path={`${Routes.CUSTOMER}/:_id`} component={Customer} />
-                    <Route path={Routes.WORK_ORDERS} component={WorkOrders} />
-                    <Route path={`${Routes.WORK_ORDER}/:_id`} component={WorkOrder} />
-                    <Route path={Routes.INVOICES} component={Invoices} />
-                    <Route path={`${Routes.INVOICE}/:_id`} component={Invoice} />
-                    <Route path={Routes.COSTS} component={Costs} />
-                    <Route path={`${Routes.COST}/:_id`} component={Cost} />
-                    <Route path={Routes.ACCOUNT} component={UserAccount} />
-                    {/* </Route> */}
-                    <Route className="routes" exact path={Routes.SIGN_UP} component={SignUp} />
-                    <Route className="routes" exact path={Routes.SIGN_IN} component={SignIn} />
-                    <Route
-                        className="routes"
-                        exact
-                        path={Routes.PASSWORD_FORGET}
-                        component={PasswordForgetForm}
-                    />
-                    <Route
-                        className="routes"
-                        exact
-                        path={Routes.PASSWORD_CHANGE}
-                        component={PasswordChange}
-                    />
-                </div>
-            </Router>
+            <AuthUserContext.Provider value={this.state.authUser}>
+                <Router>
+                    <div className="App">
+                        <MainNav handleShow={this.handleShow} auth={this.state.authUser} />
+                        <Route
+                            className="routes"
+                            exact
+                            path={Routes.LANDING}
+                            render={() => (
+                                <LandingPage data={this.state.show} close={this.handleClose} />
+                            )}
+                        />
+                        {/* After user is past landing page or loggin in... */}
+                        <Route className="routes" exact path={Routes.HOME} component={UserHome} />
+                        <Route path={Routes.CUSTOMERS} component={Customers} />
+                        <Route path={`${Routes.CUSTOMER}/:_id`} component={Customer} />
+                        <Route path={Routes.WORK_ORDERS} component={WorkOrders} />
+                        <Route path={`${Routes.WORK_ORDER}/:_id`} component={WorkOrder} />
+                        <Route path={Routes.INVOICES} component={Invoices} />
+                        <Route path={`${Routes.INVOICE}/:_id`} component={Invoice} />
+                        <Route path={Routes.COSTS} component={Costs} />
+                        <Route path={`${Routes.COST}/:_id`} component={Cost} />
+                        <Route path={Routes.ACCOUNT} component={UserAccount} />
+                        {/* </Route> */}
+                        <Route className="routes" exact path={Routes.SIGN_UP} component={SignUp} />
+                        <Route className="routes" exact path={Routes.SIGN_IN} component={SignIn} />
+                        <Route
+                            className="routes"
+                            exact
+                            path={Routes.PASSWORD_FORGET}
+                            component={PasswordForgetForm}
+                        />
+                        <Route
+                            className="routes"
+                            exact
+                            path={Routes.PASSWORD_CHANGE}
+                            component={PasswordChange}
+                        />
+                    </div>
+                </Router>
+            </AuthUserContext.Provider>
         )
     }
 }

@@ -5,6 +5,7 @@ import Routes from '../../Constants/routes';
 import './MainNav.css';
 import { LinkContainer } from 'react-router-bootstrap';
 import SignOutButton from '../Auth/SignOut/index';
+import { AuthUserContext } from '../Auth/Session';
 
 const NavAuth = () => (
   <div>
