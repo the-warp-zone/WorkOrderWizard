@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import IndividualWorkOrderData from './IndividualWorkOrderData'
+import { withAuthorization } from '../../../../Auth/Session'
 
 const API_ENDPOINT_BASEURL =
     process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost'
@@ -36,4 +37,5 @@ class WorkOrder extends Component {
         return <IndividualWorkOrderData data={this.state.data} />
     }
 }
-export default WorkOrder
+const condition = authUser => !!authUser
+export default withAuthorization(condition)(WorkOrder)

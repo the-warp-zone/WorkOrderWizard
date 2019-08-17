@@ -4,15 +4,17 @@ import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
+import './Invoices.css'
 
-const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
-const PORT = process.env.REACT_APP_API_PORT || '';
-const pageEndpoint = '/api/invoice/';
-let url;
+const API_ENDPOINT_BASEURL =
+    process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost'
+const PORT = process.env.REACT_APP_API_PORT || ''
+const pageEndpoint = '/api/invoice/'
+let url
 
-if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
-else url = API_ENDPOINT_BASEURL + pageEndpoint;
-console.log(url);
+if (PORT) url = API_ENDPOINT_BASEURL + ':' + PORT + pageEndpoint
+else url = API_ENDPOINT_BASEURL + pageEndpoint
+console.log(url)
 
 class InvoiceRow extends Component {
     constructor(props) {
@@ -20,7 +22,7 @@ class InvoiceRow extends Component {
         this.state = {
             show: false,
             submit: '',
-            data: ''
+            data: '',
         }
         this.getData = this.getData.bind(this)
     }
@@ -52,7 +54,7 @@ class InvoiceRow extends Component {
     deleteInvoice = event => {
         let value = event.target.value
         fetch(url + value, {
-            method: 'DELETE'
+            method: 'DELETE',
         }).then()
     }
 
@@ -77,14 +79,11 @@ class InvoiceRow extends Component {
             </tr>
         ))
         return (
-            <div>
+            <div className="container">
                 <div id="invoiceHeader">
                     <h1>Invoices</h1>
-                    <Button
-                        datatype="invoice"
-                        onClick={this.addInvoice}
-                    >
-                       + Create New Invoice
+                    <Button datatype="invoice" onClick={this.addInvoice}>
+                        + Create New Invoice
                     </Button>
                 </div>
                 <SubmitForm
@@ -95,20 +94,22 @@ class InvoiceRow extends Component {
                     getData={this.getData}
                     cancel={this.cancelForm}
                 />
-                <Table responsive>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Invoice ID</th>
-                            <th>Associated W.O.</th>
-                            <th>Date Issued</th>
-                            <th>Date Due</th>
-                            <th>Paid (Y/N)</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>{invoiceData}</tbody>
-                </Table>
+                <div className="invoicesTable">
+                    <Table responsive>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Invoice ID</th>
+                                <th>Associated W.O.</th>
+                                <th>Date Issued</th>
+                                <th>Date Due</th>
+                                <th>Paid (Y/N)</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>{invoiceData}</tbody>
+                    </Table>
+                </div>
             </div>
         )
     }

@@ -118,7 +118,7 @@ class CustomersData extends Component {
                     cancel={this.cancelForm}
                 />
 
-                <div>
+                <div className="customerTable">
                     <Table responsive="md">
                         <thead>
                             <tr>

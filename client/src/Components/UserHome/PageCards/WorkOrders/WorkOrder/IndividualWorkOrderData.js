@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 import SubmitForm from '../../Forms/Submit'
+import './individualWorkOrderData.css'
 
 class IndividualWorkOrderData extends Component {
     constructor(props) {
@@ -42,7 +43,7 @@ class IndividualWorkOrderData extends Component {
     render() {
         console.log(this.props.data)
         return (
-            <div>
+            <div className="container workCard">
                 <section>
                     <ul>
                         <li>
@@ -56,9 +57,6 @@ class IndividualWorkOrderData extends Component {
                         </li>
                         <li>
                             <h4>Hours Logged: {this.props.data.hoursLogged}</h4>
-                        </li>
-                        <li>
-                            <h4>Costs</h4>
                         </li>
                     </ul>
                 </section>

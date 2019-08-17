@@ -4,15 +4,17 @@ import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
+import './WorkOrders.css'
 
-const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
-const PORT = process.env.REACT_APP_API_PORT || '';
-const pageEndpoint = '/api/workorder/';
-let url;
+const API_ENDPOINT_BASEURL =
+    process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost'
+const PORT = process.env.REACT_APP_API_PORT || ''
+const pageEndpoint = '/api/workorder/'
+let url
 
-if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
-else url = API_ENDPOINT_BASEURL + pageEndpoint;
-console.log(url);
+if (PORT) url = API_ENDPOINT_BASEURL + ':' + PORT + pageEndpoint
+else url = API_ENDPOINT_BASEURL + pageEndpoint
+console.log(url)
 
 class WorkOrderData extends Component {
     constructor(props) {
@@ -20,7 +22,7 @@ class WorkOrderData extends Component {
         this.state = {
             show: false,
             submit: '',
-            data: ''
+            data: '',
         }
         this.getData = this.getData.bind(this)
     }
@@ -78,9 +80,11 @@ class WorkOrderData extends Component {
             </tr>
         ))
         return (
-            <div>
+            <div className="container">
                 <h1>Work Orders</h1>
-                <Button datatype="workorder" onClick={this.addWorkOrder}>+ Create New Work Order</Button>
+                <Button datatype="workorder" onClick={this.addWorkOrder}>
+                    + Create New Work Order
+                </Button>
                 <SubmitForm
                     dataType="workorder"
                     submitType={this.state.submit}
@@ -90,20 +94,22 @@ class WorkOrderData extends Component {
                     cancel={this.cancelForm}
                 />
                 {/* Table */}
-                <Table responsive>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Work Order ID</th>
-                            <th>Work Order Title</th>
-                            <th>Customer ID</th>
-                            <th>Created On</th>
-                            <th>Date Due</th>
-                            <th>Hours Logged</th>
-                        </tr>
-                    </thead>
-                    <tbody>{WorkOrderRows}</tbody>
-                </Table>
+                <div className="workOrdersTable">
+                    <Table responsive>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Work Order ID</th>
+                                <th>Work Order Title</th>
+                                <th>Customer ID</th>
+                                <th>Created On</th>
+                                <th>Date Due</th>
+                                <th>Hours Logged</th>
+                            </tr>
+                        </thead>
+                        <tbody>{WorkOrderRows}</tbody>
+                    </Table>
+                </div>
             </div>
         )
     }

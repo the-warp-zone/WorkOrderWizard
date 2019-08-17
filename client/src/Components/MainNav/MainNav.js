@@ -8,7 +8,7 @@ import SignOutButton from '../Auth/SignOut/index'
 import { AuthUserContext } from '../Auth/Session'
 
 const NavAuth = () => (
-    <div className="authorizedNav">
+    <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
             <LinkContainer to={Routes.CUSTOMERS}>
                 <Nav.Link>Customers</Nav.Link>
@@ -30,18 +30,18 @@ const NavAuth = () => (
             </LinkContainer>
             <SignOutButton />
         </Nav>
-    </div>
+    </Navbar.Collapse>
 )
 
 const NavNonAuth = props => (
-    <div>
-        <Nav>
+    <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="ml-auto">
             {/* Note: Only Show Sign In While Logged Out */}
             <LinkContainer to={Routes.SIGN_IN}>
                 <Nav.Link>Sign In</Nav.Link>
             </LinkContainer>
         </Nav>
-    </div>
+    </Navbar.Collapse>
 )
 
 const MainNav = props => (
@@ -54,14 +54,13 @@ const MainNav = props => (
                 </Navbar.Brand>
             </LinkContainer>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-                {props.auth ? (
-                    <NavAuth />
-                ) : (
-                    <NavNonAuth handleShow={props.handleShow} />
-                )}
-                {/* Note: Only Show Sign In While Logged Out */}
-            </Navbar.Collapse>
+
+            {props.auth ? (
+                <NavAuth />
+            ) : (
+                <NavNonAuth handleShow={props.handleShow} />
+            )}
+            {/* Note: Only Show Sign In While Logged Out */}
         </Navbar>
     </div>
 )
