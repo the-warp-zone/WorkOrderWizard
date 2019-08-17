@@ -1,48 +1,37 @@
 import React from 'react'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+import userStory1 from '../../../../src/images/user-story1.jpg';
+import userStory2 from '../../../../src/images/user-story2.jpg';
+
 import './UserExamples.css'
+import '../../../App.css';
 
 var UserExamples = () => {
     return (
-        <div>
-            <hr />
-            <Row>
-                {/* lg={{ span: 2, offset: 2 }} */}
-                <Col className="header">
+        <div className="container">
+            <div className="row">
+                <div className="header col">
                     <h2>
-                        <em>User Examples</em>
+                        <em className="div-title">User Examples</em>
                     </h2>
-                </Col>
-            </Row>
-            <Row>
-                <Col />
-            </Row>
-            <Row className="examples">
-                {/* lg={{ span: 2, offset: 1 }} */}
-                <Col>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col">
                     <img
-                        src="https://via.placeholder.com/500x200.jpg"
+                        className="story-images"
+                        src={userStory1}
                         alt="placeholder"
                     />
-                </Col>
-                {/* lg={{ span: 2, offset: 1 }} */}
-                <Col>
+                </div>
+                <div className="col">
                     <img
-                        src="https://via.placeholder.com/500x200.jpg"
+                        className="story-images"
+                        src={userStory2}
                         alt="placeholder"
                     />
-                </Col>
-                {/* lg={{ span: 1, offset: 1 }} */}
-                <Col>
-                    <img
-                        src="https://via.placeholder.com/500x200.jpg"
-                        alt="placeholder"
-                    />
-                </Col>
-            </Row>
+                </div>
+            </div>
         </div>
     )
 }
-
 export default UserExamples

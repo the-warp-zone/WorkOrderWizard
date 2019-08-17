@@ -22,10 +22,16 @@
 }
 
 .navbar-brand {
-	font-family: monospace;
-    font-weight: bold;
-    font-variant-caps: small-caps;
-    font-size: xx-large;
-	word-spacing: -.69rem;
-	color: gold!important;
+    font-family: LogoFont;
+    font-size: 30px;
+	color: white;
+}
+
+@font-face {
+	font-family: LogoFont;
+	src: url(../../../src/Raphtalia.otf);
+}
+
+.navText {
+	word-spacing: -0.3rem;
 }

@@ -94,9 +94,11 @@ class CustomersData extends Component {
             </tr>
         ))
         return (
-            <div>
-                <div className="row" id="customerHeader">
-                    <h1 className="col">Customers</h1>
+
+            <div className="container">
+                <div classNameName="row" id="customerHeader">
+                    <div className="col">
+                        <h1>Customers</h1>
                     <Button
                         datatype="customer"
                         onClick={this.addCustomer}
@@ -105,6 +107,8 @@ class CustomersData extends Component {
                     >
                         +
                     </Button>
+                        </div>
+                        
                 </div>
                 <SubmitForm
                     dataType="customer"

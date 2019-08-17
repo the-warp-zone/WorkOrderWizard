@@ -58,8 +58,13 @@
     "mongoose": "^5.6.7",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
+<<<<<<< HEAD
     "react-number-format": "^4.2.0",
     "recompose": "^0.30.0"
+=======
+    "react-datepicker": "^2.8.0",
+    "react-number-format": "^4.2.0"
+>>>>>>> 6dbb87ffa2359a5ff4bd2bdef52f71a09150bcf8
   },
   "repository": {
     "type": "git",

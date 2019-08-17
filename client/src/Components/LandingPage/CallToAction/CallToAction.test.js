@@ -6,12 +6,7 @@ describe('Features', () => {
     let wrapper
     beforeEach(() => (wrapper = shallow(<CallToAction />)))
     it('should render a <div />', () => {
-        expect(wrapper.find('div').length).toEqual(1)
-    })
-    it('should say Get Work Order Wizard Today', () => {
-        expect(wrapper.find('.Action').text()).toEqual(
-            'Get Work Order Wizard Today'
-        )
+        expect(wrapper.find('div').length).toEqual(9)
     })
     it('should contain a button', () => {
         expect(wrapper.find('Button').length).toEqual(1)

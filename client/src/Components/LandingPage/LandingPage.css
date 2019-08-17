@@ -1,0 +1,25 @@
+@font-face {
+	font-family: LogoFont;
+	src: url(../../../src/Raphtalia.otf);
+}
+
+
+h2 {
+	padding-top: 25px;
+	padding-bottom: 25px;
+
+}
+
+.div-title {
+	font-family: LogoFont;
+	font-size: 55px;
+}
+.LandingPage {
+	height: 100%;
+	margin: 0;
+	background-image: url('/images/wow-background2.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}

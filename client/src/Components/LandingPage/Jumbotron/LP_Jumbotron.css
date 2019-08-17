@@ -1,17 +1,19 @@
 .jumbotron {
     /* background-color: white; */
-    height: 660px;
+    /* height: 660px;*/
     background-image: url('/images/jumbotron.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0% 40%;
-    margin: 0;
     border-radius: 0;
+	min-height: fit-content;
+	padding: 7rem 2rem;
 }
 
 #text {
     padding: 55px 0;
     text-align: center;
+	margin: 5rem 0;
 }
 @font-face {
     font-family: LogoFont;
@@ -30,6 +32,7 @@
     font-size: 100px;
     animation: fadein 3s;
 }
+
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }

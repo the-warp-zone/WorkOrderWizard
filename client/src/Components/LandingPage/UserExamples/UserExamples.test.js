@@ -6,12 +6,12 @@ describe('User Examples', () => {
     let wrapper
     beforeEach(() => (wrapper = shallow(<UserExamples />)))
     it('should render a <div />', () => {
-        expect(wrapper.find('div').length).toEqual(1)
+        expect(wrapper.find('div').length).toEqual(6)
     })
     it('should say User Examples', () => {
         expect(wrapper.find('.header').text()).toEqual('User Examples')
     })
     it('should contain a <img />', () => {
-        expect(wrapper.find('img').length).toEqual(3)
+        expect(wrapper.find('img').length).toEqual(2)
     })
 })
