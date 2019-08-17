@@ -6,9 +6,13 @@ import InvoiceForm from './DataForms/InvoiceForm'
 import CostForm from './DataForms/CostForm'
 
 class SubmitForm extends Component {
-    state = {
-        form: '',
+    constructor(props) {
+        super(props)
+        this.state = {
+            form: '',
+        }
     }
+
     componentDidMount() {
         this.setState({
             form: this.props.dataType,
@@ -20,7 +24,8 @@ class SubmitForm extends Component {
         if (this.props.dataType === 'customer')
             formData = (
                 <CustomerForm
-                    data={this.props}
+                    data={this.props.data}
+                    updateType={this.props.updateType}
                     getData={this.props.getData}
                     hide={this.props.cancel}
                 />
