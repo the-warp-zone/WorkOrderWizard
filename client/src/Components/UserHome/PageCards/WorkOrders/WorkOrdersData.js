@@ -80,9 +80,7 @@ class WorkOrderData extends Component {
         return (
             <div>
                 <h1>Work Orders</h1>
-                <Button datatype="workorder" onClick={this.addWorkOrder}>
-                    +
-                </Button>
+                <Button datatype="workorder" onClick={this.addWorkOrder}>+ Create New Work Order</Button>
                 <SubmitForm
                     dataType="workorder"
                     submitType={this.state.submit}

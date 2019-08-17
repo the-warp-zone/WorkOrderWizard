@@ -99,6 +99,7 @@ class CustomersData extends Component {
                 <div className="row" id="customerHeader">
                     <div className="col">
                         <h1>Customers</h1>
+<<<<<<< HEAD
                         <Button
                             datatype="customer"
                             onClick={this.addCustomer}
@@ -108,6 +109,15 @@ class CustomersData extends Component {
                             +
                         </Button>
                     </div>
+=======
+                    <Button
+                        datatype="customer"
+                        onClick={this.addCustomer}
+                        
+                        variant="success" >+ Create New Customer</Button>
+                        </div>
+                        
+>>>>>>> bc5729ae3f25c73940ce6309e62434616bfde9d6
                 </div>
                 <SubmitForm
                     dataType="customer"
