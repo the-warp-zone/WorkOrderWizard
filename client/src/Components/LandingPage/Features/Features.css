@@ -1,6 +1,7 @@
 .list {
     text-align: center;
+    height: 228px;
 }
 ul {
     list-style-type: none;
-   }
+}

@@ -9,7 +9,13 @@
     margin: 0;
     align-items: center;
     justify-content: center;
+    margin-bottom: 50px;
 }
+
+.signupButton {
+    margin-bottom: 25px;
+}
+
 .ctaBtn {
     margin-bottom: 40px;
 }
