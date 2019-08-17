@@ -60,7 +60,7 @@ class CustomersData extends Component {
 
         // remove deleted row from component and re-render component
         fetch(url + value, {
-            method: 'DELETE'
+            method: 'DELETE',
         }).then()
         // send delete command to API
     }
@@ -80,7 +80,9 @@ class CustomersData extends Component {
                         value={i._id}
                         onClick={this.deleteCustomer}
                         variant="success"
-                    >-</Button>
+                    >
+                        -
+                    </Button>
                 </td>
                 <td>
                     <Link to={Routes.CUSTOMER + '/' + i._id}>
@@ -93,16 +95,18 @@ class CustomersData extends Component {
             </tr>
         ))
         return (
-            <div>
+            <div className="container">
                 <div className="row" id="customerHeader">
-                    <h1 className="col">Customers</h1>
-                    <Button
-                        datatype="customer"
-                        onClick={this.addCustomer}
-                        
-                        variant="success" >+ Create New Customer</Button>
-                        </div>
-                        
+                    <div className="col">
+                        <h1>Customers</h1>
+                        <Button
+                            datatype="customer"
+                            onClick={this.addCustomer}
+                            variant="success"
+                        >
+                            + Create New Customer
+                        </Button>
+                    </div>
                 </div>
                 <SubmitForm
                     dataType="customer"
