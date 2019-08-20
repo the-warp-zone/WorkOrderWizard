@@ -38,7 +38,7 @@ const NavNonAuth = props => (
         <Nav className="ml-auto">
             {/* Note: Only Show Sign In and Sign Up While Logged Out */}
 			<LinkContainer to={Routes.SIGN_UP}>
-				<Nav.Link>Sign Up</Nav.Link>
+				<Nav.Link className="signup-button">Join today!</Nav.Link>
 			</LinkContainer>
             <LinkContainer to={Routes.SIGN_IN}>
                 <Nav.Link>Sign In</Nav.Link>
