@@ -59,12 +59,13 @@
     .jumbotron {
         background-position: 50% 20%;
         background-image: url('/images/jumbotron.jpg');
-		padding-left: .5rem;
-		padding-right: .5rem;
+		padding: .5rem;
+		height: 100vh;
     }
+	
 	#text {
-    padding: 0;
-    text-align: center;
-	margin: 0;
-}
+		padding: 0;
+		text-align: center;
+		margin: 0;
+	}
 }
