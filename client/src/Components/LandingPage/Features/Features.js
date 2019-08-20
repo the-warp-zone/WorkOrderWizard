@@ -15,15 +15,15 @@ var Features = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col">
-                        <ul className="list text-font landing-background feature-pad">
+                    <div className="col landing-background testi-text">
+                        <ul className="list text-font feature-pad">
                             <li>Manage Your Customers</li>
                             <li>Create and Archive Work Orders</li>
                             <li>Manage your Invoices and Billing</li>
                             <li>Keep Track of your Costs</li>
                         </ul>
                     </div>
-                    <div className="col text-font landing-background feature-pad">
+                    <div className="col text-font landing-background feature-pad testi-text">
                         <p>Work Order Wizard is your one stop for all of your business accounting. We make sure that you get to spend your
                             time doing what you love and helping your customers, not filling out paperwork. We want to give you the easiest 
                             possible method of keeping track of all things business related.

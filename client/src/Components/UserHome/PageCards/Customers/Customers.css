@@ -1,18 +1,28 @@
 .btn-success {
-	background-color: rgb(16, 146, 80);
-	border-color: rgb(16, 146, 80);
+    background-color: rgb(16, 146, 80);
+    border-color: rgb(16, 146, 80);
 }
 
-.btn-success:hover { 
-	background-color: rgb(16, 186, 80);
-	border-color: rgb(16, 186, 80);
+.btn-success:hover {
+    background-color: rgb(16, 186, 80);
+    border-color: rgb(16, 186, 80);
 }
 
 .btn-success:focus {
-	box-shadow: 0 0 0 0.2rem rgba(144,238,144 ,1 )
+    box-shadow: 0 0 0 0.2rem rgba(144, 238, 144, 1);
 }
 
 .button-row {
-	padding-left: 0!important;
-	padding-right:  0!important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.customerTable {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    box-shadow: 10px 10px 5px -4px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin: 5px;
+    margin-bottom: 50px;
+    margin-top: 20px;
 }

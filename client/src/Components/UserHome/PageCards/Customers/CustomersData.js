@@ -6,14 +6,15 @@ import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
 import './Customers.css'
 
-const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
-const PORT = process.env.REACT_APP_API_PORT || '';
-const pageEndpoint = '/api/customer/';
-let url;
+const API_ENDPOINT_BASEURL =
+    process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost'
+const PORT = process.env.REACT_APP_API_PORT || ''
+const pageEndpoint = '/api/customer/'
+let url
 
-if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
-else url = API_ENDPOINT_BASEURL + pageEndpoint;
-console.log(url);
+if (PORT) url = API_ENDPOINT_BASEURL + ':' + PORT + pageEndpoint
+else url = API_ENDPOINT_BASEURL + pageEndpoint
+console.log(url)
 
 class CustomersData extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class CustomersData extends Component {
         this.state = {
             show: false,
             submit: '',
-            data: ''
+            data: '',
         }
         this.getData = this.getData.bind(this)
     }
@@ -59,13 +60,14 @@ class CustomersData extends Component {
 
         // remove deleted row from component and re-render component
         fetch(url + value, {
-            method: 'DELETE'
+            method: 'DELETE',
         }).then()
         // send delete command to API
     }
     // Props should be the API call to get customer data
 
     render() {
+        console.log(this.props.data)
         const CustomerData = this.props.data.map(i => (
             <tr key={i._id}>
                 <td className="button-row">
@@ -79,7 +81,9 @@ class CustomersData extends Component {
                         value={i._id}
                         onClick={this.deleteCustomer}
                         variant="success"
-                    >-</Button>
+                    >
+                        -
+                    </Button>
                 </td>
                 <td>
                     <Link to={Routes.CUSTOMER + '/' + i._id}>
@@ -92,18 +96,18 @@ class CustomersData extends Component {
             </tr>
         ))
         return (
-
             <div className="container">
                 <div className="row" id="customerHeader">
                     <div className="col">
                         <h1>Customers</h1>
-                    <Button
-                        datatype="customer"
-                        onClick={this.addCustomer}
-                        
-                        variant="success" >+ Create New Customer</Button>
-                        </div>
-                        
+                        <Button
+                            datatype="customer"
+                            onClick={this.addCustomer}
+                            variant="success"
+                        >
+                            + Create New Customer
+                        </Button>
+                    </div>
                 </div>
                 <SubmitForm
                     dataType="customer"
@@ -114,7 +118,7 @@ class CustomersData extends Component {
                     cancel={this.cancelForm}
                 />
 
-                <div>
+                <div className="customerTable">
                     <Table responsive="md">
                         <thead>
                             <tr>

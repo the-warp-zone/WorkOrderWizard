@@ -6,15 +6,15 @@ import axios from 'axios'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
+const API_ENDPOINT_BASEURL =
+    process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost'
+const PORT = process.env.REACT_APP_API_PORT || ''
+const pageEndpoint = '/api/workorder/'
+let url
 
-const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
-const PORT = process.env.REACT_APP_API_PORT || '';
-const pageEndpoint = '/api/workorder/';
-let url;
-
-if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
-else url = API_ENDPOINT_BASEURL + pageEndpoint;
-console.log(url);
+if (PORT) url = API_ENDPOINT_BASEURL + ':' + PORT + pageEndpoint
+else url = API_ENDPOINT_BASEURL + pageEndpoint
+console.log(url)
 
 class WorkOrderForm extends Component {
     constructor(props) {
@@ -46,11 +46,13 @@ class WorkOrderForm extends Component {
     }
 
     handleCustomers = () => {
-		let customer_url = '';
-		if (PORT) customer_url = API_ENDPOINT_BASEURL + ":" + PORT + "/api/customer/all";
-		else customer_url = API_ENDPOINT_BASEURL + "/api/customer/all";
-		console.log(customer_url);
-		
+        let customer_url = ''
+        if (PORT)
+            customer_url =
+                API_ENDPOINT_BASEURL + ':' + PORT + '/api/customer/all'
+        else customer_url = API_ENDPOINT_BASEURL + '/api/customer/all'
+        console.log(customer_url)
+
         var list = []
         var idList = []
         fetch(customer_url)
@@ -91,27 +93,63 @@ class WorkOrderForm extends Component {
             notes: this.state.notes,
         }
         /* Post goes here */
-        
-        axios
-            .post(url, data)
-            .then(res => {
-                console.log(res)
-                data = res.data
-                this.props.getData(data)
-            })
-            .catch(err => {
-                if (err) {
-                    this.setState({
-                        err: 'Something went wrong. Please try again.',
-                    })
-                } else {
-                    this.setState({ posted: true })
-                    console.log(data)
-                }
-            })
+        if (this.props.updateType === 'Insert') {
+            axios
+                .post(url, data)
+                .then(res => {
+                    console.log(res)
+                    data = res.data
+                    this.props.getData(data)
+                })
+                .catch(err => {
+                    if (err) {
+                        this.setState({
+                            err: 'Something went wrong. Please try again.',
+                        })
+                    } else {
+                        this.setState({ posted: true })
+                        console.log(data)
+                    }
+                })
+        } else if (this.props.updateType === 'Update') {
+            axios
+                .put(url + this.props.data._id, this.state)
+                .then(res => {
+                    console.log(res)
+
+                    data = res.config.data
+                    data = JSON.parse(data)
+                    this.props.getData(data)
+                })
+                .catch(err => {
+                    if (err) {
+                        this.setState({
+                            err: 'Something went wrong. Please try again.',
+                        })
+                    } else {
+                        this.setState({ posted: true })
+                        console.log(data)
+                    }
+                })
+        }
     }
     componentDidMount() {
         this.handleCustomers()
+        if (this.props.updateType === 'Update') {
+            this.setState({
+                businessName: this.props.data.businessName,
+                phone: this.props.data.phone,
+                email: this.props.data.email,
+                customerAssociated: this.props.data.customer,
+                firstName: this.props.data.firstName,
+                lastName: this.props.data.lastName,
+                address1: this.props.data.address1,
+                address2: this.props.data.address2,
+                city: this.props.data.city,
+                state: this.props.data.state,
+                zip: this.props.data.zip,
+            })
+        }
     }
     render() {
         return (

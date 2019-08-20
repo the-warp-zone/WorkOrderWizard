@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import WorkOrdersData from './WorkOrdersData'
+import { withAuthorization } from '../../../Auth/Session'
 
-const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
-const PORT = process.env.REACT_APP_API_PORT || '';
-const pageEndpoint = '/api/workorder/all';
-let url;
+const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost'
+const PORT = process.env.REACT_APP_API_PORT || ''
+const pageEndpoint = '/api/workorder/all'
+let url
 
-if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
-else url = API_ENDPOINT_BASEURL + pageEndpoint;
-console.log(url);
+if (PORT) url = API_ENDPOINT_BASEURL + ':' + PORT + pageEndpoint
+else url = API_ENDPOINT_BASEURL + pageEndpoint
+console.log(url)
 
 function checkNotDeleted(workorder) {
-		return workorder.deleted !== true;
+    return workorder.deleted !== true
 }
 
 class WorkOrders extends Component {
@@ -19,16 +20,16 @@ class WorkOrders extends Component {
         data: [],
     }
 
-	componentDidMount() {
-        
+    componentDidMount() {
         fetch(url)
             .then(response => response.json())
-			.then(data => this.setState({ data: data.filter(checkNotDeleted)}));
-	}
-	
+            .then(data => this.setState({ data: data.filter(checkNotDeleted) }))
+    }
+
     render() {
         return <WorkOrdersData data={this.state.data} />
     }
 }
+const condition = authUser => !!authUser
 
-export default WorkOrders
+export default withAuthorization(condition)(WorkOrders)

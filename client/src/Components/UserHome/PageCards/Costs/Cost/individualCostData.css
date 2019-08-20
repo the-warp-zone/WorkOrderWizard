@@ -1,0 +1,26 @@
+.costCard {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    box-shadow: 10px 10px 5px -4px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    height: 21.5em;
+}
+
+/* section {
+    margin-bottom: 20px;
+    background: #ffffff;
+    padding: 20px;
+    margin: 0 auto;
+} */
+
+li {
+    float: left;
+    clear: left;
+}
+
+#edit {
+    float: right;
+    margin: 10px;
+}

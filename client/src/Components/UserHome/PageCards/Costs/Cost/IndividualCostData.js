@@ -1,24 +1,37 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
+import './individualCostData.css'
 
 const IndividualCostData = props => {
     //
     console.log(props.data)
     return (
-        <div>
+        <div className="container costCard">
             <div>
-                <h1>{props.data._id}</h1>
-                <h2>{props.data.costName}</h2>
-                <h2>{props.data.vendor}</h2>
-                <h2>{props.data.workOrderID}</h2>
-            </div>
-            <div>
-                <h3>{props.data.datePurchased}</h3>
-                <h3>{props.data.amount}</h3>
-                <Button>Edit</Button>
-            </div>
-            <div>
-                <h3>{props.data.vendorReceiptSN}</h3>
+                <ul>
+                    <li>
+                        <h3>ID: {props.data._id}</h3>
+                    </li>
+                    <li>
+                        <h3>Name: {props.data.costName}</h3>
+                    </li>
+                    <li>
+                        <h3>Vendor: {props.data.vendor}</h3>
+                    </li>
+                    <li>
+                        <h3>Work Order ID: {props.data.workOrderID}</h3>
+                    </li>
+                    <li>
+                        <h3>Date Purchased: {props.data.datePurchased}</h3>
+                    </li>
+                    <li>
+                        <h3>Amount Billed: {props.data.amount}</h3>
+                    </li>
+                    <li>
+                        <h3>Receipt: {props.data.vendorReceiptSN}</h3>
+                    </li>
+                </ul>
+                <Button id="edit">Edit</Button>
             </div>
         </div>
     )

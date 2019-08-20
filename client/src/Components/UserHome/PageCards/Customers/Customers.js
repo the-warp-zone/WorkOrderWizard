@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import CustomersData from './CustomersData'
+import { withAuthorization } from '../../../Auth/Session'
 
-const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
-const PORT = process.env.REACT_APP_API_PORT || '';
-const pageEndpoint = '/api/customer/all';
-let url;
+const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost'
+const PORT = process.env.REACT_APP_API_PORT || ''
+const pageEndpoint = '/api/customer/all'
+let url
 
-if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
-else url = API_ENDPOINT_BASEURL + pageEndpoint;
-console.log(url);
+if (PORT) url = API_ENDPOINT_BASEURL + ':' + PORT + pageEndpoint
+else url = API_ENDPOINT_BASEURL + pageEndpoint
+console.log(url)
 
 function checkNotDeleted(customer) {
-		return customer.deleted !== true;
+    return customer.deleted !== true
 }
 
 class Customers extends Component {
@@ -20,16 +21,15 @@ class Customers extends Component {
         posted: false,
         err: '',
     }
-	
+
     componentDidMount() {
-        
         fetch(url)
             .then(response => response.json())
-			.then(data => this.setState({ data: data.filter(checkNotDeleted)}));
+            .then(data => this.setState({ data: data.filter(checkNotDeleted) }))
     }
-	
+
     submit() {}
-    
+
     handleHide = () => {
         this.setState({ show: false })
     }
@@ -37,5 +37,6 @@ class Customers extends Component {
         return <CustomersData data={this.state.data} />
     }
 }
+const condition = authUser => !!authUser
 
-export default Customers
+export default withAuthorization(condition)(Customers)

@@ -4,15 +4,17 @@ import Table from 'react-bootstrap/Table'
 import { Link } from 'react-router-dom'
 import Routes from '../../../../Constants/routes'
 import SubmitForm from '../Forms/Submit'
+import './Costs.css'
 
-const API_ENDPOINT_BASEURL = process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost';
-const PORT = process.env.REACT_APP_API_PORT || '';
-const pageEndpoint = '/api/cost/';
-let url;
+const API_ENDPOINT_BASEURL =
+    process.env.REACT_APP_API_ENDPOINT_BASEURL || 'http://localhost'
+const PORT = process.env.REACT_APP_API_PORT || ''
+const pageEndpoint = '/api/cost/'
+let url
 
-if (PORT) url = API_ENDPOINT_BASEURL + ":" + PORT + pageEndpoint;
-else url = API_ENDPOINT_BASEURL + pageEndpoint;
-console.log(url);
+if (PORT) url = API_ENDPOINT_BASEURL + ':' + PORT + pageEndpoint
+else url = API_ENDPOINT_BASEURL + pageEndpoint
+console.log(url)
 
 class CostData extends Component {
     constructor(props) {
@@ -20,7 +22,7 @@ class CostData extends Component {
         this.state = {
             show: false,
             submit: '',
-            data: ''
+            data: '',
         }
         this.getData = this.getData.bind(this)
     }
@@ -51,7 +53,7 @@ class CostData extends Component {
     deleteCost = event => {
         let value = event.target.value
         fetch(url + value, {
-            method: 'DELETE'
+            method: 'DELETE',
         }).then()
     }
     render() {
@@ -65,19 +67,19 @@ class CostData extends Component {
                         Delete
                     </Button>
                 </td>
-                <td>
+                <td className="costId">
                     <Link to={Routes.COST + '/' + i._id}>{'CO-' + i._id}</Link>
                 </td>
                 <td>{i.costName}</td>
                 <td>{i.vendor}</td>
-                <td>{i.vendorReceiptSN}</td>
-                <td>{i.datePurchased}</td>
+                <td className="costId">{i.vendorReceiptSN}</td>
+                <td className="costId">{i.datePurchased}</td>
                 <td>{i.amount}</td>
-                <td>{i.workOrderID}</td>
+                <td className="costId">{i.workOrderID}</td>
             </tr>
         ))
         return (
-            <div>
+            <div className="container">
                 <div id="costHeader">
                     <h1>Cost</h1>
                     <Button
@@ -85,7 +87,7 @@ class CostData extends Component {
                         onClick={this.addCost}
                         className="add-button"
                     >
-                       + Create New Work Cost
+                        + Create New Work Cost
                     </Button>
                 </div>
                 <SubmitForm
@@ -96,26 +98,28 @@ class CostData extends Component {
                     getData={this.getData}
                     cancel={this.cancelForm}
                 />
-                <Table responsive>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>Cost ID</th>
-                            <th>Name</th>
-                            <th>Vendor</th>
-                            <th>Vendor Receipt</th>
-                            <th>Date Purchased</th>
-                            <th>Amount</th>
-                            <th>W.O.</th>
+                <div className="costTable">
+                    <Table responsive>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Cost ID</th>
+                                <th>Name</th>
+                                <th>Vendor</th>
+                                <th>Vendor Receipt</th>
+                                <th>Date Purchased</th>
+                                <th>Amount</th>
+                                <th>W.O.</th>
 
-                            {/* <th>Sort</th>
+                                {/* <th>Sort</th>
                     <th>Filter</th>
                     Do we have these as options for each column? */}
-                        </tr>
-                    </thead>
-                    <tbody>{CostRows}</tbody>
-                </Table>
+                            </tr>
+                        </thead>
+                        <tbody>{CostRows}</tbody>
+                    </Table>
+                </div>
             </div>
         )
     }
