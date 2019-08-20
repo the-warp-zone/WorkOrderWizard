@@ -9,7 +9,7 @@ import Routes from '../../../Constants/routes'
 var CallToAction = () => {
     return (
         <div id="calltoAction">
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
                     <div className="col">
                         <h2>
@@ -19,7 +19,7 @@ var CallToAction = () => {
                         </h2>
                     </div>
                 </div>
-                <div className="row landing-background">
+                <div className="row landing-background2">
                     <div className="col">
                         <div className="text-font ctaText">
                             <p>

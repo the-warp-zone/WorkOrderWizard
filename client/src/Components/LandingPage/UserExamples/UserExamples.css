@@ -4,12 +4,27 @@
 	padding: 2rem 0;
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 580px) {
     .examples {
-        max-width: 400px;
+        max-width:fit-content;
     }
 
     img {
-        max-width: 300px;
+		padding: 0;
+        max-width: 85vw;
+		margin: 0 auto;
     }
+	
+	.container {
+		padding: 0;
+	}
+	
+	.div-title {
+	padding: 0 1rem;
+	}
+	
+	imgcol {
+		padding: 0;
+	}
+	
 }
