@@ -36,7 +36,10 @@ const NavAuth = () => (
 const NavNonAuth = props => (
     <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
-            {/* Note: Only Show Sign In While Logged Out */}
+            {/* Note: Only Show Sign In and Sign Up While Logged Out */}
+			<LinkContainer to={Routes.SIGN_UP}>
+				<Nav.Link>Sign Up</Nav.Link>
+			</LinkContainer>
             <LinkContainer to={Routes.SIGN_IN}>
                 <Nav.Link>Sign In</Nav.Link>
             </LinkContainer>
