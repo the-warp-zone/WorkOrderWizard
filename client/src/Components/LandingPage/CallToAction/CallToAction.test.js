@@ -12,6 +12,6 @@ describe('Features', () => {
         expect(wrapper.find('Button').length).toEqual(1)
     })
     it('should contain a Submit Button that says: Sign Up Now', () => {
-        expect(wrapper.find('Button').text()).toEqual('Sign Up Now')
+        expect(wrapper.find('Button').text()).toEqual('Join Now!')
     }) //
 })
