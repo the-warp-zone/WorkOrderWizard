@@ -38,3 +38,13 @@
 .navText {
     word-spacing: -0.3rem;
 }
+
+.signup-button {
+	background-color: green;
+	border-radius: 1rem;
+	border-color: greenyellow;
+	border-style: inset;
+	width: fit-content;
+	margin: auto;
+	padding: .5rem!important;
+}

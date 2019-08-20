@@ -1,5 +1,6 @@
 .ctaText {
     text-align: center;
+	font-size: 1.25rem;
     /* height: 10%;
     width: 60%; */
     padding-top: 40px;
@@ -18,4 +19,14 @@
 
 .signupButton {
     margin-bottom: 25px;
+	font-size: x-large;
+}
+
+.landing-background2 {
+	background-color: rgba(255,255,255,.5);
+    border-radius: 0px;
+}
+
+.container-fluid {
+	padding: 0;
 }

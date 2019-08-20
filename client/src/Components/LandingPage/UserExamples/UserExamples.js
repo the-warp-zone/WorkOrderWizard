@@ -16,14 +16,14 @@ var UserExamples = () => {
                 </div>
             </div>
             <div className="row">
-                <div className="col">
+                <div className="col imgcol">
                     <img
                         className="story-images"
                         src={userStory1}
                         alt="placeholder"
                     />
                 </div>
-                <div className="col">
+                <div className="col imgcol">
                     <img
                         className="story-images"
                         src={userStory2}
