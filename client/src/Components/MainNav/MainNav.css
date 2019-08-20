@@ -46,5 +46,5 @@
 	border-style: inset;
 	width: fit-content;
 	margin: auto;
-	padding: .5rem;
+	padding: .5rem!important;
 }
