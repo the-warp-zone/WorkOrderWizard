@@ -4,10 +4,11 @@ import { compose } from 'recompose'
 
 import { withFirebase } from '../Firebase'
 import ROUTES from '../../../Constants/routes'
+import './index.css'
 
 const SignUpPage = () => (
     <div>
-        <h1>SignUp</h1>
+        <h1>Sign Up</h1>
         <SignUpForm />
     </div>
 )
@@ -95,39 +96,60 @@ class SignUpFormBase extends Component {
 
         return (
             <form onSubmit={this.onSubmit}>
+			<div className="row">
+			<div className="col">
                 <input
                     name="username"
                     value={username}
                     onChange={this.onChange}
                     type="text"
-                    placeholder="Full Name"
+                    placeholder=" Your Name"
                 />
+			</div>
+			</div>
+			<div className="row">
+			<div className="col">
                 <input
                     name="email"
                     value={email}
                     onChange={this.onChange}
                     type="text"
-                    placeholder="Email Address"
+                    placeholder=" Email Address"
                 />
+			</div>
+			</div>
+			<div className="row">
+			<div className="col">
                 <input
                     name="passwordOne"
                     value={passwordOne}
                     onChange={this.onChange}
                     type="password"
-                    placeholder="Password"
+                    placeholder=" Password"
                 />
+			</div>
+			</div>
+			<div className="row">
+			<div className="col">
                 <input
                     name="passwordTwo"
                     value={passwordTwo}
                     onChange={this.onChange}
                     type="password"
-                    placeholder="Confirm Password"
+                    placeholder=" Confirm Password"
                 />
-                <button disabled={isInvalid} type="submit">
-                    Sign Up
-                </button>
-
+			</div>
+			</div>
+			<div className="row">
+			<div className="col">
+                <button className="signupButton btn btn-success" disabled={isInvalid} type="button">Sign Up</button>
+			</div>
+			</div>
+			<div className="row">
+			<div className="col">
                 {error && <p>{error.message}</p>}
+			</div>
+			</div>
             </form>
         )
     }
