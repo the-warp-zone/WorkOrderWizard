@@ -67,25 +67,38 @@ class SignInFormBase extends Component {
 
         return (
             <form onSubmit={this.onSubmit}>
+			<div className="row">
+			<div className="col">
                 <input
                     name="email"
                     value={email}
                     onChange={this.onChange}
                     type="text"
-                    placeholder="Email Address"
+                    placeholder=" Email Address"
                 />
+			</div>
+			</div>
+			<div className="row">
+			<div className="col">
                 <input
                     name="password"
                     value={password}
                     onChange={this.onChange}
                     type="password"
-                    placeholder="Password"
+                    placeholder=" Password"
                 />
-                <button disabled={isInvalid} type="submit">
-                    Sign In
-                </button>
-
+			</div>
+			</div>
+			<div className="row">
+			<div className="col">
+				<button className="signupButton btn btn-success" disabled={isInvalid} type="submit">Sign In</button>
+			</div>
+			</div>
+			<div className="row">
+			<div className="col">
                 {error && <p>{error.message}</p>}
+			</div>
+			</div>
             </form>
         )
     }
@@ -129,8 +142,7 @@ class SignInGoogleBase extends Component {
 
         return (
             <form onSubmit={this.onSubmit}>
-                <button type="submit">Sign In with Google</button>
-
+				<button className="signupButton btn btn-success" type="submit">Sign In with Google</button>
                 {error && <p>{error.message}</p>}
             </form>
         )

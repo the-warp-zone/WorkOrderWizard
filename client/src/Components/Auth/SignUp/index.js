@@ -4,7 +4,7 @@ import { compose } from 'recompose'
 
 import { withFirebase } from '../Firebase'
 import ROUTES from '../../../Constants/routes'
-import './index.css'
+import '../index.css'
 
 const SignUpPage = () => (
     <div>
@@ -142,7 +142,7 @@ class SignUpFormBase extends Component {
 			</div>
 			<div className="row">
 			<div className="col">
-                <button className="signupButton btn btn-success" disabled={isInvalid} type="button">Sign Up</button>
+                <button className="signupButton btn btn-success" disabled={isInvalid} type="submit">Sign Up</button>
 			</div>
 			</div>
 			<div className="row">
