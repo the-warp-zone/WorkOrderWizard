@@ -1,0 +1,7 @@
+SKIP_PREFLIGHT_CHECK=true
+NODE_ENV=development
+PORT=3001
+DEV_MONGODB=WorkOrderWizardTest
+PROD_MONGODB=WorkOrderWizard
+API_PORT='3001'
+API_ENDPOINT_BASEURL='http://localhost/'
