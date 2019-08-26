@@ -7,7 +7,7 @@ import '../../../App.css';
 
 var UserExamples = () => {
     return (
-        <div className="container">
+        <div className="container example-container">
             <div className="row">
                 <div className="header col">
                     <h2>

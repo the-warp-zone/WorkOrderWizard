@@ -6,12 +6,12 @@ import Routes from '../../../Constants/routes'
 
 var PageCards = () => {
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-sm-6">
+        <div className="container" style={{ marginTop: '2vh' }} >
+            <div className="row" >
+                <div className="col-sm-6 col-xs-12 card-column">
                     <Link to={Routes.CUSTOMERS} className="cards">
                         <Card
-                            style={{ width: '100%', height: '300px' }}
+                            
                             className="shadow-box card-spacing"
                         >
                             <Card.Body>Customers</Card.Body>
@@ -19,22 +19,19 @@ var PageCards = () => {
                     </Link>
                 </div>
 
-                <div className="col-sm-6">
+                <div className="col-sm-6 col-xs-12 card-column">
                     <Link to={Routes.WORK_ORDERS} className="cards">
                         <Card
-                            style={{ width: '100%', height: '300px' }}
                             className="shadow-box card-spacing"
                         >
-                            <Card.Body>Work Orders</Card.Body>
+                            <Card.Body>Work&nbsp;Orders</Card.Body>
                         </Card>
                     </Link>
                 </div>
-            </div>
-            <div className="row">
-                <div className="col-sm-6">
+            
+                <div className="col-sm-6 col-xs-12 card-column">
                     <Link to={Routes.INVOICES} className="cards">
                         <Card
-                            style={{ width: '100%', height: '300px' }}
                             className="shadow-box card-spacing"
                         >
                             <Card.Body>Invoices</Card.Body>
@@ -42,10 +39,9 @@ var PageCards = () => {
                     </Link>
                 </div>
 
-                <div className="col-sm-6">
+                <div className="col-sm-6 col-xs-12 card-column">
                     <Link to={Routes.COSTS} className="cards">
                         <Card
-                            style={{ width: '100%', height: '300px' }}
                             className="shadow-box card-spacing"
                         >
                             <Card.Body>Costs</Card.Body>
