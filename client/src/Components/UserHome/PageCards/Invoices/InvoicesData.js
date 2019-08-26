@@ -68,10 +68,10 @@ class InvoiceRow extends Component {
                 </td>
                 <td>
                     <Link to={Routes.INVOICE + '/' + i._id}>
-                        {'INV-' + i._id}
+                        {'INV' + String.fromCharCode(8209) + i._id}
                     </Link>
                 </td>
-                <td>{'WO-' + i.workOrderID}</td>
+                <td>{'WO' + String.fromCharCode(8209) + i.workOrderID}</td>
                 <td>{i.dateIssued}</td>
                 <td>{i.paid.toString()}</td>
                 <td>{i.open.toString()}</td>

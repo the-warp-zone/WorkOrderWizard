@@ -68,7 +68,7 @@ class CostData extends Component {
                     </Button>
                 </td>
                 <td className="costId">
-                    <Link to={Routes.COST + '/' + i._id}>{'CO-' + i._id}</Link>
+                    <Link to={Routes.COST + '/' + i._id}>{'CO' + String.fromCharCode(8209) + i._id}</Link>
                 </td>
                 <td>{i.costName}</td>
                 <td>{i.vendor}</td>
