@@ -2,21 +2,18 @@ body, html {
     height: 100%;
     margin: 0;
 }
+
+.card-column {
+	min-width:fit-content!important;
+}
+
 .cards {
     color: #109250;
     font-size: 30px;
     font-weight: 300;
     font-family: 'Lato', sans-serif;
 }
-.card-spacing {
-    margin: 20px;
-}
-.margin-top {
-    margin: 5%;
-}
-/* .second-row {
-    margin: 5%;
-} */
+
 .shadow-box{
     box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
 }
@@ -25,11 +22,11 @@ body, html {
 
 }
 .card-body {
-    padding: 50px;
-    margin-top: 15%;;
+	margin: auto;
+	flex: unset;
 }
 .card-spacing {
-    margin-top: 5%;
+    margin: 1rem 0;
 }
 a:link {
     color: rgb(43, 43, 43);
