@@ -69,11 +69,11 @@ class WorkOrderData extends Component {
                 </td>
                 <td>
                     <Link to={Routes.WORK_ORDER + '/' + i._id}>
-                        {'WO-' + i._id}
+                        {'WO' + String.fromCharCode(8209) + i._id}
                     </Link>
                 </td>
                 <td>{i.title}</td>
-                <td>{'C-' + i.customerID}</td>
+                <td>{'C' + String.fromCharCode(8209) + i.customerID}</td>
                 <td>{i.createdOn}</td>
                 <td>{i.dateDue}</td>
                 <td>{i.hoursLogged}</td>
