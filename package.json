@@ -55,7 +55,7 @@
         "express": "^4.17.1",
         "font-awesome": "^4.7.0",
         "if-env": "^1.0.4",
-        "mongoose": "^5.6.7",
+        "mongoose": "^5.7.5",
         "prettier": "^1.18.2",
         "pretty-quick": "^1.11.1",
         "react-datepicker": "^2.8.0",
